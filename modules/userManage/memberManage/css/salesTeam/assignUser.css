@@ -1,0 +1,66 @@
+.salesTeam-add-pop {
+  width: 100%;
+  text-align: center; }
+  .salesTeam-add-pop table {
+    width: 80%;
+    margin: auto; }
+    .salesTeam-add-pop table tr {
+      height: 80px;
+      line-height: 80px;
+      width: 100%; }
+      .salesTeam-add-pop table tr th {
+        font-weight: normal;
+        font-style: normal;
+        height: 80px;
+        line-height: 80px;
+        text-align: center;
+        width: 30%;
+        color: #6b818b;
+        font-family: Microsoft YaHei;
+        font-size: 14px; }
+      .salesTeam-add-pop table tr td {
+        height: 80px;
+        line-height: 80px;
+        width: 70%;
+        color: #6b818b;
+        font-family: Microsoft YaHei;
+        font-size: 14px;
+        text-align: left; }
+  .salesTeam-add-pop .salesTeam-users {
+    width: 85%;
+    padding-top: 15px;
+    border-top: 2px solid #6b818b;
+    margin: auto; }
+    .salesTeam-add-pop .salesTeam-users .user_node {
+      float: left;
+      margin-left: 10px;
+      margin-top: 10px;
+      height: 20px;
+      min-width: 40px;
+      border: 1px solid #eee;
+      -moz-border-radius: 3px;
+      -webkit-border-radius: 3px;
+      border-radius: 3px;
+      cursor: pointer; }
+      .salesTeam-add-pop .salesTeam-users .user_node .user {
+        float: left;
+        padding-left: 5px;
+        padding-right: 5px;
+        color: #6b818b;
+        font-family: Microsoft YaHei;
+        font-size: 14px; }
+      .salesTeam-add-pop .salesTeam-users .user_node .delete {
+        float: right;
+        width: 20px;
+        height: 20px;
+        line-height: 20px;
+        text-align: center;
+        color: #000;
+        background-color: #f2f2f2;
+        font-family: Arial;
+        font-size: 10px; }
+      .salesTeam-add-pop .salesTeam-users .user_node .delete:hover {
+        background-color: #95a0aa;
+        color: #fff; }
+
+/*# sourceMappingURL=assignUser.css.map */

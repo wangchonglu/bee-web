@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+
+    <script src="../js/lib/jquery/jquery-1.11.3.min.js"></script>
+    <link rel="stylesheet" href="../js/lib/miniTip/css/miniTip.css" />
+    <script src="../js/lib/miniTip/js/miniTip.js"></script>
+
+    <style>
+        html, body, * {
+            padding: 0px;
+            margin: 0px;
+        }
+
+        .v-errorTip {
+            border: solid 1px red;
+            padding: 3px;
+        }
+    </style>
+
+    <script>
+        $(function () {
+
+            validate($("#myInput"));
+
+        });
+
+        var validate = function ($ele) {
+            var left = $ele.offset().left + $ele.width() - 20;
+            var top = $ele.offset().top - $ele.height()-20;
+            var position = "position: absolute;left: {0}px;top: {1}px".format(left, top);
+            var tipEle = "<i class='v-errorTip' style='{1}'>{0}</i>".format("输入不能为空，请输入至少8个字符", position);
+            $ele.after(tipEle);
+        }
+
+        /*
+         String format
+         */
+        String.prototype.format = String.prototype.f = function () {
+
+            var s = this,
+                    i = arguments.length;
+
+            while (i--) {
+                s = s.replace(new RegExp('\\{' + i + '\\}', 'gm'), arguments[i]);
+            }
+            return s;
+        };
+
+    </script>
+
+
+</head>
+<body>
+
+<input id="myInput" style="margin-top: 300px;margin-left:400px" placeholder="" value=""/>
+
+
+</body>
+</html>

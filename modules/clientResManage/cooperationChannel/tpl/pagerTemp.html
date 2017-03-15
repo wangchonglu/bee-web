@@ -1,0 +1,19 @@
+<% if(it.length > 0){ %>
+<% for(var i=0;i
+<it.length;i++){ %>
+<% var item=it[i];%>
+<% var flag=i%2;var curClass;%>
+<% if(flag==0){curClass="trOddBackColor";}else{curClass="trEvenBackColor";} %>
+<tr class="<%= curClass %>">
+    <td class="tbody_td" data-field="proName"><%=item.proName%></td>
+    <td class="tbody_td" data-field="fund"><%=item.fund%></td>
+    <td class="tbody_td" data-field="income"><%=item.income%></td>
+    <td class="tbody_td" data-field="region"><%=item.region%></td>
+    <td class="tbody_td" data-field="years"><%=item.years%></td>
+    <td class="tbody_td" data-field="income"><%=item.zone%></td>
+    <td class="tbody_td" data-field="region"><%=item.funderCount%></td>
+    <td class="tbody_td" data-field="years"><%=item.serviceMan%></td>
+    <td class="tbody_td" data-field="region"><a href="#">历史成交记录</a></td>
+</tr>
+<% } %>
+<% } %>

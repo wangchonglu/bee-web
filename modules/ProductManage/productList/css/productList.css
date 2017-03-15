@@ -1,0 +1,91 @@
+.product_list {
+  width: 100%; }
+  .product_list .prolist_header {
+    width: 100%;
+    height: 76px;
+    background-color: #fff; }
+    .product_list .prolist_header .header_operation {
+      position: relative;
+      top: 24px;
+      padding-left: 20px;
+      height: 28px; }
+      .product_list .prolist_header .header_operation .operation_add {
+        display: inline-block;
+        cursor: pointer;
+        display: none; }
+        .product_list .prolist_header .header_operation .operation_add img {
+          position: relative;
+          top: 5px;
+          width: 18px;
+          height: 18px; }
+      .product_list .prolist_header .header_operation .operation_filter {
+        display: inline-block; }
+        .product_list .prolist_header .header_operation .operation_filter .select_op_filter {
+          color: #6b818b;
+          margin-right: 10px; }
+          .product_list .prolist_header .header_operation .operation_filter .select_op_filter option {
+            color: #6b818b;
+            font-family: Microsoft YaHei;
+            font-size: 10px; }
+      .product_list .prolist_header .header_operation .operation_sort {
+        display: inline-block; }
+        .product_list .prolist_header .header_operation .operation_sort .select_op_sort {
+          color: #6b818b;
+          margin-right: 10px; }
+          .product_list .prolist_header .header_operation .operation_sort .select_op_sort option {
+            color: #6b818b;
+            font-family: Microsoft YaHei;
+            font-size: 10px; }
+      .product_list .prolist_header .header_operation .operation_search {
+        float: right;
+        margin-right: 30px;
+        border: 1px solid #e8e8e8;
+        padding: 0 6px 3px 10px; }
+        .product_list .prolist_header .header_operation .operation_search input {
+          border: none;
+          outline: none;
+          height: 16px; }
+        .product_list .prolist_header .header_operation .operation_search img {
+          height: 16px;
+          width: 16px;
+          position: relative;
+          top: 4px;
+          cursor: pointer; }
+      .product_list .prolist_header .header_operation span, .product_list .prolist_header .header_operation select, .product_list .prolist_header .header_operation option {
+        color: #6b818b;
+        font-family: Microsoft YaHei;
+        font-size: 14px;
+        margin-right: 10px; }
+
+.prolist_content {
+  width: 99%;
+  margin: auto; }
+  .prolist_content .prolist_table .prolist_tbody_op a {
+    cursor: pointer;
+    text-decoration: none;
+    margin-left: 6px; }
+  .prolist_content .prolist_table .prolist_tbody_op a:hover {
+    cursor: pointer;
+    text-decoration: underline; }
+  .prolist_content .prolist_table .prolist_tbody_empty {
+    height: 100px; }
+    .prolist_content .prolist_table .prolist_tbody_empty td {
+      height: 100px;
+      line-height: 100px;
+      text-align: center;
+      font-family: Arial; }
+  .prolist_content .prolist_pager {
+    width: 100%;
+    height: 35px;
+    background-color: #e5e5e5; }
+
+.trMouseover {
+  background-color: #eee; }
+
+.trOddBackColor {
+  background-color: #f7f9fb; }
+
+.trEvenBackColor {
+  background-color: #ebeff1; }
+
+/*# sourceMappingURL=productList.css.map */

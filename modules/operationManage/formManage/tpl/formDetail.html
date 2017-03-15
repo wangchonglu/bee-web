@@ -1,0 +1,119 @@
+<div class="form-detail">
+    <div class="form-detail-content">
+        <table>
+            <tr>
+                <th>产品名称：</th>
+                <td>
+                    <span data-field="phone"><%= it.proName %></span>
+                </td>
+                <th>产品编号：</th>
+                <td>
+                    <span data-field="name"><%= it.proNum %></span>
+                </td>
+            </tr>
+            <tr>
+                <th>报单金额：</th>
+                <td>
+                    <span data-field="formPrice"><%= it.formPrice %></span>
+                </td>
+                <th>打款金额：</th>
+                <td>
+                    <span><%= it.price %></span>
+                </td>
+            </tr>
+            <tr>
+                <th>客户姓名：</th>
+                <td>
+                    <span data-field="email"><%= it.cusName %></span>
+                </td>
+                <th>报单时间：</th>
+                <td>
+                    <span><%= it.createAt %></span>
+                </td>
+            </tr>
+            <tr>
+                <th>理财师：</th>
+                <td>
+                    <span><%= it.fundName %></span>
+                </td>
+                <th>理财师手机：</th>
+                <td>
+                    <span><%= it.fundName %></span>
+                </td>
+            </tr>
+            <tr class="trImage">
+                <th>合同签字页：</th>
+                <td>
+                    <img src="<%= it.contractPicUrl %>" title="点击查看大图" class="viewImage" data-text="合同签字页" />
+                </td>
+                <th>身份证正面：</th>
+                <td>
+                    <img src="<%= it.accountIdPicUrl %>" title="点击查看大图" class="viewImage"  data-text="身份证正面"/>
+                </td>
+            </tr>
+            <tr class="trImage">
+                <th>打款凭条：</th>
+                <td>
+                    <img src="<%= it.paySlipPicUrl %>" title="点击查看大图" class="viewImage" data-text="打款凭条" />
+                </td>
+                <th>银行卡：</th>
+                <td>
+                    <img src="<%= it.bankCardPicUrl %>" title="点击查看大图" class="viewImage" data-text="银行卡"/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="form-verify">
+        <button class="cfyBtn verifyBtn">审核</button>
+        <div class="verified" style="display: none;">
+            <div class="verified-info">
+                <span>审核状态：<i class="status"></i></span>
+                <span>打款金额：<i class="payPrice"></i></span>
+                <span class="verifiedEdit">修改</span>
+            </div>
+            <div class="verified-btns">
+                <button class="cfyBtn verifiedReturn">返回列表</button>
+                <button class="cfyBtn verifiedNext">下一个</button>
+            </div>
+        </div>
+    </div>
+    <div class="verify-content" >
+        <div class="verifying">
+            <table>
+                <tr>
+                    <th>
+                        审核状态：
+                    </th>
+                    <td>
+                        <select class="verifyStatus commonInput">
+                            <option value="0">报单中</option>
+                            <option value="1">预审成功</option>
+                            <option value="2">预审失败</option>
+                            <option value="3">报单成功</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr class="real-price">
+                    <th>
+                        打款金额：
+                    </th>
+                    <td>
+                        <input type="text" class="commonInput real-price-input" value="placeHolder" required  required-msg="不能为空呦！" />
+                    </td>
+                </tr>
+                <tr class="verify-opinion">
+                    <th>
+                        审核意见：
+                    </th>
+                    <td>
+                        <textarea class="commonInput verifyOpinion" value="placeHolder" required  required-msg="不能为空呦！" />
+                    </td>
+                </tr>
+            </table>
+            <div class="btns">
+                <button class="cfyBtn verifyOk">确认</button>
+                <button class="cfyBtn verifyCancel">取消</button>
+            </div>
+        </div>
+    </div>
+</div>

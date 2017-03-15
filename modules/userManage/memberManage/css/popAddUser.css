@@ -1,0 +1,25 @@
+.popAddUser {
+  width: 100%; }
+  .popAddUser table {
+    width: 100%; }
+    .popAddUser table tr {
+      width: 100%;
+      height: 50px; }
+      .popAddUser table tr th {
+        width: 35%;
+        text-align: right;
+        font-family: Microsoft YaHei;
+        font-size: 13px;
+        font-weight: normal;
+        padding-right: 30px; }
+      .popAddUser table tr td {
+        width: 65%;
+        text-align: left;
+        font-family: Microsoft YaHei;
+        font-size: 13px;
+        padding: 5px 0 5px 0; }
+        .popAddUser table tr td .add_dept {
+          background-color: #f9f9f9;
+          cursor: pointer; }
+
+/*# sourceMappingURL=popAddUser.css.map */

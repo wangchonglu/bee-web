@@ -1,0 +1,117 @@
+$thLineHeight: 60px;
+$tdLineHeight: 35px;
+$fontName: Microsoft YaHei;
+
+@mixin borderRadius($size:1px) {
+  -moz-border-radius: $size;
+  -webkit-border-radius: $size;
+  border-radius: $size;
+}
+
+@mixin font-set($size:14px) {
+  color: #6b818b;
+  font-family: Microsoft YaHei;
+  font-size: $size;
+}
+
+.work_change {
+  width: 100%;
+  margin: auto;
+  text-align: center;
+  .work_change_header {
+    height: 76px;
+    margin: 0px;
+    .header_operation {
+      //position: relative;
+      //top: 24px;
+      background-color: #95a0aa;
+      //@include borderRadius(5px);
+      height: 28px;
+      text-align: left;
+      padding-left: 20px;
+      line-height: 28px;
+      span {
+        color: #fff;
+        font-family: Microsoft YaHei;
+        font-size: 14px;
+        margin-right: 10px;
+        line-height: 28px;
+      }
+    }
+  }
+  .work_change_content {
+    width: 99%;
+    margin: auto;
+    text-align: left;
+    background-color: #fff;
+    @include borderRadius(5px);
+    .work_change_table {
+      width: 100%;
+      border-collapse: collapse;
+      border-spacing: 0;
+      tr {
+
+        padding: 10px 0 10px 0;
+        td {
+          font-size: 12px;
+          //height: $thLineHeight;
+          @include font-set(14px);
+        }
+        .td_info {
+          width: 40%;
+          text-align: right;
+          line-height: $thLineHeight;
+          span {
+            margin-right: 15px;
+            @include font-set(14px);
+          }
+        }
+        .td_content {
+          width: 60%;
+          text-align: left;
+          line-height: 25px;
+          padding-left: 15px;
+          input {
+            @include font-set(14px);
+          }
+        }
+        .work_change_flow, .work_change_asset {
+          @include font-set(14px);
+          padding-top: 15px;
+          //padding-bottom: 15px;
+          div {
+            width: 300px;
+            height: 70px;
+            border: 1px solid #cccccc;
+            border-radius: 5px;
+          }
+        }
+        .td_op {
+          #work_change_position {
+            margin-left: 3%;
+          }
+          #work_change_resign {
+            margin-left: 20px;
+          }
+          .work_change_submit {
+            margin-left: 2%;
+            display: inline-block;
+            background-color: #4cb1e0;
+            border: none;
+            @include borderRadius(5px);
+            outline: none;
+            color: #fff;
+            width: 100px;
+            height: 30px;
+            margin-top: 5px;
+            font-family: $fontName;
+            font-size: 13px;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+}
+
+

@@ -1,0 +1,53 @@
+<div class="leads_pool">
+    <div class="leadsPool_header">
+        <div class="display_info">
+            <span class="title">公司线索池</span>
+            <div>
+                <!--共<span class="total"><%=it.seaData.allCount%></span>条,已分配<span class="use"><%=it.seaData.claimedCount%></span>，-->未分配<a href="javascript:void(0);" class="view_detail" title="查看线索详情"><span class="remain"><%=it.seaData.uncaimedCount%></span></a>
+            </div>
+        </div>
+        <div class="operation_info">
+            <input type="button" value="创建团队" class="createTeam cfyBtn" />
+            <input type="button" value="分配线索" class="customAssign cfyBtn" />
+            <input type="button" value="导入线索" class="importLeads cfyBtn" />
+        </div>
+        <div style="clear: both"></div>
+    </div>
+
+    <div class="leadsPool_content">
+        <table class="leadsPool_table beeWebTable">
+            <thead>
+            <tr>
+                <th>团队名称</th>
+                <th>成员数目</th>
+                <th>线索总数</th>
+                <th>未分配</th>
+                <th>已分配</th>
+                <th>操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            <% if(it.groups.length > 0){ %>
+            <% for(var i=0;i<it.groups.length;i++){ %>
+            <% var item=it.groups[i];%>
+            <% var flag=i%2;var curClass;%>
+            <% if(flag==0){curClass="trOddBackColor";}else{curClass="trEvenBackColor";} %>
+            <tr class="<%= curClass %>" data-gid="<%=item.id%>" data-index="<%=i%>">
+                <td class="tbody_td name" data-field="name"><%=item.name%></td>
+                <td class="tbody_td member" data-field="member"><%=item.memberCount%></td>
+                <td class="tbody_td all" data-field="all"><%=item.allCount%></td>
+                <td class="tbody_td remain" data-field="remain"><%=item.uncaimedCount%></td>
+                <td class="tbody_td use" data-field="use"><%=item.claimedCount%></td>
+                <td class="tbody_op" data-field="operate">
+                    <a class="op_addmember" href="javascript:void(0)">添加人员</a>
+                    <!--<a class="op_detail" href="javascript:void(0)">线索详情</a>-->
+                </td>
+            </tr>
+            <% } %>
+            <% }else{ %>
+            <tr class="tbody_empty"><td colspan="6">当前没有数据 /(ㄒoㄒ)/~~</td></tr>
+            <% } %>
+            </tbody>
+        </table>
+    </div>
+</div>

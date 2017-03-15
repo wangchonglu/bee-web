@@ -1,0 +1,39 @@
+.client_statistic {
+  width: 100%; }
+  .client_statistic .clientStati_header {
+    width: 100%;
+    height: 76px;
+    background-color: #fff; }
+    .client_statistic .clientStati_header .header_operation {
+      position: relative;
+      top: 24px;
+      height: 28px; }
+      .client_statistic .clientStati_header .header_operation .operation_sort {
+        float: left;
+        margin-left: 20px; }
+        .client_statistic .clientStati_header .header_operation .operation_sort .select_op_sort {
+          color: #6b818b; }
+          .client_statistic .clientStati_header .header_operation .operation_sort .select_op_sort option {
+            color: #6b818b;
+            font-family: Microsoft YaHei;
+            font-size: 10px; }
+        .client_statistic .clientStati_header .header_operation .operation_sort span, .client_statistic .clientStati_header .header_operation .operation_sort select, .client_statistic .clientStati_header .header_operation .operation_sort option {
+          color: #6b818b;
+          font-family: Microsoft YaHei;
+          font-size: 14px; }
+  .client_statistic .clientStati_content {
+    width: 99%;
+    margin: auto; }
+    .client_statistic .clientStati_content .clientStati_table .clientStati_tbody_empty {
+      height: 100px; }
+      .client_statistic .clientStati_content .clientStati_table .clientStati_tbody_empty td {
+        height: 100px;
+        line-height: 100px;
+        text-align: center;
+        font-family: Arial; }
+    .client_statistic .clientStati_content .clientStati_pager {
+      width: 100%;
+      height: 35px;
+      background-color: #e5e5e5; }
+
+/*# sourceMappingURL=index.css.map */

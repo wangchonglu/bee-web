@@ -1,0 +1,90 @@
+<div class="product_list">
+    <div class="prolist_header">
+        <div class="header_operation">
+            <div class="operation_add">
+                <img class="op_addproduct" src="./modules/foundation/image/operation_add.png" title="创建产品"/>
+                <span>创建产品</span>
+            </div>
+            <div class="operation_filter">
+                <span>筛选</span>
+                <select class="select_op_filter">
+                    <option>所有</option>
+                    <option>信托</option>
+                    <option>资管</option>
+                    <option>私募</option>
+                </select>
+            </div>
+            <div class="operation_sort">
+                <span>排序方式</span>
+                <select class="select_op_sort">
+                    <option value="rebateRatio" sort="desc">返佣比例降序</option>
+                    <option value="lastPayTime" sort="asc">打款截止日期升序</option>
+                    <option value="distributionTime" sort="asc">发行日期升序</option>
+                    <!--<option value="productType">私募</option>-->
+                </select>
+            </div>
+            <div class="operation_search">
+                <input class="op_pro_search_btn" type="text" placeholder="产品名称..."/>
+                <img class="op_pro_search_img" src="./modules/foundation/image/operation_search.png" title="搜索"/>
+            </div>
+        </div>
+    </div>
+    <div class="prolist_content">
+        <table class="prolist_table beeWebTable">
+            <thead>
+            <tr>
+                <th class="prolist_thead_th">产品名称</th>
+                <th class="prolist_thead_th">产品类型</th>
+                <th class="prolist_thead_th">收益类型</th>
+                <th class="prolist_thead_th">募集规模(万元)</th>
+                <th class="prolist_thead_th">投资期限</th>
+                <th class="prolist_thead_th">年化收益率</th>
+                <th class="prolist_thead_th">返佣比例</th>
+                <th class="prolist_thead_op">操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            <% if(it.items!=undefined){ %>
+            <% for(var i=0;i
+            <it.items.length
+            ;i++){ %>
+            <% var item=it.items[i];%>
+            <% var flag=i%2;var curClass;%>
+            <% if(flag==0){curClass="trOddBackColor";}else{curClass="trEvenBackColor";} %>
+            <tr class="<%= curClass %>" data-id="<%=item.id %>">
+                <td class="prolist_tbody_td proName" data-field="proName"><%=item.proName%></td>
+                <td class="prolist_tbody_td fund" data-field="fund"><%=item.fund%></td>
+                <td class="prolist_tbody_td income" data-field="income"><%=item.income%></td>
+                <td class="prolist_tbody_td region" data-field="region"><%=item.region%></td>
+                <td class="prolist_tbody_td years" data-field="years"><%=item.years%></td>
+                <td class="prolist_tbody_td yearRate" data-field="yearRate">
+                    <% if(item.yearRate!=undefined){ %>
+                        <% for(var j=0;j<item.yearRate.length;j++){ %>
+                            <% var annual=item.yearRate[j];%>
+                            <div><%=annual.start%>万 ~ <%=annual.end%>万　<%=annual.annual%>%</div>
+                        <% } %>
+                    <% } %>
+                </td>
+                <td class="prolist_tbody_td backRate" data-field="backRate"><%=item.backRate%></td>
+                <td class="prolist_tbody_op operate" data-field="operate">
+                    <a data-id="<%=item.id%>" class="list_img_edit" href="javascript:void(0)">编辑</a>
+                    <!--<a data-id="<%=item.id%>" class="list_img_details" href="javascript:void(0)">详情</a>-->
+                    <a data-id="<%=item.id%>" class="list_img_delete" href="javascript:void(0)">删除</a>
+                    <a data-id="<%=item.id%>" class="list_img_distribute" href="javascript:void(0)">分配额度</a>
+                </td>
+            </tr>
+            <% } %>
+            <% }else{ %>
+            <tr class="prolist_tbody_empty">
+                <td colspan="9">No Data</td>
+            </tr>
+            <% } %>
+            </tbody>
+            <tfoot>
+            </tfoot>
+        </table>
+        <div class="prolist_pager">
+
+        </div>
+    </div>
+</div>

@@ -1,0 +1,88 @@
+.work_change {
+  width: 100%;
+  margin: auto;
+  text-align: center; }
+  .work_change .work_change_header {
+    height: 76px;
+    margin: 0px; }
+    .work_change .work_change_header .header_operation {
+      background-color: #95a0aa;
+      height: 28px;
+      text-align: left;
+      padding-left: 20px;
+      line-height: 28px; }
+      .work_change .work_change_header .header_operation span {
+        color: #fff;
+        font-family: Microsoft YaHei;
+        font-size: 14px;
+        margin-right: 10px;
+        line-height: 28px; }
+  .work_change .work_change_content {
+    width: 99%;
+    margin: auto;
+    text-align: left;
+    background-color: #fff;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px; }
+    .work_change .work_change_content .work_change_table {
+      width: 100%;
+      border-collapse: collapse;
+      border-spacing: 0; }
+      .work_change .work_change_content .work_change_table tr {
+        padding: 10px 0 10px 0; }
+        .work_change .work_change_content .work_change_table tr td {
+          font-size: 12px;
+          color: #6b818b;
+          font-family: Microsoft YaHei;
+          font-size: 14px; }
+        .work_change .work_change_content .work_change_table tr .td_info {
+          width: 40%;
+          text-align: right;
+          line-height: 60px; }
+          .work_change .work_change_content .work_change_table tr .td_info span {
+            margin-right: 15px;
+            color: #6b818b;
+            font-family: Microsoft YaHei;
+            font-size: 14px; }
+        .work_change .work_change_content .work_change_table tr .td_content {
+          width: 60%;
+          text-align: left;
+          line-height: 25px;
+          padding-left: 15px; }
+          .work_change .work_change_content .work_change_table tr .td_content input {
+            color: #6b818b;
+            font-family: Microsoft YaHei;
+            font-size: 14px; }
+        .work_change .work_change_content .work_change_table tr .work_change_flow, .work_change .work_change_content .work_change_table tr .work_change_asset {
+          color: #6b818b;
+          font-family: Microsoft YaHei;
+          font-size: 14px;
+          padding-top: 15px; }
+          .work_change .work_change_content .work_change_table tr .work_change_flow div, .work_change .work_change_content .work_change_table tr .work_change_asset div {
+            width: 300px;
+            height: 70px;
+            border: 1px solid #cccccc;
+            border-radius: 5px; }
+        .work_change .work_change_content .work_change_table tr .td_op #work_change_position {
+          margin-left: 3%; }
+        .work_change .work_change_content .work_change_table tr .td_op #work_change_resign {
+          margin-left: 20px; }
+        .work_change .work_change_content .work_change_table tr .td_op .work_change_submit {
+          margin-left: 2%;
+          display: inline-block;
+          background-color: #4cb1e0;
+          border: none;
+          -moz-border-radius: 5px;
+          -webkit-border-radius: 5px;
+          border-radius: 5px;
+          outline: none;
+          color: #fff;
+          width: 100px;
+          height: 30px;
+          margin-top: 5px;
+          font-family: Microsoft YaHei;
+          font-size: 13px;
+          cursor: pointer; }
+
+/*# sourceMappingURL=workChangeManage.css.map */

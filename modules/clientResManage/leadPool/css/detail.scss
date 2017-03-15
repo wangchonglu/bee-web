@@ -1,0 +1,29 @@
+
+@mixin font-set($size:14px) {
+  color: #6b818b;
+  font-family: Microsoft YaHei;
+  font-size: $size;
+}
+
+.leadPool_detail{
+  width:100%;
+  .header{
+    width: 100%;
+    margin:10px 30px;
+    span{
+      display: block;
+      height: 30px;
+      line-height: 30px;
+      @include font-set(15px);
+    }
+  }
+  .content{
+    width: 99%;
+    margin:auto;
+    .leadPool_detail_pager{
+      width:100%;
+      height:35px;
+      background-color: #e5e5e5;
+    }
+  }
+}

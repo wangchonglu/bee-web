@@ -1,0 +1,18 @@
+<% if(it.length > 0){ %>
+    <% for(var i=0;i<it.length;i++){ %>
+        <% var item=it[i];%>
+        <% var flag=i%2;var curClass;%>
+        <% if(flag==0){curClass="trOddBackColor";}else{curClass="trEvenBackColor";} %>
+        <tr class="<%= curClass %>">
+            <td class="name" data-field="proName"><%=item.proName%></td>
+            <td class="product" data-field="fund"><%=item.fund%></td>
+            <td class="address" data-field="region"><%=item.region%></td>
+            <td class="status" data-field="years"><%=item.years%></td>
+            <td>
+                <%if(item.isSend==false){%>
+                <a class="confirm_send" href="javascript:void(0)">确认发送</a>
+                <%}%>
+            </td>
+        </tr>
+    <% } %>
+<% } %>

@@ -1,0 +1,47 @@
+<div class="popup_all_content">
+    <div class="popup_title">
+        <% if(it.addOrEdit==0) {%>
+        <span>新增产品</span>
+        <% }else{ %>
+        <span>编辑产品信息</span>
+        <% } %>
+        <img class="prolist_pop_exit" src="./modules/comm/image/pop_exit.png" title="关闭">
+    </div>
+    <div class="popup_content">
+        <table class="popTable">
+            <tr>
+                <td class="popTable_name">产品名称</td>
+                <td class="popTable_content">
+                    <% if(it.addOrEdit==0) {%>
+                    <input type="text" class="add_proname"/>
+                    <% }else{ %>
+                    <input type="text" value="<%= it.proName %>" />
+                    <% } %>
+                </td>
+            </tr>
+            <tr>
+                <td class="popTable_name">产品类型</td>
+                <td class="popTable_content">
+                    <% if(it.addOrEdit==0) {%>
+                    <input type="text" class="add_proType"/>
+                    <% }else{ %>
+                    <input type="text" value="<%= it.proType %>" />
+                    <% } %>
+                </td>
+            </tr>
+            <tr>
+                <td class="popTable_name">收益类型</td>
+                <td class="popTable_content">
+                    <% if(it.addOrEdit==0) {%>
+                    <input type="text" class="add_getType"/>
+                    <% }else{ %>
+                    <input type="text" value="<%= it.getType %>" />
+                    <% } %>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="popup_operate">
+        <input class="prolist_pop_submit" type="button" value="确定" />
+    </div>
+</div>

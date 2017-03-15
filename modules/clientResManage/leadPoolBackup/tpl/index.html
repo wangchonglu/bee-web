@@ -1,0 +1,30 @@
+<div class="lead_pool_manage">
+    <div class="groupUpper">
+        <div class="seaHigh">
+            <div class="seaHightitle">线索池</div>
+            <div class="leadsnumber">总共<span class="leads_all"></span>条</div>
+        </div>
+        <div class="groupButton">
+            <div class="avgButton">
+                <button class="customAssign cfyBtn">自定义分配</button>
+                <button class="createTeam cfyBtn">创建团队</button>
+            </div>
+        </div>
+    </div>
+    <div class="groupList">
+        <%for(var i=0;i<it.groups.length;i++){
+        var group=it.groups[i];
+        %>
+        <div class="groupnode" data-gid="<%=group.id%>">
+            <div class="groupnodetitle"><%=group.name%></div>
+            <div class="nodeleadsnumber">全部<span class="team_all"></span>条</div>
+            <div class="nodeleadsnumber">未分配<span class="team_last"></span>条</div>
+            <div class="groupnodeAssginStaff">
+                添加员工
+            </div>
+        </div>
+        <%
+        }
+        %>
+    </div>
+</div>

@@ -1,0 +1,33 @@
+.deptOpsEdit-pop {
+  width: 100%;
+  text-align: center; }
+  .deptOpsEdit-pop table {
+    width: 90%;
+    margin: auto; }
+    .deptOpsEdit-pop table tr {
+      height: 70px;
+      line-height: 70px;
+      width: 100%; }
+      .deptOpsEdit-pop table tr th {
+        height: 70px;
+        line-height: 70px;
+        text-align: center;
+        width: 30%;
+        font-style: normal;
+        font-weight: normal;
+        color: #6b818b;
+        font-family: Microsoft YaHei;
+        font-size: 14px; }
+      .deptOpsEdit-pop table tr td {
+        height: 70px;
+        line-height: 70px;
+        width: 70%;
+        color: #6b818b;
+        font-family: Microsoft YaHei;
+        font-size: 14px;
+        text-align: left; }
+        .deptOpsEdit-pop table tr td .parent-dept {
+          background-color: #f9f9f9;
+          cursor: pointer; }
+
+/*# sourceMappingURL=deptOpsEdit.css.map */

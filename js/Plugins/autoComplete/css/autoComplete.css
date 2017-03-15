@@ -1,0 +1,26 @@
+.auto_search_data_content {
+    width: 100%;
+    background-color: #fff;
+    z-index: 10001;
+}
+.auto_search_data_content .auto_search_data_items {
+    list-style: none;
+    margin: 0 0 0 2px;
+    padding: 0;
+    border: 1px solid #eee;
+    border-top:none;
+    overflow-y: scroll;
+    max-height:180px;
+}
+.auto_search_data_content .auto_search_data_items .auto_search_data_item {
+    height: 30px;
+    line-height: 30px;
+    cursor: default;
+    color: #6b818b;
+    font-family: Microsoft YaHei;
+    font-size: 14px;
+    padding: 0px 10px;
+}
+
+.focused {
+    background-color: #abcdef; }

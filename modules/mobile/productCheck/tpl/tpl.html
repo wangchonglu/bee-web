@@ -1,0 +1,94 @@
+<div class="father">
+    <div class="father-content overflow">
+        <div class="wrapper overflow">
+            <header>
+                <div class="header_style">
+                    <span class="header_style-span">产品报单审核</span>
+                </div>
+            </header>
+            <article class="content">
+                <div class="whiteLine">
+                    <label>产品编号：</label>
+                    <span class="span"><%=it.id %></span>
+                </div>
+                <div class="whiteLine">
+                    <label>产品名称：</label>
+                    <span><%=it.name %></span>
+                </div>
+                <div class="whiteLine">
+                    <label>客户姓名：</label>
+                    <span><%=it.userName %></span>
+                </div>
+
+                <div class="whiteLine">
+                    <label>报单金额：</label>
+                    <span><%=it.reportAmount %></span>
+                </div>
+                <div class="whiteLine">
+                    <label>报单时间：</label>
+                    <span><%=it.reportTime %></span>
+                </div>
+                <div class="whiteLine">
+                    <label>理财师：</label>
+                    <span><%=it.financialPlanner %></span>
+                </div>
+                <!--
+                <div class="whiteLine">
+                    <label>理财师手机：</label>
+                    <span><%=it.financialPlannerPhone %></span>
+                </div>
+                -->
+                <div class="whiteLine2">
+                    <label>合同签字页：</label>
+                    <img class="img-sty" src="<%=it.cont %>" alt="合同签字页">
+                </div>
+                <div class="whiteLine2">
+                    <label>身份证正面：</label>
+                    <img class="img-sty" src="<%=it.cardPicture %>" alt="身份证正面">
+                </div>
+                <div class="whiteLine2">
+                    <label>打款凭条：</label>
+                    <img class="img-sty" src="<%=it.payMoney %>" alt="打款凭条">
+                </div>
+                <div class="whiteLine2">
+                    <label>银行卡：</label>
+                    <img class="img-sty" src="<%=it.bankCard %>" alt="银行卡">
+                </div>
+
+            </article>
+
+            <div class="commit-btn">
+                <button type="button" class="tex-btn">审核</button>
+            </div>
+        </div>
+
+        <div class="wrapper2 overflow"  >
+            <div class="top-style">
+                <a class="nav-return">
+                    返回
+                </a>
+            </div>
+            <div class="whiteLine2">
+                <label>审核状态：</label>
+                <select class="select-style">
+                    <option value="1">预审成功</option>
+                    <option value="2">预审失败</option>
+                    <option value="3">报单成功</option>
+                </select>
+            </div>
+            <div class="whiteLine2 formNum">
+                <label>打款金额：</label>
+                <input class="inputVal" placeholder="输入金额(万元)" type="number">
+            </div>
+            <div class="whiteLine2">
+                <label>审核意见：</label>
+                <textarea class="textareaStyle"></textarea>
+            </div>
+            <div class="commit-btn btn2">
+                <button type="button" class="confirm-btn">提交</button>
+            </div>
+
+        </div>
+        <div style="clear: both"></div>
+    </div>
+</div>

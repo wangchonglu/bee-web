@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0 , maximum-scale=1.0, user-scalable=0">
+    <title></title>
+    <script src="../js/lib/jquery/jquery-1.11.3.min.js"></script>
+    <script>
+        $(function () {
+
+            $(".next").click(function () {
+                $(".box-content").animate({"margin-left":(0-300)+"px"})
+            });
+            $(".pre").click(function () {
+                $(".box-content").animate({"margin-left":"0px"})
+            });
+
+        });
+
+
+
+
+    </script>
+
+    <style>
+        html,body{
+            padding:0px;
+            margin:0px;
+        }
+        .box{
+            width:100%;
+            overflow: hidden;
+            border: solid 1px blue;
+            margin: auto;
+        }
+        .box-content{
+            width:200%;
+            border: solid 1px black;
+        }
+      .main,.approve{
+          float:left;
+          height: 200px;
+          width:100%;
+      }
+
+    </style>
+
+</head>
+<body>
+
+<div class="box">
+    <div class="box-content">
+        <div class="main">
+            主要信息
+
+            <a class="next">next</a>
+        </div>
+        <div class="approve">
+            审批信息
+            <a class="pre">pre</a>
+        </div>
+        <div style="clear: both"></div>
+    </div>
+</div>
+</body>
+</html>

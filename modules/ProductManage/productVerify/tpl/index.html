@@ -1,0 +1,79 @@
+<div class="product_verify">
+    <div class="proveri_header">
+        <div class="header_operation">
+            <div class="operation_add">
+                <img class="op_addproduct" src="./modules/comm/image/operation_add.png" title="创建产品" onclick="alert('Add Product');"/>
+                <span>创建产品</span>
+            </div>
+            <div class="operation_filter">
+                <span>筛选</span>
+                <select class="select_op_filter">
+                    <option>所有</option>
+                    <option>信托</option>
+                    <option>资管</option>
+                    <option>私募</option>
+                </select>
+            </div>
+            <div class="operation_sort">
+                <span>排序方式</span>
+                <select class="select_op_sort">
+                    <option>返佣比例降序</option>
+                    <option>打款截止日期升序</option>
+                    <option>发行日期升序</option>
+                    <option>私募</option>
+                </select>
+            </div>
+            <div class="operation_search">
+                <input type="text" placeholder="产品名称..."/>
+                <img class="op_search" src="./modules/comm/image/operation_search.png" title="搜索" onclick="alert('Search')" />
+            </div>
+        </div>
+    </div>
+    <div class="proveri_content">
+        <table class="proveri_table">
+            <thead>
+            <tr>
+                <th class="proveri_thead_op">操作</th>
+                <th class="proveri_thead_th">产品名称</th>
+                <th class="proveri_thead_th">产品类型</th>
+                <th class="proveri_thead_th">收益类型</th>
+                <th class="proveri_thead_th">募集规模</th>
+                <th class="proveri_thead_th">投资期限</th>
+                <th class="proveri_thead_th">年化收益率</th>
+                <th class="proveri_thead_th">返佣比例</th>
+            </tr>
+            </thead>
+            <tbody>
+            <% if(it.items.length > 0){ %>
+            <% for(var i=0;i<it.items.length;i++){ %>
+            <% var item=it.items[i]; %>
+            <% var flag=i%2;var curClass;%>
+            <% if(flag==0){curClass="trOddBackColor";}else{curClass="trEvenBackColor";} %>
+            <tr class="<%= curClass %>">
+                <td class="proveri_tbody_op">
+                    <select>
+                        <option>审核中</option>
+                        <option>审核成功</option>
+                        <option>审核失败</option>
+                    </select>
+                </td>
+                <td class="proveri_tbody_td"><%=item.proName%></td>
+                <td class="proveri_tbody_td"><%=item.fund%></td>
+                <td class="proveri_tbody_td"><%=item.income%></td>
+                <td class="proveri_tbody_td"><%=item.region%></td>
+                <td class="proveri_tbody_td"><%=item.years%></td>
+                <td class="proveri_tbody_td"><%=item.yearRate%></td>
+                <td class="proveri_tbody_td"><%=item.backRate%></td>
+            </tr>
+            <% } %>
+            <% }else{ %>
+            <tr class="proveri_tbody_empty"><td colspan="11">No Data</td></tr>
+            <% } %>
+            </tbody>
+            <tfoot>
+
+            </tfoot>
+        </table>
+        <div class="proveri_pager"></div>
+    </div>
+</div>

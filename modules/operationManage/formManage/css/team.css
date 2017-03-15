@@ -1,0 +1,33 @@
+.form-team {
+  width: 100%;
+  height: 100%; }
+  .form-team .teamHeader {
+    width: 100%;
+    height: 50px;
+    line-height: 50px; }
+    .form-team .teamHeader .title {
+      float: left;
+      font-family: "Microsoft YaHei";
+      font-size: 15px;
+      font-weight: bold;
+      color: #000; }
+    .form-team .teamHeader .allList {
+      float: right;
+      font-family: "Microsoft YaHei";
+      font-size: 13px;
+      color: #000; }
+      .form-team .teamHeader .allList a {
+        font-family: Microsoft YaHei;
+        font-size: 13px;
+        color: #000;
+        text-decoration: none; }
+      .form-team .teamHeader .allList a:hover {
+        color: red; }
+  .form-team .form-team-table {
+    width: 100%; }
+    .form-team .form-team-table tbody tr {
+      cursor: pointer; }
+    .form-team .form-team-table tbody tr:hover {
+      background-color: #CCCCFF; }
+
+/*# sourceMappingURL=team.css.map */

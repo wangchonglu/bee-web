@@ -1,0 +1,98 @@
+.lead_pool_manage {
+  width: 99%;
+  margin: auto;
+  border: 1px solid #e8e8e8;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px; }
+  .lead_pool_manage .groupUpper {
+    border-bottom: 1px solid #e8e8e8;
+    overflow: hidden; }
+    .lead_pool_manage .groupUpper .seaHigh {
+      margin: 20px;
+      height: 200px;
+      width: 30%;
+      float: left;
+      border: 1px solid #e8e8e8;
+      -moz-border-radius: 5px;
+      -webkit-border-radius: 5px;
+      border-radius: 5px; }
+      .lead_pool_manage .groupUpper .seaHigh .seaHightitle {
+        background-color: #f2f2f2;
+        text-indent: 20px;
+        height: 30px;
+        line-height: 30px;
+        color: #6b818b;
+        font-family: Microsoft YaHei;
+        font-size: 15px; }
+      .lead_pool_manage .groupUpper .seaHigh .leadsnumber {
+        margin-top: 40px;
+        line-height: 40px;
+        text-align: center;
+        color: #6b818b;
+        font-family: Microsoft YaHei;
+        font-size: 14px; }
+        .lead_pool_manage .groupUpper .seaHigh .leadsnumber span {
+          font-family: Microsoft YaHei;
+          font-size: 19px;
+          color: red;
+          font-weight: bold;
+          margin: 5px; }
+    .lead_pool_manage .groupUpper .groupButton {
+      margin: 20px;
+      height: 200px;
+      width: 30%;
+      float: left; }
+      .lead_pool_manage .groupUpper .groupButton .avgButton {
+        width: 100%;
+        height: 40px; }
+  .lead_pool_manage .groupList {
+    overflow: hidden;
+    margin: 20px; }
+    .lead_pool_manage .groupList .groupnode {
+      width: 22%;
+      float: left;
+      margin: 20px 1%;
+      height: 200px;
+      border: 1px solid #e8e8e8;
+      -moz-border-radius: 5px;
+      -webkit-border-radius: 5px;
+      border-radius: 5px; }
+      .lead_pool_manage .groupList .groupnode .groupnodetitle {
+        height: 30px;
+        line-height: 30px;
+        background-color: #f2f2f2;
+        text-indent: 20px;
+        color: #6b818b;
+        font-family: Microsoft YaHei;
+        font-size: 14px; }
+      .lead_pool_manage .groupList .groupnode .nodeleadsnumber {
+        height: 30px;
+        line-height: 30px;
+        margin: 20px 0 0 20px;
+        color: #6b818b;
+        font-family: Microsoft YaHei;
+        font-size: 14px; }
+        .lead_pool_manage .groupList .groupnode .nodeleadsnumber span {
+          font-family: Microsoft YaHei;
+          font-size: 19px;
+          color: red;
+          font-weight: bold;
+          margin: 5px; }
+      .lead_pool_manage .groupList .groupnode .groupnodeAssginStaff {
+        margin-top: 40px;
+        height: 30px;
+        line-height: 30px;
+        width: 100%;
+        text-align: center;
+        background-color: #f2f2f2;
+        color: #6b818b;
+        font-family: Microsoft YaHei;
+        font-size: 14px;
+        cursor: pointer; }
+      .lead_pool_manage .groupList .groupnode .groupnodeAssginStaff:hover {
+        background-color: #eee;
+        color: #fff;
+        cursor: pointer; }
+
+/*# sourceMappingURL=index.css.map */

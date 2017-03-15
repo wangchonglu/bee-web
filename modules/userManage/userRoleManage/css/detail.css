@@ -1,0 +1,36 @@
+.popup_content {
+  width: 100%; }
+  .popup_content .contact_user_img {
+    position: absolute;
+    right: 77px;
+    top: 7px; }
+    .popup_content .contact_user_img img {
+      width: 120px;
+      height: 120px;
+      border: 1px solid grey;
+      border-radius: 3px; }
+  .popup_content .popTable {
+    width: 100%;
+    padding-bottom: 5px; }
+    .popup_content .popTable tr {
+      width: 100%;
+      padding: 8px 0 8px 0; }
+      .popup_content .popTable tr td {
+        border: solid grey 0px;
+        height: 18px; }
+      .popup_content .popTable tr .popTable_name {
+        width: 24%;
+        text-align: right;
+        font-family: Microsoft YaHei;
+        font-size: 13px; }
+      .popup_content .popTable tr .popTable_content {
+        width: 70%;
+        text-align: left;
+        font-family: Microsoft YaHei;
+        font-size: 13px;
+        padding: 5px 0 5px 30px; }
+        .popup_content .popTable tr .popTable_content img {
+          width: 150px;
+          height: 150px; }
+
+/*# sourceMappingURL=detail.css.map */

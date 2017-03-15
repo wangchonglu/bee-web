@@ -1,0 +1,45 @@
+<div class="user-table">
+    <table>
+        <thead>
+        <tr>
+            <td class="td-op">
+                <span class="user-check-all" data-check="false"></span>
+            </td>
+            <td class="td-name">姓名 </td>
+            <td class="td-dept">部门</td>
+            <td class="td-phone">手机</td>
+            <td class="td-email">邮箱</td>
+        </tr>
+        </thead>
+        <tbody>
+        <% if(it.length > 0){ %>
+        <% for(var i=0;i<it.length;i++){ %>
+        <% var item=it[i];%>
+        <% var flag=i%2;var curClass;%>
+        <% if(flag==0){curClass="trOdd";}else{curClass="trEven";} %>
+        <tr class="<%= curClass %> tr-member" data-uid="<%=item.id %>">
+            <td class="td-op">
+                <span class="user-check-item" data-check="false"></span>
+            </td>
+            <td class="td-name" data-field="name"><%= item.userName %></td>
+            <td class="td-dept" data-field="dept" data-did="<%=item.dep_id%>"><%= item.departName %></td>
+            <td class="td-phone" data-field="phone"><%= item.phone %></td>
+            <td class="td-email" data-field="email"><%= item.personalEmail %></td>
+        </tr>
+        <% } %>
+        <% }else{ %>
+        <tr class="empty"><td colspan="5">暂无数据</td></tr>
+        <% } %>
+        </tbody>
+        <% if(it.length>0){ %>
+        <tfoot>
+        <tr>
+            <td colspan="5">
+                <div class="user-table-pager">
+                </div>
+            </td>
+        </tr>
+        </tfoot>
+        <% } %>
+    </table>
+</div>

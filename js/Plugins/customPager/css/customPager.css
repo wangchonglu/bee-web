@@ -1,0 +1,25 @@
+.pager_content {
+    line-height: 35px;
+    float: right;
+    margin-right: 20px;
+    padding: 0 10px 0 10px; }
+.pager_content .pager_first, .pager_content .pager_pre,.pager_content .pager_next,.pager_content .pager_last {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    margin: 0 5px 0 5px;
+    position: relative;
+    top: 5px; }
+.pager_content .pager_info {
+    display: inline-block;
+    font-family: Arial;
+    font-size: 12px;}
+.pager_content .pager_info .pager_info_border {
+    font-family: Microsoft YaHei;
+    color: #ced3d9;
+    font-weight: bold; }
+.pager_content .pager_info span, .pager_content .pager_info input{
+    margin: 0 5px 0 5px;
+    text-align: center;}
+.pager_content .pager_info input {
+    width: 17px; }

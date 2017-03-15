@@ -1,0 +1,35 @@
+.role_add_content {
+  width: 100%;
+  text-align: center; }
+  .role_add_content table {
+    width: 100%; }
+    .role_add_content table tr {
+      height: 45px;
+      line-height: 45px;
+      width: 100%; }
+      .role_add_content table tr th {
+        height: 45px;
+        line-height: 45px;
+        text-align: center;
+        width: 30%;
+        font-style: normal;
+        font-weight: normal;
+        color: #6b818b;
+        font-family: Microsoft YaHei;
+        font-size: 14px; }
+      .role_add_content table tr td {
+        height: 45px;
+        line-height: 45px;
+        width: 70%;
+        color: #6b818b;
+        font-family: Microsoft YaHei;
+        font-size: 14px;
+        text-align: left; }
+        .role_add_content table tr td .role_select {
+          width: 214px;
+          height: 32px;
+          color: #6b818b;
+          font-family: Microsoft YaHei;
+          font-size: 14px; }
+
+/*# sourceMappingURL=adds.css.map */

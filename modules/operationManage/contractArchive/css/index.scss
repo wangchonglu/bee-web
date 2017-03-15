@@ -1,0 +1,60 @@
+$thLineHeight:45px;
+$tdLineHeight:35px;
+
+.contract_archive{
+  width: 100%;
+  .contractArch_header {
+    width: 100%;
+    height: 76px;
+    background-color: #fff;
+    .header_operation{
+      height:76px;
+      line-height:76px ;
+      padding-left: 30px;
+      .addArchive{
+        text-decoration: none;
+        cursor: pointer;
+        span{
+          color: #6b818b;
+          font-family: Microsoft YaHei;
+          font-size: 14px;
+          margin-right: 10px;
+        }
+        img{
+          position: relative;
+          top: 3px;
+          width: 18px;
+          height: 18px;
+        }
+      }
+      .addArchive:hover{
+        span{
+          color:#5FAEE3;
+        }
+      }
+    }
+  }
+
+  .contractArch_content{
+    width: 99%;
+    margin:auto;
+    .contractArch_table{
+      .contractArch_tbody_empty {
+        height: 100px;
+        td{
+          height:100px;
+          line-height: 100px;
+          text-align: center;
+          font-family: Arial;
+        }
+      }
+    }
+    .contractArch_pager{
+      width:100%;
+      height:$tdLineHeight;
+      background-color: #e5e5e5;
+    }
+  }
+}
+
+

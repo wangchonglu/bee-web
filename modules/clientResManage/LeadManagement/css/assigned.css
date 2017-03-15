@@ -1,0 +1,9 @@
+.lead-assigned {
+  width: 99%;
+  margin: auto; }
+  .lead-assigned tbody tr {
+    cursor: pointer; }
+  .lead-assigned tbody tr:hover {
+    background-color: #CCCCFF; }
+
+/*# sourceMappingURL=assigned.css.map */

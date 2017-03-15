@@ -1,0 +1,114 @@
+.popDetails{
+  //width: 400px;
+
+  background-color: #ffffff;
+  margin: 0;
+  padding: 0;
+
+  font-size: 12px;
+
+  .header{
+    height: 45px;
+    line-height: 45px;
+    background-color: #fbfbfb;
+    border-bottom: 1px solid #e8e8e8;
+
+  }
+
+  .header-font{
+    font-weight: bold;
+    color: #a7a7a7;
+    padding-left: 15px;
+    float: left;
+    width: 85%;
+  }
+
+  .header-img{
+    width: 18px;
+    height: 18px;
+    float: left;
+    margin-left: 15px;
+    cursor: pointer;
+  }
+
+  .main-content{
+    padding-left: 45px;
+    text-align: center;
+
+
+  }
+
+  .content-div{
+    clear: both;
+    margin: 22px auto;
+    height: 10px;
+
+  }
+
+  .label-div{
+    float: left;
+    width: 20%;
+    text-align: right;
+    line-height: 22px;
+  }
+
+  .input-div{
+    float: right;
+    width: 75%;
+    text-align: left;
+  }
+
+  .content-div img{
+    width: 150px;
+    height: 120px;
+    border: 1px solid #cfcfcf;
+  }
+
+  .input-style{
+
+    color: #000000;
+    border-radius: 4px;
+    background-color: white;
+    border: none;
+    height: 22px;
+    line-height: 22px;
+    //padding: 4px 6px 4px 6px;
+    width: 200px;
+  }
+
+  .select-style{
+    height: 25px;
+    padding: 2px 5px;
+    width: 43%;
+  }
+
+  .footer{
+    height: 45px;
+    line-height: 45px;
+    background-color: #fbfbfb;
+    border-top: 1px solid #e8e8e8;
+    text-align: center;
+  }
+
+  .btn-cancel{
+    float: left;
+    width: 15%;
+  }
+
+  .btn-style{
+    background-color: #4cb1e0;
+    border: none;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    outline: none;
+    color: #fff;
+    width: 100px;
+    height: 30px;
+    font-family: Microsoft YaHei;
+    font-size: 13px;
+    margin-top: 5px;
+    cursor: pointer;
+  }
+
+}

@@ -1,0 +1,39 @@
+
+.add_arch_pop{
+  width:100%;
+  text-align: center;
+  .add_arch_table{
+    width: 100%;
+    margin-bottom: 20px;
+    table{
+      width: 80%;
+      margin: auto;
+      tr{
+        height:80px;
+        line-height: 80px;
+        width: 100%;
+        th{
+          font-weight: normal;
+          font-style: normal;
+          height:80px;
+          line-height: 80px;
+          text-align: center;
+          width:30%;
+          color: #6b818b;
+          font-family: Microsoft YaHei;
+          font-size: 14px;
+        }
+        td{
+          height:80px;
+          line-height: 80px;
+          width:70%;
+          color: #6b818b;
+          font-family: Microsoft YaHei;
+          font-size: 14px;
+          text-align: left;
+        }
+      }
+
+    }
+  }
+}

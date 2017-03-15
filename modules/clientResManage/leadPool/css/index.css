@@ -1,0 +1,58 @@
+.leads_pool {
+  width: 100%; }
+  .leads_pool .leadsPool_header {
+    width: 99%;
+    margin: auto;
+    padding: 10px 0 10px 0;
+    background-color: #fff; }
+    .leads_pool .leadsPool_header .display_info {
+      float: left;
+      margin-left: 10px;
+      padding: 10px;
+      min-width: 130px;
+      text-align: center;
+      -moz-border-radius: 5px;
+      -webkit-border-radius: 5px;
+      border-radius: 5px;
+      border: 1px solid #e5e5e5; }
+      .leads_pool .leadsPool_header .display_info .title {
+        display: block;
+        color: #000;
+        font-family: Microsoft YaHei;
+        font-size: 15px; }
+      .leads_pool .leadsPool_header .display_info div {
+        margin-top: 20px;
+        color: #000;
+        font-family: Microsoft YaHei;
+        font-size: 15px; }
+        .leads_pool .leadsPool_header .display_info div a {
+          text-decoration: none; }
+        .leads_pool .leadsPool_header .display_info div span {
+          font-family: Microsoft YaHei;
+          font-size: 19px;
+          color: red;
+          font-weight: bold;
+          margin: 5px; }
+    .leads_pool .leadsPool_header .operation_info {
+      float: left;
+      margin-left: 20px; }
+      .leads_pool .leadsPool_header .operation_info .createTeam, .leads_pool .leadsPool_header .operation_info .customAssign, .leads_pool .leadsPool_header .operation_info .importLeads {
+        background-color: #4cb1e0;
+        color: #fff; }
+  .leads_pool .leadsPool_content {
+    width: 99%;
+    margin: auto; }
+    .leads_pool .leadsPool_content .leadsPool_table .tbody_empty {
+      height: 100px; }
+      .leads_pool .leadsPool_content .leadsPool_table .tbody_empty td {
+        height: 100px;
+        line-height: 100px;
+        text-align: center;
+        font-family: Arial; }
+        .leads_pool .leadsPool_content .leadsPool_table .tbody_empty td a {
+          text-decoration: none;
+          margin-left: 10px; }
+        .leads_pool .leadsPool_content .leadsPool_table .tbody_empty td a:hover {
+          text-decoration: underline; }
+
+/*# sourceMappingURL=index.css.map */

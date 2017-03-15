@@ -1,0 +1,444 @@
+$minWidth: 1200px;
+$minLeftWidth: 200px;
+$leftWidthPer: 220px;
+$minRightWidth: 100%;
+$rightWidthPer: 100%;
+$mainContentMinHeight: 600px;
+
+@mixin borderRadius($top,$right,$bottom,$left) {
+  -moz-border-radius: $top $right $bottom $left;
+  -webkit-border-radius: $top $right $bottom $left;
+  border-radius: $top $right $bottom $left;
+}
+
+@mixin borderRadiusImportant($top,$right,$bottom,$left) {
+  -moz-border-radius: $top $right $bottom $left !important;
+  -webkit-border-radius: $top $right $bottom $left !important;
+  border-radius: $top $right $bottom $left !important;
+}
+
+.index_header {
+  width: 100%;
+  min-width: $minWidth;
+  height: 74px;
+  background-color: #f2f2f2;
+
+  .header_left_info {
+    float: left;
+    .logo_left_img {
+      float: left;
+      width: 27px;
+      height: 78px;
+      margin: 0;
+      padding: 0;
+    }
+    .logo_company_name {
+      float: left;
+      height: 74px;
+      max-width: 320px;
+      line-height: 72px;
+      margin: 0;
+      padding: 0;
+      padding-left: 10px;
+      color: #fff;
+      font-family: Microsoft YaHei;
+      font-size: 26px;
+      //background-color: #4d7496;
+      background: url(../image/header_logo_center.png) repeat-x;
+      overflow: hidden;
+    }
+    .logo_right_img {
+      float: left;
+      margin: 0;
+      padding: 0;
+      width: 111px;
+      height: 74px;
+    }
+  }
+  .system_web_info {
+    float: left;
+    line-height: 72px;
+    .system_name_en {
+      color: #95a0aa;
+      font-family: Microsoft YaHei;
+      font-style: italic;
+      font-weight: bold;
+      font-size: 24px;
+    }
+    .system_name {
+      margin-left: 8px;
+      color: #95a0aa;
+      font-family: Microsoft YaHei;
+      font-size: 17px;
+    }
+  }
+
+  .header_right_info {
+    float: right;
+    line-height: 72px;
+    .info_notice_msg {
+      display: block;
+      float: left;
+      font-family: Microsoft YaHei;
+      font-size: 13px;
+      color: #c3c9ce;
+    }
+
+    .user {
+      float: left;
+      margin: auto 10px;
+
+      position: relative;
+      .user_img {
+        position: relative;
+        top: 9px;
+        cursor: pointer;
+        .info_people_img {
+          width: 28px;
+          height: 28px;
+          @include borderRadius(14px, 14px, 14px, 14px);
+        }
+      }
+      .info_notice_people, .current_work_space {
+        font-family: Microsoft YaHei;
+        font-size: 13px;
+        color: #444444;
+      }
+      .info_notice_drop_down {
+        width: 15px;
+        height: 12px;
+        cursor: pointer;
+      }
+
+      .dropdown-box {
+        float: right;
+        margin-right: 20px;
+        position: relative;
+        &:hover .user_dropdown {
+          display: block;
+        }
+        .user_dropdown {
+          margin-right: 10px;
+          display: none;
+          position: absolute;
+          top: 54px;
+          right: -18px;
+          background: white;
+          box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+          border: 1px solid rgba(0, 0, 0, 0.17);
+          @include borderRadius(5px, 5px, 5px, 5px);
+          font-weight: normal;
+          list-style: none;
+          line-height: 30px;
+          z-index: 201;
+
+          li a {
+            display: block;
+            padding: 0 10px;
+            text-decoration: none;
+            font-family: Microsoft YaHei;
+            font-size: 13px;
+            color: #444444;
+            @include borderRadiusImportant(5px, 5px, 5px, 5px);
+            border-bottom: 1px solid #e6e8ea;
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 1);
+          }
+          li:first-of-type a {
+            @include borderRadius(5px, 5px, 0, 0);
+          }
+          li:last-of-type a {
+            border: none;
+            @include borderRadius(0, 0, 5px, 5px);
+          }
+        }
+      }
+      .user_dropdown:after {
+        content: "";
+        width: 0;
+        height: 0;
+        position: absolute;
+        bottom: 100%;
+        right: 9px;
+        border-width: 0 6px 6px 6px;
+        border-style: solid;
+        border-color: #fff transparent;
+      }
+
+      .user_dropdown:before {
+        content: "";
+        width: 0;
+        height: 0;
+        position: absolute;
+        bottom: 100%;
+        right: 7px;
+        border-width: 0 8px 8px 8px;
+        border-style: solid;
+        border-color: rgba(0, 0, 0, 0.1) transparent;
+      }
+
+      .work-space .user_dropdown {
+        width: 100px;
+      }
+
+    }
+
+    .company_space {
+      display: block;
+      float: left;
+      margin-left: 10px;
+      font-family: Microsoft YaHei;
+      font-size: 10px;
+      color: #c3c9ce;
+      #change_work_space {
+        padding: 2px 5px;
+        color: #444444;
+      }
+    }
+
+  }
+}
+
+.main_content {
+  width: 100%;
+  height: 100%;
+
+  #menu_navigate {
+    width: $leftWidthPer;
+    background-color: #273238;
+    span {
+      font-size: 14px;
+      font-family: Microsoft YaHei;
+    }
+  }
+  #menu_content {
+    margin: 220px;
+    background-color: white;
+    .wait_loading {
+      width: 100%;
+      height: 100%;
+      background-color: #fff;
+      text-align: center;
+      .wait_img {
+        //margin-top:50px;
+        line-height: 300px;
+      }
+    }
+    .ajax_data_error {
+      margin: auto;
+      margin-top: 100px;
+      font-size: 20px;
+      text-align: center;
+    }
+
+    #menu_content_box {
+      margin: 50px;
+    }
+    #shortcutMenu {
+      margin-bottom: 30px;
+
+      ul{
+        margin-top:30px;
+      }
+
+      li {
+        width: 23%;
+        margin-right: 2%;
+        height: 150px;
+        float: left;
+        font-size: 20px;
+        color: white;
+        font-weight: 500;
+        font-family: "Microsoft YaHei", "Hiragino Sans GB", Verdana, Helvetica, Arial, SimSun, sans-serif;
+        div {
+          margin-right: 20px;
+          height: 100%;
+        }
+        span {
+          margin-top: 20px;
+          margin-left: 25px;
+          display: block;
+        }
+        img {
+          margin-top: 10px;
+          margin-left: 130px;
+        }
+      }
+      .sm-one {
+        background-color: #607D8B;
+      }
+      .sm-two {
+        background-color: #8BC24A;
+      }
+      .sm-three {
+        background-color: #00BBD4;
+      }
+      .sm-four {
+        background-color: #9E9E9E;
+      }
+    }
+    #hotProducts {
+      li {
+        height: 92px;
+        width: 100%;
+        border: solid 1px red;
+      }
+    }
+    #shortcutMenu, #hotProducts {
+      .sm-title {
+        font-size: 20px;
+        font-family: "Microsoft YaHei";
+        color: #444444;
+        font-weight: 500;
+      }
+      .sm-title-tips {
+        font-size: 16px;
+        font-family: "Microsoft YaHei";
+        color: #666666;
+        margin-left: 10px;
+      }
+    }
+
+  }
+}
+
+.clear {
+  clear: both;
+}
+
+.cfyBtn {
+  border: none;
+  @include borderRadius(5px, 5px, 5px, 5px);
+  outline: none;
+  color: #fff;
+  width: 100px;
+  height: 30px;
+  font-family: Microsoft YaHei;
+  font-size: 13px;
+  margin-top: 5px;
+  cursor: pointer;
+  background-color: #5293c4;
+}
+
+.cfyInput {
+  color: rgb(68, 68, 68);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  height: 23px;
+  letter-spacing: normal;
+  line-height: 23px;
+  margin: 0px;
+  outline: none;
+  text-align: start;
+  text-indent: 11px;
+  text-rendering: auto;
+  text-shadow: none;
+  text-transform: none;
+  width: 200px;
+  word-spacing: 0px;
+}
+
+/*Common Input CSS*/
+.commonInput {
+  background-color: rgb(255, 255, 255);
+  border: 1px solid rgb(204, 204, 204);
+  outline: none;
+  @include borderRadius(4px, 4px, 4px, 4px);
+  filter: progid:DXImageTransform.Microsoft.Shadow(color='rgba(0, 0, 0, 0.0745098)', Direction=135, Strength=5);
+  -moz-box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.0745098);
+  -webkit-box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.0745098);
+  box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.0745098);
+  color: rgb(85, 85, 85);
+  display: inline-block;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  height: 22px;
+  line-height: 22px;
+  padding: 4px 6px 4px 6px;
+  width: 200px;
+}
+
+/*Common Table CSS*/
+.beeWebTable {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  border: 1px solid #eee;
+
+  thead {
+    tr {
+      height: 45px;
+      background-color: #e5e5e5;
+      th {
+        height: 45px;
+        line-height: 45px;
+        text-align: center;
+        font-family: Microsoft YaHei;
+        font-size: 14px;
+        color: #000;
+        overflow: hidden;
+      }
+    }
+  }
+
+  tbody {
+    tr {
+      height: 35px;
+      td {
+        height: 35px;
+        line-height: 35px;
+        text-align: center;
+        font-family: Microsoft YaHei;
+        font-size: 12px;
+        color: #000;
+        overflow: hidden;
+      }
+    }
+
+    tr.tbodyEmpty {
+      height: 150px;
+      cursor: default;
+      td {
+        font-family: "Microsoft YaHei";
+        font-size: 30px;
+        font-style: italic;
+        color: #dcdcdc;
+      }
+    }
+
+    tr:nth-child(odd) {
+      background-color: #f7f9fb;
+    }
+    tr:nth-child(even) {
+      background-color: #ebeff1;
+    }
+    //tr:hover{
+    //  background-color: #CCCCFF;//CCFF99
+    //}
+  }
+
+  tfoot {
+    tr {
+      height: 35px;
+      background-color: #e5e5e5;
+      td {
+        height: 35px;
+        line-height: 35px;
+        font-family: Microsoft YaHei;
+        font-size: 12px;
+        color: #000;
+      }
+    }
+  }
+}
+
+.trMouseover {
+  background-color: #CCCCFF;
+}
+
+.trOddBackColor {
+  background-color: #f7f9fb;
+}
+
+.trEvenBackColor {
+  background-color: #ebeff1;
+}

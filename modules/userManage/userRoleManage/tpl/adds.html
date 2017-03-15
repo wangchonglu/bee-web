@@ -1,0 +1,25 @@
+<div class="role_add_content">
+    <table>
+        <tr>
+            <th>
+                选择用户:
+            </th>
+            <td>
+                <input type="text" id="role_add_input" placeholder="请输入您要查找的用户"  class="commonInput"  />
+            </td>
+        </tr>
+        <tr>
+            <th>
+                选择角色:
+            </th>
+            <td>
+                <select class="role_select commonInput" >
+                    <% for(var i=0;i<it.length;i++){ %>
+                    <% var item=it[i]; %>
+                    <option data-id="<%= item.id %>"><%= item.name %></option>
+                    <% } %>
+                </select>
+            </td>
+        </tr>
+    </table>
+</div>

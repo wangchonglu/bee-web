@@ -1,0 +1,67 @@
+.team_manage {
+  width: 100%; }
+  .team_manage .teamMana_header {
+    width: 100%;
+    height: 45px;
+    background-color: #f9f9f9; }
+    .team_manage .teamMana_header .header_operation {
+      height: 45px;
+      line-height: 45px;
+      padding-left: 20px; }
+      .team_manage .teamMana_header .header_operation .operation_add {
+        display: inline-block; }
+        .team_manage .teamMana_header .header_operation .operation_add a {
+          text-decoration: none; }
+          .team_manage .teamMana_header .header_operation .operation_add a img {
+            position: relative;
+            top: 5px;
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+            -webkit-transition: all 1s ease;
+            -moz-transition: all 1s ease;
+            -o-transition: all 1s ease;
+            transition: all 1s ease; }
+          .team_manage .teamMana_header .header_operation .operation_add a span {
+            color: #6b818b;
+            font-family: Microsoft YaHei;
+            font-size: 14px;
+            margin-right: 10px; }
+        .team_manage .teamMana_header .header_operation .operation_add a:hover span {
+          color: #5FAEE3; }
+        .team_manage .teamMana_header .header_operation .operation_add a:hover img {
+          -webkit-transform: rotate(360deg);
+          -moz-transform: rotate(360deg);
+          -ms-transform: rotate(360deg);
+          -o-transform: rotate(360deg);
+          transform: rotate(360deg); }
+
+.teamMana_content {
+  width: 99%;
+  margin: auto; }
+  .teamMana_content .teamMana_table .thead_th {
+    width: 16%; }
+  .teamMana_content .teamMana_table .tbody_td {
+    width: 20%; }
+  .teamMana_content .teamMana_table .thead_op, .teamMana_content .teamMana_table .tbody_op {
+    width: 20%; }
+  .teamMana_content .teamMana_table .tbody_op a {
+    cursor: pointer;
+    text-decoration: none;
+    margin-left: 6px; }
+  .teamMana_content .teamMana_table .tbody_op a:hover {
+    cursor: pointer;
+    text-decoration: underline; }
+  .teamMana_content .teamMana_table .tbody_empty {
+    height: 100px; }
+    .teamMana_content .teamMana_table .tbody_empty td {
+      height: 100px;
+      line-height: 100px;
+      text-align: center;
+      font-family: Arial; }
+  .teamMana_content .teamMana_pager {
+    width: 100%;
+    height: 35px;
+    background-color: #e5e5e5; }
+
+/*# sourceMappingURL=index.css.map */

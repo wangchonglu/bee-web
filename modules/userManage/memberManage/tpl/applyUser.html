@@ -1,0 +1,38 @@
+<div class="apply-table">
+    <table>
+        <thead>
+        <tr>
+            <td class="td-name">姓名 </td>
+            <td class="td-dept">手机</td>
+            <td class="td-applydate">申请时间</td>
+        </tr>
+        </thead>
+        <tbody>
+        <% if(it.length > 0){ %>
+        <% for(var i=0;i<it.length;i++){ %>
+        <% var item=it[i];%>
+        <% var flag=i%2;var curClass;%>
+        <% if(flag==0){curClass="trOdd";}else{curClass="trEven";} %>
+        <tr class="<%= curClass %> tr-member" data-uid="<%= item.user_id %>">
+            <td class="td-name" data-field="name"><%= item.name %></td>
+            <td class="td-phone" data-field="login_name" data-did="<%=item.login_name%>"><%= item.login_name %></td>
+            <td class="td-applydate" data-field="apply_time"><%= item.apply_time %></td>
+        </tr>
+        <% } %>
+        <% }else{ %>
+        <tr class="empty"><td colspan="3">暂无数据</td></tr>
+        <% } %>
+        </tbody>
+        <% if(it.length>0){ %>
+        <tfoot>
+        <tr>
+            <td colspan="3">
+                <div class="applyuser-pager">
+                </div>
+            </td>
+        </tr>
+        </tfoot>
+        <% } %>
+    </table>
+</div>
+

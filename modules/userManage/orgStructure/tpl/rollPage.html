@@ -1,0 +1,35 @@
+<div class="org_table_content">
+    <table class="beeWebTable table-style">
+        <thead class="table-style-thead">
+        <tr>
+            <th>部门编码</th>
+            <th>部门名称</th>
+            <th>上级部门</th>
+            <th>操作</th>
+        </tr>
+        </thead>
+        <tbody class="tbody-style">
+        <% if(it.length>0){ %>
+        <% for(var i=0; i<it.length; i++){ %>
+        <% var item=it[i]; %>
+        <% var flag=i%2;var curClass;%>
+        <% if(flag==0){curClass="trOddBackColor";}else{curClass="trEvenBackColor";} %>
+        <tr class="tr-style <%= curClass %>"  data-id="<%= item.id %>" parent-id="<%= item.parentId %>">
+            <td class="depart-code"><%= item.code %></td>
+            <td class="depart-name"><%= item.name %></td>
+            <td class="super-name"><%= item.parentName %></td>
+            <td class="op">
+                <a href="javascript:void(0)" class="table-edit" title="编辑" >编辑</a>
+                <a href="javascript:void(0)" class="table-delete" title="编辑" >删除</a>
+                <%if(item.child==true){%>
+                <span class="sub_dept" title="下级部门"></span>
+                <%}%>
+            </td>
+        </tr>
+        <% } %>
+        <% }else{ %>
+        <tr class="tbody_empty"><td colspan="4">No Data</td></tr>
+        <% } %>
+        </tbody>
+    </table>
+</div>

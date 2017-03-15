@@ -1,0 +1,47 @@
+<div class="popup_content">
+    <div class="contact_user_img">
+        <img src="<%= it.currUser.head_img %>"/>
+    </div>
+    <table class="popTable">
+        <tr>
+            <td class="popTable_name">姓名：</td>
+            <td class="popTable_content">
+                <span data-field="name"><%= it.currUser.name %></span>
+            </td>
+        </tr>
+        <tr>
+            <td class="popTable_name">手机：</td>
+            <td class="popTable_content">
+                <span data-field="phone"><%= it.currUser.telphone %></span>
+            </td>
+        </tr>
+        <tr>
+            <td class="popTable_name">部门：</td>
+            <td class="popTable_content">
+                <span data-field="phone"><%= it.currUser.dep_name %></span>
+            </td>
+        </tr>
+        <tr>
+            <td class="popTable_name">邮箱：</td>
+            <td class="popTable_content">
+                <span data-field="email"><%= it.currUser.email %></span>
+            </td>
+        </tr>
+    </table>
+
+    <hr>
+
+    <div class="role_allot_content">
+        <div class="content-div">
+            <% for(var i=0;i<it.jsonObj.roles.length;i++){ %>
+            <% var item=it.jsonObj.roles[i]; %>
+            <div class="roleItem">
+                <input type="checkbox" data-id="<%= item.id %>" name="roles" class="roleCheckBox" <%
+                if(item.checked==true){%>checked<%}%> />
+                <%= item.name %>
+            </div>
+            <% } %>
+        </div>
+    </div>
+
+</div>

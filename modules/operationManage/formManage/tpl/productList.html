@@ -1,0 +1,40 @@
+
+<div class="form-main">
+    <div class="header">
+        <div class="nav-bar">
+            <ul>
+                <li>
+                    <a href="javascript:void(0)">报单管理&gt;</a>
+                </li>
+                <li>
+                    所有报单产品
+                </li>
+            </ul>
+        </div>
+        <div class="all">
+            <a href="javascript:void(0)" class="allProForm">所有产品报单列表&gt;&gt;</a>
+        </div>
+        <div style="clear: both"></div>
+    </div>
+    <div class="form-part">
+        <div class="form-product">
+            <% if(it.length > 0){ %>
+            <ul>
+                <% for(var i=0;i<it.length;i++){ %>
+                <% var item=it[i];%>
+                <li class="product-item" data-id="<%= item.id %>">
+                    <span><%= item.name %></span>
+                    <div class="hover"></div>
+                </li>
+                <% } %>
+            </ul>
+            <div style="clear: both"></div>
+            <% }else{ %>
+            <div class="empty">
+                暂无报单
+            </div>
+            <% } %>
+        </div>
+    </div>
+</div>
+

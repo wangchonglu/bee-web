@@ -1,0 +1,37 @@
+<div class="cfyPopuplay_box">
+    <div class="cfyPopuplay_shade"></div>
+    <div class='cfyPopuplay'>
+        <div class='cfyPopuplay_header cfyPopuplay_drag'>
+            <div class="cfyPopuplay_title" title="<%=it.title%>"><%=it.title%></div>
+            <div class="cfyPopuplay_op">
+                <span class="cfyPopuplay_close_box cfyPopuplay_close">
+                    <span class="cfyPopuplay_close_icon"></span>
+                </span>
+            </div>
+            <div style="clear: both"></div>
+        </div>
+        <div class="cfyPopuplay_body">
+            <%=it.content %>
+        </div>
+        <div class='cfyPopuplay_header cfyPopuplay_action' style="display:<%=it.showAction %>">
+            <% if($.inArray("submit",it.actions)>-1){ %>
+            <input type="button" class="cfyBtn cfyPopuplay_submit" value="提交"/>
+            <% } %>
+            <% if($.inArray("save",it.actions)>-1){ %>
+            <input type="button" class="cfyBtn cfyPopuplay_save" value="保存"/>
+            <% } %>
+            <% if($.inArray("ok",it.actions)>-1){ %>
+            <input type="button" class="cfyBtn cfyPopuplay_ok" value="确认"/>
+            <% } %>
+            <% if($.inArray("login",it.actions)>-1){ %>
+            <input type="button" class="cfyBtn cfyPopuplay_login" value="登录"/>
+            <% } %>
+            <% if($.inArray("cancel",it.actions)>-1){ %>
+            <input type="button" class="cfyBtn cfyPopuplay_cancel" value="取消"/>
+            <% } %>
+            <% if($.inArray("close",it.actions)>-1){ %>
+            <input type="button" class="cfyBtn cfyPopuplay_close1" value="关闭"/>
+            <% } %>
+        </div>
+    </div>
+</div>

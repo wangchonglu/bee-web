@@ -1,0 +1,100 @@
+﻿<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>蜜蜂云平台</title>
+    <link rel="icon" href="images/logo/favicon.ico" mce_href="images/logo/favicon.ico" type="image/x-icon">
+
+
+</head>
+<body style="display: none">
+<div class="index_header bee_web" style="display: none">
+    <div class="header_left_info">
+        <div class="logo_company_name"></div>
+        <img class="logo_right_img" src="modules/foundation/image/header_logo_right.png"/>
+    </div>
+    <div class="system_web_info">
+        <span class="system_name_en">BEECLOUD</span>
+        <span class="system_name">财顾合作&nbsp;口袋随身</span>
+    </div>
+    <div class="header_right_info">
+        <li class="user">
+
+            <div class="dropdown-box work-space">
+                <span class="current_work_space">本公司</span>
+                <img class="info_notice_drop_down" src="modules/foundation/image/header_notice_drop.png">
+                <ul class="user_dropdown">
+                    <li><a href="#" id="change_work_space"> 切换到云平台 </a></li>
+                </ul>
+            </div>
+
+            <div class="dropdown-box">
+                <a class="user_img">
+                    <img class="info_people_img" src="images/users/user.gif">
+                </a>
+                <span class="info_notice_people"></span>
+                <img class="info_notice_drop_down" src="modules/foundation/image/header_notice_drop.png">
+                <ul class="user_dropdown">
+                    <li><a href="#" class="logoff"> 退出 </a></li>
+                </ul>
+            </div>
+
+        </li>
+
+    </div>
+    <div style="clear: both"></div>
+</div>
+<table class="main_content bee_web" style="display: none" border="0" cellspacing="0" cellpadding="0">
+    <tr valign="top">
+        <td id="menu_navigate"></td>
+        <td id="menu_content">
+            <div id="menu_content_box">
+
+                <div id="shortcutMenu" style="display: none">
+                    <span class="sm-title">选择面板</span><span class="sm-title-tips">点击选择快速入口</span>
+                    <ul>
+
+                        <li class="sm-one">
+                            <span>人员管理</span> <img src="modules/foundation/image/shortcutMenu/xiansc.png" alt=""/>
+                        </li>
+
+                        <li class="sm-two">
+                            <span>线索管理</span><img src="modules/foundation/image/shortcutMenu/xiansc.png" alt=""/>
+                        </li>
+
+                        <li class="sm-three">
+                            <span>在售产品库</span> <img src="modules/foundation/image/shortcutMenu/xiansc.png" alt=""/>
+                        </li>
+
+                        <li class="sm-four">
+                            <span>销售仪表盘</span> <img src="modules/foundation/image/shortcutMenu/xiansc.png" alt=""/>
+                        </li>
+
+                    </ul> <div class="clear"></div>
+                </div>
+
+                <div id="hotProducts" style="display: none">
+                    <span class="sm-title">热销产品</span>
+                    <ul>
+                        <li>
+
+                        </li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </div>
+            </div>
+        </td>
+    </tr>
+</table>
+
+<script src="js/lib/seajs/sea.js"></script>
+<script src="js/lib/seajs/seajs-config.js"></script>
+<script src="js/lib/seajs/seajsText.js"></script>
+<script type="text/javascript">
+    seajs.use("modules/foundation/index.js", function (index) {
+        index.init();
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+.banners {
+    margin: auto;
+    /*width: 1600px;*/
+    height: 428px;
+    position: relative;
+}
+.banners .inline {
+}
+.banners .banner-box{
+    margin: 0 auto;
+    background-color: black;
+    heigth: 428px;
+    /*width: 1600px;*/
+    overflow: hidden;
+    position: absolute;
+
+}
+.banners .banner-list {
+    heigth: 428px;
+    width: 5000px;
+}
+.banners .banner-content {
+    height: 428px;
+    line-height: 428px;
+    margin: 0px ;
+    background-color: brown;
+    text-align: center;
+}
+.banners .banner-list .banner-item {
+    float: left;
+    height: 428px;
+    /*width: 1600px;*/
+    background-color: red
+}
+
+.banners .btnLeft {
+    width: 25px;
+    height: 75px;
+    background: url(../../../images/index/left.png) no-repeat center center;
+    position: absolute;
+    top: 50%;
+    left: 2%;
+    z-index: 9;
+}
+
+.banners .btnRight {
+    width: 25px;
+    height: 75px;
+    background: url(../../../images/index/right.png) no-repeat center center;
+    position: absolute;
+    right: 2%;
+    top: 50%;
+    z-index: 10;
+}
+
+.banners .btnLeft:hover, .banner .btnRight:hover {
+    cursor: pointer;
+}
+
+.box {
+    background-color: #b18f5b;
+
+   /*padding: 24px 50px;*/
+    margin: 0 auto;
+}
+
+.li_one{
+     background: url("../../../images/index/bg.png") no-repeat center center;
+     height: 428px;
+ }
+
+
+
+.li_two{
+    background: url("../../../images/index/bg_0.png") no-repeat center center;
+    height: 428px;
+}
+
+
+.li_three{
+    background: url("../../../images/index/bg_02.png") no-repeat center center;
+    height: 428px;
+}
+

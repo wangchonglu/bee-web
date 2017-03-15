@@ -1,0 +1,60 @@
+
+<div class="orgStructure">
+    <div class="content-style">
+        <div class="table-nav">
+            <div class="table-nav-content">
+                <a class="addDepartment" title="新增部门">
+                    <img src="./modules/foundation/image/operation_add.png">
+                    <span>新增部门</span>
+                </a>
+            </div>
+            <div class="return_dept">
+                <img class="return_last" src="./modules/foundation/image/return_last.png" title="返回上级部门" />
+            </div>
+        </div>
+
+        <div class="org_tables_frames">
+            <div class="org_tables_frames_margin">
+                <div class="org_table_content">
+                    <table class="beeWebTable table-style">
+                        <thead class="table-style-thead">
+                        <tr>
+                            <th>部门编码</th>
+                            <th>部门名称</th>
+                            <th>上级部门</th>
+                            <th>操作</th>
+                        </tr>
+                        </thead>
+                        <tbody class="tbody-style">
+                        <% if(it.subs!=undefined){ %>
+                        <% for(var i=0; i<it.subs.length; i++){ %>
+                        <% var item=it.subs[i]; %>
+                        <% var flag=i%2;var curClass;%>
+                        <% if(flag==0){curClass="trOddBackColor";}else{curClass="trEvenBackColor";} %>
+                        <tr class="tr-style <%= curClass %>"  data-id="<%= item.id %>" parent-id="<%= it.id %>">
+                            <td class="depart-code"><%= item.departCode %></td>
+                            <td class="depart-name"><%= item.name %></td>
+                            <td class="super-name"><%= it.name %></td>
+                            <td class="op">
+                                <a href="javascript:void(0)" class="table-edit" title="编辑" >编辑</a>
+                                <a href="javascript:void(0)" class="table-delete" title="编辑" >删除</a>
+                                <%if(item.subs!=undefined && item.subs.length>0){%>
+                                <span class="sub_dept" title="下级部门"></span>
+                                <%}%>
+                            </td>
+                        </tr>
+                        <% } %>
+                        <% }else{ %>
+                        <tr class="tbody_empty"><td colspan="4">当前没有数据 /(ㄒoㄒ)/~~</td></tr>
+                        <% } %>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+

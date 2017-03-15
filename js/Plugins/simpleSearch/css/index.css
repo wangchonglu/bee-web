@@ -1,0 +1,31 @@
+.simpleSearch {
+  height: 27px;
+  border: 1px solid #e8e8e8;
+  -moz-border-radius: 7px;
+  -webkit-border-radius: 7px;
+  border-radius: 7px; }
+  .simpleSearch .selectSearch {
+    position: relative;
+    top: -1px;
+    height: 27px;
+    border: none;
+    outline: none;
+    background-color: #f7f9fb;
+    -moz-border-radius: 7px 0 0 7px;
+    -webkit-border-radius: 7px 0 0 7px;
+    border-radius: 7px 0 0 7px; }
+  .simpleSearch .txtSearch {
+    position: relative;
+    top: -2px;
+    border: none;
+    outline: none;
+    height: 25px;
+    width: 140px; }
+  .simpleSearch .imgSearch {
+    height: 20px;
+    width: 20px;
+    position: relative;
+    top: 4px;
+    cursor: pointer; }
+
+/*# sourceMappingURL=index.css.map */

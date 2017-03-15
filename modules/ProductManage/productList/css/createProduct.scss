@@ -1,0 +1,198 @@
+.createProduct {
+  padding: 12px; }
+.createProduct *, .createProduct *::before, .createProduct *::after {
+  box-sizing: border-box; }
+.createProduct hr {
+  border-color: #eee;
+  border-image: none;
+  border-style: solid none none;
+  border-width: 1px 0 0;
+  margin-bottom: 20px;
+  margin-top: 20px; }
+.createProduct .test {
+  content: "2714";
+  font-size: 14px; }
+.createProduct .title {
+  background-image: url("../../../foundation/image/ticxx.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 18px;
+  height: 14px;
+  z-index: 4; }
+.createProduct .wizard-steps {
+  display: table;
+  list-style: outside none none;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  width: 100%; }
+.createProduct .wizard-steps li:first-child::before {
+  left: 50%;
+  max-width: 51%; }
+.createProduct .wizard-steps li:last-child::before {
+  max-width: 50%;
+  width: 50%; }
+.createProduct .wizard-steps li::before {
+  border-top: 4px solid #ced1d6;
+  content: "";
+  display: block;
+  font-size: 0;
+  height: 1px;
+  overflow: hidden;
+  position: relative;
+  top: 21px;
+  width: 100%;
+  z-index: 1; }
+.createProduct .wizard-steps li.active::before, .createProduct .wizard-steps li.complete::before, .createProduct .wizard-steps li.active .step, .createProduct .wizard-steps li.complete .step {
+  border-color: #5293c4; }
+.createProduct .wizard-steps li {
+  display: table-cell;
+  text-align: center;
+  width: 1%; }
+.createProduct .step {
+  background-color: #fff;
+  border: 5px solid #ced1d6;
+  border-radius: 100%;
+  color: #546474;
+  display: inline-block;
+  font-size: 15px;
+  height: 40px;
+  line-height: 30px;
+  position: relative;
+  text-align: center;
+  width: 40px;
+  z-index: 2; }
+.createProduct .border-color {
+  border-color: #5293c4; }
+.createProduct .step1 {
+  margin: 10px auto; }
+.createProduct .div-style {
+  margin: 10px auto 20px;
+  width: 80%;
+  overflow: hidden; }
+.createProduct .div-label {
+  width: 20%;
+  text-align: right;
+  float: left;
+  padding: 3px; }
+.createProduct .div-input {
+  width: 80%;
+  text-align: left;
+  float: left; }
+.createProduct .label-font {
+  font-size: 14px;
+  font-weight: normal; }
+.createProduct .input-style {
+  border: 1px solid #d5d5d5;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  color: #858585;
+  font-family: inherit;
+  font-size: 14px;
+  line-height: 1.2;
+  padding: 5px 4px;
+  width: 80%; }
+.createProduct .select-style {
+  height: 30px;
+  padding: 2px 4px;
+  width: 200px;
+  background-color: #fff;
+  border: 1px solid #d5d5d5;
+  border-radius: 0;
+  box-shadow: none !important;
+  color: #858585; }
+.createProduct .textarea-style {
+  max-width: 100%;
+  width: 270px; }
+.createProduct .footer-btn {
+  width: 85%;
+  overflow: hidden;
+  text-align: right;
+  margin: 0 auto; }
+.createProduct .prev-btn {
+  background-color: #abbac3;
+  border-color: #abbac3;
+  border: 3px solid #fff;
+  border-radius: 5px;
+  outline: none;
+  color: #fff;
+  width: 100px;
+  height: 45px;
+  font-family: Microsoft YaHei;
+  font-size: 14px;
+  cursor: pointer;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+
+}
+.prev{
+  background-image: url("../../../foundation/image/btn-prev.png");
+  background-position: 5px;
+  background-repeat: no-repeat;
+  padding-left: 5px;
+}
+
+.next{
+  background-image: url("../../../foundation/image/btn-next.png");
+  background-position: 70px;
+  background-repeat: no-repeat;
+  padding-right: 5px;
+}
+
+.createProduct .next-btn {
+  background-color: #5293c4;
+  border-color: #5293c4;
+  border: 3px solid #fff;
+  border-radius: 5px;
+  outline: none;
+  color: #fff;
+  width: 100px;
+  height: 45px;
+  font-size: 13px;
+  margin-top: 5px;
+  cursor: pointer;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+}
+.createProduct .half-div {
+  width: 50%;
+  float: left;
+  margin: 0 auto; }
+.createProduct .half-div-label {
+  width: 40%;
+  text-align: right;
+  float: left;
+  padding: 3px; }
+.createProduct .half-div-input {
+  width: 60%;
+  text-align: left;
+  float: left; }
+
+#createPro{
+  width:1000px;
+  overflow: hidden;
+  position: relative;
+  min-height: 1000px;
+}
+#createPro .items{width:20000px; clear:both; position:absolute;}
+#createPro .items .page{
+    float:left;
+    width:1000px;
+}
+
+.upload_p{width: 150px;height: 120px;
+border: 1px solid #cfcfcf}
+
+#upload_btn {
+  height: 100%;
+  width: 100%;
+}
+#rebate_ratio{
+  width: 192px;
+}
+.upload_btn {
+  height: 100%;
+  width: 100%;
+}
+
+.error{display: none;margin: 2px 0 20px;color: red;float: left;}
+
+.errorC{ margin-bottom: 10px;border-color: red;color: red;}

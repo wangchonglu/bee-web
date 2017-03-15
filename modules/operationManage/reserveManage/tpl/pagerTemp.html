@@ -1,0 +1,19 @@
+<% if(it.length > 0){ %>
+    <% for(var i=0;i<it.length;i++){ %>
+        <% var item=it[i];%>
+        <% var flag=i%2;var curClass;%>
+        <% if(flag==0){curClass="trOddBackColor";}else{curClass="trEvenBackColor";} %>
+        <tr class="<%= curClass %>">
+            <td data-field="proName"><%= item.proName %></td>
+            <td data-field="cusName"><%= item.cusName %></td>
+            <td data-field="price"><%= item.price %></td>
+            <td data-field="fundName"><%= item.fundName %></td>
+            <td data-field="team">周立团队一</td>
+            <td data-field="institute"></td>
+            <td data-field="channelManage"></td>
+            <td data-field="createdAt"><%= item.createdAt %></td>
+        </tr>
+    <% } %>
+<% }else{ %>
+<tr class="tbodyEmpty"><td colspan="8">暂无数据</td></tr>
+<% } %>

@@ -1,0 +1,12 @@
+html,body{margin:0;padding:0;}
+body, html, * {padding: 0px;margin: 0px;}
+ul, li { list-style: none;}
+.cfyTreeView li .dataspan {display: block;height: 46px;line-height: 46px;padding-left: 10px;font-family: Arial;font-size: 13px;color: #98a2ad;cursor: pointer;margin-left: 0px;font-weight: bold;}
+.cfyTreeView li ul{padding-left: 45px;}
+.cfyTreeView li .dataspan img {vertical-align:middle;height: 20px;width: 20px;margin-right: 10px;margin-bottom: 3px;}
+.cfyTreeView .cfyDownBG {background: url(../images/nav_down.png) no-repeat 90% 16px;}
+.cfyTreeView .cfyUpBG {background: url(../images/nav_up_hi.png) no-repeat 90% 16px;}
+.cfyTreeView li .itemHovered {background-color: #5FAEE3;color: white !important;}
+.cfyTreeView li .rootItemSelect {background-color: #5FAEE3;color: white !important;}
+.cfyTreeView li .itemSelected {color: white !important;}
+.cfyTreeView ul {display: none; background-color: #2B3840}

@@ -1,0 +1,95 @@
+.orgStructure {
+  width: 100%;
+  margin: 0;
+  background-color: #f9f9f9; }
+  .orgStructure .content-style {
+    width: 100%; }
+    .orgStructure .content-style .table-nav {
+      width: 100%;
+      background-color: #f9f9f9;
+      height: 45px; }
+      .orgStructure .content-style .table-nav .table-nav-content {
+        float: left;
+        margin-left: 30px;
+        height: 45px;
+        line-height: 45px; }
+        .orgStructure .content-style .table-nav .table-nav-content .addDepartment {
+          text-decoration: none;
+          cursor: pointer; }
+          .orgStructure .content-style .table-nav .table-nav-content .addDepartment span {
+            color: #6b818b;
+            font-family: Microsoft YaHei;
+            font-size: 14px;
+            margin-right: 10px; }
+          .orgStructure .content-style .table-nav .table-nav-content .addDepartment img {
+            position: relative;
+            top: 3px;
+            width: 18px;
+            height: 18px;
+            -webkit-transition: all 1s ease;
+            -moz-transition: all 1s ease;
+            -o-transition: all 1s ease;
+            transition: all 1s ease; }
+        .orgStructure .content-style .table-nav .table-nav-content .addDepartment:hover img {
+          -webkit-transform: rotate(360deg);
+          -moz-transform: rotate(360deg);
+          -ms-transform: rotate(360deg);
+          -o-transform: rotate(360deg);
+          transform: rotate(360deg); }
+        .orgStructure .content-style .table-nav .table-nav-content .addDepartment:hover span {
+          color: #5FAEE3; }
+      .orgStructure .content-style .table-nav .return_dept {
+        display: none;
+        float: right;
+        margin-top: 10px;
+        margin-right: 30px; }
+        .orgStructure .content-style .table-nav .return_dept .return_last {
+          width: 26px;
+          height: 26px;
+          cursor: pointer; }
+    .orgStructure .content-style .org_tables_frames {
+      width: 100%;
+      overflow: hidden; }
+      .orgStructure .content-style .org_tables_frames .org_tables_frames_margin {
+        margin: 0 10px; }
+        .orgStructure .content-style .org_tables_frames .org_tables_frames_margin .org_table_content {
+          width: 100%; }
+          .orgStructure .content-style .org_tables_frames .org_tables_frames_margin .org_table_content .table-style {
+            width: 100%; }
+            .orgStructure .content-style .org_tables_frames .org_tables_frames_margin .org_table_content .table-style .table-edit, .orgStructure .content-style .org_tables_frames .org_tables_frames_margin .org_table_content .table-style .table-delete {
+              cursor: pointer;
+              text-decoration: none;
+              margin-left: 5px; }
+            .orgStructure .content-style .org_tables_frames .org_tables_frames_margin .org_table_content .table-style .tr-style a:hover {
+              text-decoration: underline; }
+            .orgStructure .content-style .org_tables_frames .org_tables_frames_margin .org_table_content .table-style .op {
+              position: relative; }
+              .orgStructure .content-style .org_tables_frames .org_tables_frames_margin .org_table_content .table-style .op .sub_dept {
+                position: absolute;
+                top: 7px;
+                display: block;
+                right: 30px;
+                width: 20px;
+                height: 20px;
+                border: 1px solid #e5e5e5;
+                -moz-border-radius: 10px;
+                -webkit-border-radius: 10px;
+                -o-border-radius: 10px;
+                border-radius: 10px;
+                background-image: url("../../../../images/resource/sprite.png");
+                background-position: 2px -13px;
+                background-repeat: no-repeat;
+                cursor: pointer; }
+              .orgStructure .content-style .org_tables_frames .org_tables_frames_margin .org_table_content .table-style .op .sub_dept:hover {
+                background-color: #4d7496;
+                border: 1px solid #4d7496; }
+            .orgStructure .content-style .org_tables_frames .org_tables_frames_margin .org_table_content .table-style .tbody_empty {
+              height: 150px; }
+              .orgStructure .content-style .org_tables_frames .org_tables_frames_margin .org_table_content .table-style .tbody_empty td {
+                height: 150px;
+                line-height: 150px;
+                font-size: 13px;
+                text-align: center;
+                font-family: Microsoft YaHei; }
+
+/*# sourceMappingURL=orgStructure.css.map */

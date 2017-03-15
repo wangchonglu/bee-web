@@ -1,0 +1,351 @@
+$headerHeight:50px;
+$opHeight:40px;
+
+@mixin fontSet($size:14px) {
+  color: #666;
+  font-family: Microsoft YaHei;
+  font-size: $size;
+}
+
+.member-manage{
+  width:100%;
+  height:100%;
+  overflow: hidden;
+  .header{
+    width:100%;
+    height:$headerHeight;
+    background-color: #eeeeee;
+    border-top: 1px solid #ddd;
+    .hd-title{
+      float:left;
+      height: $headerHeight;
+      line-height:$headerHeight ;
+      padding: 0 20px;
+      text-align: center;
+      font-weight: bold;
+      color: #6b818b;
+      font-family: Microsoft YaHei;
+      font-size: 16px;
+    }
+    .hd-op{
+      float: right;
+      ul{
+        list-style: none;
+        li{
+          float: left;
+          height: $headerHeight;
+          line-height:$headerHeight ;
+          padding: 0 15px;
+          text-align: center;
+          @include fontSet(14px);
+          border-left: 1px solid #DDDDDD;
+          cursor: pointer;
+          img{
+            position: relative;
+            top:4px;
+            width:18px;
+            height:18px;
+            -webkit-transition:all 1s ease;
+            -moz-transition:all 1s ease;
+            -o-transition:all 1s ease;
+            transition:all 1s ease;
+          }
+          span{
+            color:inherit;
+          }
+        }
+
+        li.hoverOp:hover{
+          background-color: #fff;
+          img{
+            -webkit-transform: rotate(360deg);
+            -moz-transform: rotate(360deg);
+            -ms-transform: rotate(360deg);
+            -o-transform: rotate(360deg);
+            transform: rotate(360deg);
+          }
+        }
+        li.hoverDel:hover{
+          background-color: #fff;
+        }
+        .op,.delete-team{
+          color:#b1b1b1;
+        }
+        .search{
+          cursor: default;
+          border-right: 1px solid #DDDDDD;
+          .searchinput{
+            background-color: #fff;
+            border: 1px solid #FFBF80;
+            -moz-border-radius:4px;
+            -webkit-border-radius: 4px;
+            border-radius:4px;
+            height:30px;
+            width: 200px;
+            margin-top: 10px;
+            margin-left: -11px;
+            img{
+              position: relative;
+              left: -22px;
+              top: -5px;
+              width: 18px;
+              height: 18px;
+            }
+            input{
+              position: relative;
+              top: -10px;
+              left: -19px;
+              border: none;
+              outline: none;
+              width: 120px;
+            }
+          }
+        }
+      }
+    }
+  }
+  .content{
+    width: 100%;
+    height:100%;
+    min-height:500px;
+    overflow:hidden;
+    border-bottom: 1px solid #ddd;
+    .dept-info{
+      float: left;
+      padding-bottom:10000px;
+      margin-bottom:-10000px;
+      width:20%;
+      height:100%;
+      border-right: 1px solid #ddd;
+      margin-right: -1px;
+      .dept-op{
+        width: 100%;
+        background-color: #f9f9f9;
+        height:40px;
+
+        .dept-op-edit{
+          width: 100%;
+          height:100%;
+          padding-top: 6px;
+          border-left: 1px solid #ddd;
+          border-top: 1px solid #ddd;
+          text-align: center;
+          cursor: pointer;
+          img{
+            position: relative;
+            top:4px;
+            width:18px;
+            height:18px;
+            -webkit-transition:all 1s ease;
+            -moz-transition:all 1s ease;
+            -o-transition:all 1s ease;
+            transition:all 1s ease;
+          }
+          span{
+            @include fontSet(14px);
+          }
+
+        }
+
+        .dept-op-edit:hover{
+          background-color: #fff;
+          img{
+            -webkit-transform: rotate(360deg);
+            -moz-transform: rotate(360deg);
+            -ms-transform: rotate(360deg);
+            -o-transform: rotate(360deg);
+            transform: rotate(360deg);
+          }
+        }
+
+      }
+      .dept-nav{
+        width:100%;
+        border-top: 1px solid #ddd;
+        .nav-tree{
+          width:100%;
+        }
+
+      }
+    }
+    .user-info{
+      float: left;
+      padding-bottom:10000px;
+      margin-bottom:-10000px;
+      width: 80%;
+      height:100%;
+      position: relative;
+      .user-header{
+        width:100%;
+        margin:0 -2px;
+        height:39px;
+        line-height:39px ;
+        border-left: 1px solid #ddd;
+        border-right: 1px solid #ddd;
+        border-top: 1px solid #ddd;
+        background-color:#f9f9f9;
+        text-align: center;
+        .user-title{
+          @include fontSet(14px);
+        }
+      }
+
+      .user-table,.apply-table,.sales-team-table,.resign-user-table{
+        width:100%;
+        margin:0 -2px;
+        padding-left: 2px;
+        table{
+          width:100%;
+          border-collapse: collapse;
+          border-spacing: 0;
+          thead{
+            background-color: #f9f9f9;
+            tr{
+              height:40px;
+            }
+          }
+          tbody{
+            tr{
+              height:37px;
+              cursor: pointer;
+            }
+            tr:nth-child(odd){
+              background-color:#fcfcfc ;
+            }
+            tr:nth-child(even){
+              background-color:#fff ;
+            }
+            tr:hover{
+              background-color: #f8f8f8;
+            }
+          }
+          tfoot{
+            tr{
+              height:37px;
+              background-color: #f9f9f9;
+              td{
+                height:37px;
+                line-height:37px;
+                font-family: Microsoft YaHei;
+                font-size: 12px;
+                color: #000;
+              }
+            }
+          }
+
+          tr{
+            td{
+              text-align: center;
+              border: 1px solid #ddd;
+              @include fontSet(14px);
+              overflow: hidden;
+              .user-check-all,.user-check-item,.check-all,.check-item{
+                display: block;
+                margin-left: 40%;
+                width: 15px;
+                height:15px;
+                background-image: url("../../../foundation/image/row-checkbox.gif");
+                background-position: 1px 1px;
+                background-repeat: no-repeat;
+              }
+
+              a{
+                text-decoration: none;
+              }
+              a:hover{
+                text-decoration: underline;
+              }
+            }
+            .td-op{
+              width:8%;
+            }
+          }
+
+          tr.empty{
+            height:150px;
+            cursor: default;
+            td{
+              font-family: "Microsoft YaHei";
+              font-size: 30px;
+              font-style: italic;
+              color:#dcdcdc;
+            }
+          }
+        }
+      }
+      .user-table{
+        .td-op{
+          width:10%;
+        }
+        .td-name{
+          width:20%;
+        }
+        .td-dept{
+          width:20%;
+        }
+        .td-phone{
+          width:25%;
+        }
+        .td-email{
+          width:25%;
+        }
+      }
+      .sales-team-table{
+        .td-op{
+          width:10%;
+        }
+        .td-name{
+          width:20%;
+        }
+        .td-member{
+          width:10%;
+        }
+        .td-admin{
+          width:20%;
+        }
+        .td-createAt{
+          width:20%;
+        }
+        .td-ope{
+          width:20%;
+        }
+
+      }
+      .resign-user-table{
+        .td-name{
+          width:20%;
+        }
+        .td-dept{
+          width:20%;
+        }
+        .td-phone{
+          width:30%;
+        }
+        .td-email{
+          width:30%;
+        }
+
+      }
+      .apply-table{
+        .td-name{
+          width:30%;
+        }
+        .td-dept{
+          width:35%;
+        }
+        .td-applydate{
+          width:35%;
+        }
+
+      }
+
+
+    }
+  }
+  .trOdd{
+    background-color: #fcfcfc;
+  }
+  .trEven{
+    background-color: #fff;
+  }
+}

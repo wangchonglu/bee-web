@@ -1,0 +1,42 @@
+<div class="team_manage">
+    <div class="teamMana_header">
+        <div class="header_operation">
+            <div class="operation_add">
+                <a href="javascript:void(0)" class="op_add_team"  title="创建团队" >
+                    <img src="./modules/foundation/image/operation_add.png" />
+                    <span>创建团队</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="teamMana_content">
+        <table class="teamMana_table beeWebTable">
+            <thead>
+            <tr>
+                <th>团队名称</th>
+                <th>成员数目</th>
+                <th>操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            <% if(it.length > 0){ %>
+            <% for(var i=0;i<it.length;i++){ %>
+            <% var item=it[i];%>
+            <% var flag=i%2;var curClass;%>
+            <% if(flag==0){curClass="trOddBackColor";}else{curClass="trEvenBackColor";} %>
+            <tr class="<%= curClass %>" data-gid="<%=item.id%>" data-index="<%=i%>">
+                <td class="name" data-field="name"><%=item.name%></td>
+                <td class="member" data-field="member"><%=item.memberCount%></td>
+                <td class="tbody_op" data-field="operate">
+                    <a class="op_addmember" href="javascript:void(0)">添加人员</a>
+                </td>
+            </tr>
+            <% } %>
+            <% }else{ %>
+            <tr class="tbody_empty"><td colspan="3">当前没有数据 /(ㄒoㄒ)/~~</td></tr>
+            <% } %>
+            </tbody>
+        </table>
+    </div>
+</div>

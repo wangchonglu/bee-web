@@ -1,0 +1,15 @@
+<div class="viewDetailPop">
+    <table>
+        <% for(var i=0;i<it.length;i++){ %>
+        <% var item=it[i];%>
+        <tr>
+            <th>
+                <%= item.name %>
+            </th>
+            <td>
+                <%= item.value %>
+            </td>
+        </tr>
+        <% } %>
+    </table>
+</div>

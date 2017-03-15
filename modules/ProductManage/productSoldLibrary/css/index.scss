@@ -1,0 +1,82 @@
+$thLineHeight:45px;
+$tdLineHeight:35px;
+
+.product_sales{
+  tr{
+    cursor: pointer;
+  }
+  width: 100%;
+  .prosales_header {
+    width: 100%;
+    height: 76px;
+    background-color: #fff;
+    .header_operation{
+      position: relative;
+      top: 24px;
+      padding-left:20px;
+      height:28px;
+      .operation_sort {
+        float: left;
+        margin-left: 30px;
+        .select_op_sort {
+          color: #6b818b;
+          margin-right: 10px;
+          option {
+            color: #6b818b;
+            font-family: Microsoft YaHei;
+            font-size: 10px;
+          }
+        }
+      }
+
+      .operation_search{
+        float: right;
+        margin-right:30px;
+        border:1px solid #e8e8e8;
+        padding: 0 6px 3px 10px;
+        input{
+          border: none;
+          outline: none;
+          height:16px;
+        }
+        img{
+          height:16px;
+          width:16px;
+          position: relative;
+          top:4px;
+          cursor: pointer;
+        }
+      }
+
+      span,select,option {
+        color: #6b818b;
+        font-family: Microsoft YaHei;
+        font-size: 14px;
+        margin-right:7px;
+      }
+    }
+  }
+
+  .prosales_content{
+    width: 99%;
+    margin:auto;
+    .prosales_table{
+      .prosales_tbody_empty {
+        height: 100px;
+        td{
+          height:100px;
+          line-height: 100px;
+          text-align: center;
+          font-family: Arial;
+        }
+      }
+    }
+    .prosales_pager{
+      width:100%;
+      height:$tdLineHeight;
+      background-color: #e5e5e5;
+    }
+  }
+}
+
+

@@ -1,0 +1,69 @@
+.add_user_pop {
+  width: 100%;
+  text-align: center; }
+  .add_user_pop .users_table {
+    width: 100%;
+    margin-bottom: 20px; }
+    .add_user_pop .users_table table {
+      width: 80%;
+      margin: auto; }
+      .add_user_pop .users_table table tr {
+        height: 45px;
+        line-height: 45px;
+        width: 100%; }
+        .add_user_pop .users_table table tr th {
+          font-weight: normal;
+          font-style: normal;
+          height: 45px;
+          line-height: 45px;
+          text-align: center;
+          width: 30%;
+          color: #6b818b;
+          font-family: Microsoft YaHei;
+          font-size: 14px; }
+        .add_user_pop .users_table table tr td {
+          height: 45px;
+          line-height: 45px;
+          width: 70%;
+          color: #6b818b;
+          font-family: Microsoft YaHei;
+          font-size: 14px;
+          text-align: left; }
+  .add_user_pop .all_users {
+    width: 85%;
+    padding-top: 15px;
+    border-top: 2px solid #6b818b;
+    margin: auto; }
+    .add_user_pop .all_users .user_node {
+      float: left;
+      margin-left: 10px;
+      margin-top: 10px;
+      height: 20px;
+      min-width: 40px;
+      border: 1px solid #eee;
+      -moz-border-radius: 3px;
+      -webkit-border-radius: 3px;
+      border-radius: 3px;
+      cursor: pointer; }
+      .add_user_pop .all_users .user_node .user {
+        float: left;
+        padding-left: 5px;
+        padding-right: 5px;
+        color: #6b818b;
+        font-family: Microsoft YaHei;
+        font-size: 14px; }
+      .add_user_pop .all_users .user_node .delete {
+        float: right;
+        width: 20px;
+        height: 20px;
+        line-height: 20px;
+        text-align: center;
+        color: #000;
+        background-color: #f2f2f2;
+        font-family: Arial;
+        font-size: 10px; }
+      .add_user_pop .all_users .user_node .delete:hover {
+        background-color: #95a0aa;
+        color: #fff; }
+
+/*# sourceMappingURL=addUser.css.map */

@@ -1,0 +1,48 @@
+<div class="editDetail">
+    <table>
+        <tr>
+            <!--<th> 产品号：</th>-->
+            <!--<td><label id="productId"><%=it.productId%></label></td>-->
+            <td colspan="2">
+                <!--<input type="button" value="上传文件" />-->
+                <div id="container">
+                    <a id="productDetailFileUpload" class="upLoad">上传资料</a>
+                </div>
+                <input id="product_upLoadFile" class="upLoadFile" type="file"/>
+            </td>
+        </tr>
+        <tr>
+            <th>介绍：</th>
+            <td>
+                <textarea id="introduce" required><%=it.introduce==undefined?'':it.introduce%></textarea>
+            </td>
+        </tr>
+        <tr id="fileList">
+            <th class="toTop">文件：</th>
+            <td class="fileStyle">
+                <% if(it.files!=undefined){ %>
+                <% for(var i=0; i <
+                it.files.length;i++){ %>
+                <% var item = it.files[i]; %>
+                <div>
+                    <a target="_blank" href="<%=item.fileName==undefined?undefined:item.fileUrl%>"><%=item.fileName==undefined?'':item.fileName%></a>
+                    <img file-id="<%=item.fileName==undefined?undefined:item.fileUrl%>" title="删除" class="deleteDetail"
+                         src="./modules/foundation/image/table_op_delete.png"/>
+                </div>
+                <% } %>
+                <% }else{ %>
+                <div id="noFileData" >
+                    <a>暂无文件</a>
+                </div>
+                <% } %>
+            </td>
+        </tr>
+    </table>
+</div>
+<div  id="fileListTemp" style="display: none;">
+    <div>
+        <a target="_blank" href="{0}">{1}</a><b style="padding-left: 8px;"></b>
+        <img file-id="{1}" title="删除" class="deleteDetail"
+             src="./modules/foundation/image/table_op_delete.png"/>
+    </div>
+</div>

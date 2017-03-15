@@ -1,0 +1,8 @@
+.team-member, .lead-detail {
+  margin: -10px; }
+  .team-member tbody tr, .lead-detail tbody tr {
+    cursor: pointer; }
+  .team-member tbody tr:hover, .lead-detail tbody tr:hover {
+    background-color: #CCCCFF; }
+
+/*# sourceMappingURL=teamMember.css.map */

@@ -1,0 +1,83 @@
+$thLineHeight:45px;
+$tdLineHeight:35px;
+
+@mixin borderRadius($size:1px) {
+  -moz-border-radius: $size;
+  -webkit-border-radius: $size;
+  border-radius: $size;
+  border: 1px solid #e5e5e5;
+}
+
+@mixin font-set($size:14px) {
+  color: #000;
+  font-family: Microsoft YaHei;
+  font-size: $size;
+}
+
+.leads_pool{
+  width: 100%;
+  .leadsPool_header {
+    width: 99%;
+    margin:auto;
+    padding: 10px 0 10px 0;
+    background-color: #fff;
+
+    .display_info{
+      float: left;
+      margin-left: 10px;
+      padding: 10px;
+      min-width: 130px;
+      text-align: center;
+      @include borderRadius(5px);
+      .title{
+        display: block;
+        @include font-set(15px);
+      }
+      div{
+        margin-top: 20px;
+        @include font-set(15px);
+
+        span{
+          font-family: Microsoft YaHei;
+          font-size: 19px;
+          color: red;
+          font-weight: bold;
+          margin: 5px;
+        }
+      }
+    }
+
+    .operation_info{
+      float: left;
+      margin-left: 20px;
+
+      input{
+        background-color: #4cb1e0;
+        color: #fff;
+      }
+    }
+  }
+
+  .leadsPool_content{
+    width: 99%;
+    margin:auto;
+    .leadsPool_table{
+      .tbody_empty {
+        height: 100px;
+        td{
+          height:100px;
+          line-height: 100px;
+          text-align: center;
+          font-family: Arial;
+        }
+      }
+    }
+    .leadsPool_pager{
+      width:100%;
+      height:$tdLineHeight;
+      background-color: #e5e5e5;
+    }
+  }
+}
+
+

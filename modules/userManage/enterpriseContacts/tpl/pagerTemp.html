@@ -1,0 +1,20 @@
+<% if(it.length > 0){ %>
+<% for(var i=0;i<it.length;i++){ %>
+<% var item=it[i];%>
+<% var flag=i%2;var curClass;%>
+<% if(flag==0){curClass="trOddBackColor";}else{curClass="trEvenBackColor";} %>
+<tr class="<%= curClass %>" data-uid="<%=item.uid %>">
+    <td class="tbody_td" data-field="name"><%=item.name%></td>
+    <td class="tbody_td" data-field="dept" data-did="<%=item.dep_id%>"><%=item.dep_name%></td>
+    <td class="tbody_td" data-field="phone"><%=item.telphone%></td>
+    <td class="tbody_td" data-field="email"><%=item.email%></td>
+    <td class="tbody_op" data-field="operate">
+        <% if(item.flag !=2){ %>
+        <a class="list_img_edit" href="javascript:void(0)">认证</a>
+        <a class="list_img_delete" href="javascript:void(0)">驳回</a>
+        <% }%>
+        <a class="peo_detail_info" href="javascript:void(0)">详情</a>
+    </td>
+</tr>
+<% } %>
+<% } %>

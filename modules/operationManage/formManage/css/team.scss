@@ -1,0 +1,44 @@
+.form-team{
+  width: 100%;
+  height:100%;
+  .teamHeader{
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    .title{
+      float: left;
+      font-family: "Microsoft YaHei";
+      font-size: 15px;
+      font-weight: bold;
+      color: #000;
+    }
+    .allList{
+      float: right;
+      font-family: "Microsoft YaHei";
+      font-size: 13px;
+      color: #000;
+      a{
+        font-family: Microsoft YaHei;
+        font-size: 13px;
+        color: #000;
+        text-decoration: none;
+      }
+      a:hover{
+        color:red;
+      }
+
+    }
+  }
+
+  .form-team-table{
+    width: 100%;
+    tbody{
+      tr{
+        cursor: pointer;
+      }
+      tr:hover{
+        background-color: #CCCCFF;
+      }
+    }
+  }
+}

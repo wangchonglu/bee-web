@@ -1,0 +1,195 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+.wrapper{
+    min-height:100%;
+    max-width:640px;
+    margin:0 auto;
+    position:relative;
+    float: left;
+   }
+
+.overflow{
+    overflow:hidden;
+   }
+
+
+.header_style{
+    width: 100%;
+    position: relative;
+    border-bottom: 1px solid #DCDCDB;
+    background: #fcfcfc;
+    z-index: 1000;
+    text-align: center;
+    overflow: hidden;
+}
+
+.header_style-span{
+    top: 0;
+    left: 0;
+    line-height: 45px;
+    width: 100%;
+    text-align: center;
+    z-index: 2;
+    color: #88BE4E;
+    font-size: 17px;
+    font-weight: 400;
+
+}
+
+.content{
+    margin-top: 0;
+    background-color: #FFFFFF;
+}
+
+.whiteLine{
+    border-bottom: 1px solid #d8d8d8;
+    line-height: 52px;
+    font-size: 15px;
+    position: relative;
+    width: 100%;
+    padding:0 ;
+    overflow: hidden;
+}
+
+.tex-btn{
+    border: none;
+    color: #FFF;
+    font-size: 15px;
+    width: 100%;
+    height: 100%;
+    background: #88BE4E;
+}
+
+.commit-btn{
+    width:90%;
+    height: 45px;
+    border-radius: 5px;
+    margin: 24px auto 20px ;
+    overflow: hidden;
+}
+
+.img-sty{
+    max-width: 170px;
+    max-height: 100px;
+    margin-top: 15px;
+    vertical-align: middle;
+}
+
+.whiteLine2{
+    line-height: 52px;
+    font-size: 15px;
+    position: relative;
+    width: 100%;
+    padding: 5px 0;
+    overflow: hidden;
+}
+
+.wrapper2{
+    min-height:100%;
+    max-width:640px;
+    margin: 0 auto;
+    top: 0px;
+    float: left;
+    background-color: #ffffff;
+    text-align: center;
+}
+
+.wrapper label{
+    display: block;
+    width: 32%;
+    text-align: right;
+    float: left;
+}
+
+
+.wrapper img{
+    display: block;
+    text-align: left;
+    float: left;
+}
+
+.whiteLine2 textarea{
+    width: 196px;
+    height: 100px;
+    vertical-align: middle;
+}
+
+.wrapper2 input{
+    width: 190px;
+    height: 25px;
+    border: 1px solid #a9a9a9;
+    padding: 2px 5px;
+}
+
+.select-style{
+    width: 200px;
+    height: 33px;
+    padding: 3px 5px;
+}
+
+.btn2{
+    text-align: center;
+}
+
+.confirm-btn{
+    border: none;
+    color: #FFF;
+    font-size: 15px;
+    width: 100%;
+    height: 100%;
+    background: #88BE4E;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+
+
+
+.nav-return {
+    float: left;
+    width: 70px;
+    font-size: 17px;
+    color: #88BE4E;
+    background: url(../icon_03.png) 15px 50% no-repeat;
+    background-size: 9px auto;
+    text-indent: 26px;
+    line-height: 45px;
+}
+
+
+
+.top-style{
+    width: 100%;
+    position: relative;
+    border-bottom: 1px solid #DCDCDB;
+    background: #fcfcfc;
+    z-index: 1000;
+    overflow: hidden;
+
+}
+
+
+.formNum{
+    display: none;
+}
+
+.father{
+    width: 100%;
+    max-width: 640px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.father-content{
+    width: 1300px;
+    margin: 0 auto;
+}
+
+.wrapper2-con{
+    overflow: hidden;
+    margin: auto;
+    width: 100%;
+}

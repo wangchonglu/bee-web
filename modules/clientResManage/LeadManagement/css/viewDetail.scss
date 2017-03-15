@@ -1,0 +1,33 @@
+$fontName:Microsoft YaHei;
+
+@mixin borderRadius($size:1px) {
+  -moz-border-radius: $size;
+  -webkit-border-radius: $size;
+  border-radius: $size;
+}
+
+.viewDetailPop{
+  width: 90%;
+  margin: auto;
+  table{
+    width: 100%;
+    tr{
+      width: 100%;
+      height: 40px;
+      th{
+        width: 20%;
+        text-align: center;
+        font-family:$fontName ;
+        font-size: 13px;
+      }
+
+      td{
+        width: 70%;
+        text-align: left;
+        font-family:$fontName ;
+        font-size: 13px;
+        padding: 5px 0 5px 0;
+      }
+    }
+  }
+}

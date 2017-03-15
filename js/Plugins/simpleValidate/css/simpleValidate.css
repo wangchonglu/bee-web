@@ -1,0 +1,26 @@
+.validate-box{
+    position: absolute;
+    width: 100%;
+    line-height: normal;
+}
+.validate-box .validate-msg{
+    position: relative;
+    top:3px;
+    padding:6px;
+    padding:5px 10px;
+    margin-left:15px;
+    border:1px solid #F8D19F;
+    border-radius:3px;
+    background-color:#FDFBB8;
+    color:#D07807;
+    font-size:12px;
+
+}
+.validate-box .validate-msg:before, .validate-box .validate-msg before,
+.validate-box .validate-msg:after, .validate-box .validate-msg after{
+    content:attr(data-jiantou);
+    position:absolute;
+    top: 2px;
+}
+.validate-box .validate-msg:before, .validate-box .validate-msg before{color:#F8D19F; left:-10px;}
+.validate-box .validate-msg:after, .validate-box .validate-msg after{color:#FDFBB8; left:-8px;}

@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,iDAAgD;EAC9C,KAAK,EAAE,IAAI;;AAEb,yBAAyB;EACvB,MAAM,EAAE,IAAI;;AAEd,qDAAqD;EACnD,KAAK,EAAE,GAAG;;AAEZ,wDAAwD;EACtD,KAAK,EAAE,GAAG",
+"sources": ["popTable.scss"],
+"names": [],
+"file": "popTable.css"
+}

@@ -1,0 +1,21 @@
+.viewDetailPop {
+  width: 90%;
+  margin: auto; }
+  .viewDetailPop table {
+    width: 100%; }
+    .viewDetailPop table tr {
+      width: 100%;
+      height: 40px; }
+      .viewDetailPop table tr th {
+        width: 20%;
+        text-align: center;
+        font-family: Microsoft YaHei;
+        font-size: 13px; }
+      .viewDetailPop table tr td {
+        width: 70%;
+        text-align: left;
+        font-family: Microsoft YaHei;
+        font-size: 13px;
+        padding: 5px 0 5px 0; }
+
+/*# sourceMappingURL=viewDetail.css.map */

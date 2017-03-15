@@ -1,0 +1,38 @@
+<div class="lead-assigned">
+    <div class="content">
+        <table class="beeWebTable">
+            <thead>
+            <tr>
+                <th>团队名称</th>
+                <th>成员数目</th>
+                <th>线索总数</th>
+                <th>未分配</th>
+                <th>已分配</th>
+                <!--<th>操作</th>-->
+            </tr>
+            </thead>
+            <tbody>
+            <% if(it.length > 0){ %>
+            <% for(var i=0;i<it.length;i++){ %>
+            <% var item=it[i];%>
+            <% var flag=i%2;var curClass;%>
+            <% if(flag==0){curClass="trOddBackColor";}else{curClass="trEvenBackColor";} %>
+            <tr class="<%= curClass %> everyTeam" data-id="<%=item.id%>" data-index="<%=i%>" title="点击查看详情">
+                <td class="name" data-field="name"><%= item.name %></td>
+                <td class="member" data-field="member"><%= item.memberCount %></td>
+                <td class="all" data-field="all"><%= item.allCount %></td>
+                <td class="remain" data-field="remain"><%= item.uncaimedCount %></td>
+                <td class="use" data-field="use"><%= item.claimedCount %></td>
+                <!--<td class="tbody_op" data-field="operate">-->
+                    <!--<a class="op_detail" href="javascript:void(0)">线索详情</a>-->
+                <!--</td>-->
+            </tr>
+            <% } %>
+            <% }else{ %>
+            <tr class="tbody_empty"><td colspan="5">No Data</td></tr>
+            <% } %>
+            </tbody>
+        </table>
+    </div>
+</div>
+

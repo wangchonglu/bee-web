@@ -1,0 +1,1335 @@
+<style>
+    body, html, * {
+        padding: 0px;
+        margin: 0px;
+    }
+
+    .mfy-step {
+        position: relative;
+        width: 1000px;
+        margin: 0px auto;
+    }
+
+    .mfy-step header {
+
+    }
+
+    .mfy-step .header-step-list {
+    }
+
+    .mfy-step .header-step-list .header-step {
+        position: relative;
+        z-index: 102;
+        cursor: pointer;
+    }
+
+    .mfy-step .steps-line {
+        position: absolute;
+        top: 23px;
+        height: 5px;
+        width: 100%;
+        background-color: #ced1d6;
+        z-index: 100;
+    }
+
+    .mfy-step .steps-line-active {
+        position: absolute;
+        top: 23px;
+        height: 5px;
+        z-index: 101;
+        background-color: #5293c4;
+    }
+
+    .mfy-step header .header-step {
+        float: left;
+    }
+
+    .mfy-step header .default {
+        background-color: #fff;
+        border: 5px solid #ced1d6;
+        border-radius: 100%;
+        color: #546474;
+        display: inline-block;
+        font-size: 15px;
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+        width: 40px;
+    }
+
+    .mfy-step header .stepTitle {
+        position: absolute;
+        right: -3px;
+        top: 56px;
+        color: #444444;
+        font-size: 13px;
+        display: block;
+        width: 54px;
+    }
+
+    .mfy-step header .active {
+        border-color: #5293c4;
+    }
+
+    .mfy-step .steps-contentList {
+        margin: 35px auto 20px;
+        border-top: solid 1px #eee;
+        height: 400px;
+        overflow: hidden;
+    }
+
+    .mfy-step .steps-contentList .steps-content {
+        height: 400px;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .mfy-step .steps-contentList .hide {
+
+    }
+
+    .mfy-step .footer-actions .mfy-steps-pre,
+    .mfy-step .footer-actions .mfy-steps-next,
+    .mfy-step .footer-actions .mfy-steps-ok {
+        border-radius: 5px;
+        outline: none;
+        color: #fff;
+        width: 100px;
+        height: 45px;
+        font-family: Microsoft YaHei;
+        font-size: 14px;
+        cursor: pointer;
+    }
+
+    .mfy-step .footer-actions .mfy-steps-pre {
+        background-color: #abbac3;
+        border-color: #abbac3;
+        border: 3px solid #fff;
+    }
+
+    .mfy-step .footer-actions .mfy-steps-next, .mfy-step .footer-actions .mfy-steps-ok {
+        background-color: #5293c4;
+        border-color: #5293c4;
+        border: 3px solid #fff;
+    }
+
+    .mfy-step header .stepTitle {
+        position: absolute;
+        right: -10px;
+        top: 56px;
+        color: #444444;
+        font-size: 13px;
+        display: block;
+        width: 70px;
+        text-align: center;
+    }
+
+    .footer-actions {
+        float: right;
+    }
+</style>
+<div class="new-product-container">
+    <div class="mfy-step">
+        <header>
+            <div class="header-step-list">
+                <div class="header-step">
+                    <span class="default active">1</span>
+                    <span class="stepTitle">产品概要</span>
+                </div>
+                <div class="header-step">
+                    <span class="default">2</span>
+                    <span class="stepTitle">产品要素</span>
+                </div>
+                <div class="header-step">
+                    <span class="default">3</span>
+                    <span class="stepTitle">申赎要素</span>
+                </div>
+                <div class="header-step">
+                    <span class="default">4</span>
+                    <span class="stepTitle">发行方案</span>
+                </div>
+                <div class="header-step">
+                    <span class="default">5</span>
+                    <span class="stepTitle">产品角色</span>
+                </div>
+            </div>
+            <div class="steps-line"></div>
+            <div class="steps-line-active"></div>
+        </header>
+        <div style="clear:both"></div>
+        <article class="steps-contentList">
+            <div class="steps-contentBox">
+                <div class="steps-content">
+
+                    <div class="new-product-step" id="new-product-step1">
+                        <div style="display:none">
+                            <label>产品ID:</label>
+                            <label id="productID"><%=it.base==undefined?'':it.base.id%></label>
+                        </div>
+                        <div class="new-product-column-field">
+                            <div class="new-product-column-label">
+                                <label>产品名称：</label>
+                            </div>
+                            <div class="new-product-column-value">
+                                <input type="text" required id="new-productName"
+                                       value="<%=it.base==undefined?'':it.base.productName%>"/><span
+                                    class="new-must">*</span>
+                            </div>
+                        </div>
+                        <div class="new-clear-float"></div>
+                        <div class="new-product-column-field">
+                            <div class="new-product-column-label">
+                                <label>产品简称：</label>
+                            </div>
+                            <div class="new-product-column-value">
+                                <input type="text" required id="new-shortName"
+                                       value="<%=it.base==undefined?'':it.base.shortName%>"/><span
+                                    class="new-must">*</span>
+                            </div>
+                        </div>
+                        <div class="new-clear-float"></div>
+                        <div class="new-product-column-field">
+                            <div class="new-product-column-label">
+                                <label>产品类型：</label>
+                            </div>
+                            <div class="new-product-column-value">
+                                <div id="new-productType">
+                                    信托<input type="radio" value="1" <%=it.base == undefined || (it.base != undefined &&
+                                    it.base.productType=='1') ? 'checked="checked"':'' %> name="new-productType"/>
+                                    资产<input type="radio" value="2" <%=it.base != undefined &&
+                                    it.base.productType=='2'? 'checked="checked"':'' %> name="new-productType"/>
+                                    私募<input type="radio" value="3" <%=it.base != undefined &&
+                                    it.base.productType=='3'? 'checked="checked"':'' %> name="new-productType"/>
+                                    其它<input type="radio" value="4" <%=it.base != undefined &&
+                                    it.base.productType=='4'? 'checked="checked"':'' %> name="new-productType"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="new-clear-float"></div>
+                        <div class="new-product-column-field">
+                            <div class="new-product-column-label">
+                                <label>收益类型：</label>
+                            </div>
+                            <div class="new-product-column-value">
+                                <div id="new-benefitType">
+                                    固定<input type="radio"
+                                    <%=it.base == undefined || (it.base != undefined && it.base.benefitType=='1') ?
+                                    'checked="checked"':'' %>
+                                    value="1" name="new-benefitType"/>
+                                    浮动<input type="radio" <%=it.base != undefined &&
+                                    it.base.benefitType=='2' ?
+                                    'checked="checked"':'' %> value="2" name="new-benefitType"/>
+                                    固定+浮动<input type="radio" <%=it.base != undefined &&
+                                    it.base.benefitType=='3' ?
+                                    'checked="checked"':'' %> value="3" name="new-benefitType"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="new-clear-float"></div>
+                        <div class="new-product-column-field">
+                            <div class="new-product-column-label">
+                                <label>投向：</label>
+                            </div>
+                            <div class="new-product-column-value">
+                                <select id="new-investType">
+                                    <option value="1"
+                                    <%=it.base!=undefined && it.base.investType=='1'? 'selected="selected"':'' %>
+                                    >房地产</option>
+                                    <option value="2"
+                                    <%=it.base!=undefined && it.base.investType=='3'? 'selected="selected"':'' %>
+                                    >工商企业</option>
+                                    <option value="3"
+                                    <%=it.base!=undefined && it.base.investType=='4'? 'selected="selected"':'' %>
+                                    >PE/VC</option>
+                                    <option value="4"
+                                    <%=it.base!=undefined && it.base.investType=='5'? 'selected="selected"':'' %>
+                                    >新三板</option>
+                                    <option value="5"
+                                    <%=it.base!=undefined && it.base.investType=='6'? 'selected="selected"':'' %>
+                                    >打新</option>
+                                    <option value="6"
+                                    <%=it.base!=undefined && it.base.investType=='7'? 'selected="selected"':'' %>
+                                    >定增</option>
+                                    <option value="7"
+                                    <%=it.base!=undefined && it.base.investType=='8'? 'selected="selected"':'' %>
+                                    >二级市场－》股票型</option>
+                                    <option value="8"
+                                    <%=it.base!=undefined && it.base.investType=='9'? 'selected="selected"':'' %>
+                                    >其它</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="new-clear-float"></div>
+                        <div class="new-product-column-field">
+                            <div class="new-product-column-label">
+                                <label>计价方式：</label>
+                            </div>
+                            <div class="new-product-column-value">
+                                <select id="new-currency">
+                                    <option value="1"
+                                    <%=it.base!=undefined && it.base.investType=='1'? 'selected="selected"':'' %>
+                                    >人民币</option>
+                                    <option value="2"
+                                    <%=it.base!=undefined && it.base.investType=='3'? 'selected="selected"':'' %>
+                                    >美元</option>
+                                    <option value="3"
+                                    <%=it.base!=undefined && it.base.investType=='4'? 'selected="selected"':'' %>
+                                    >欧元</option>
+                                    <option value="4"
+                                    <%=it.base!=undefined && it.base.investType=='5'? 'selected="selected"':'' %>
+                                    >澳币</option>
+                                    <option value="5"
+                                    <%=it.base!=undefined && it.base.investType=='6'? 'selected="selected"':'' %>
+                                    >加币</option>
+                                    <option value="6"
+                                    <%=it.base!=undefined && it.base.investType=='7'? 'selected="selected"':'' %>
+                                    >日元</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="new-clear-float"></div>
+
+                    </div>
+
+                </div>
+                <div class="steps-content">
+                    <div id="new-product-step2">
+                        <div class="new-product-step" id="new-product-step2-fixed">
+
+                            <div class="new-clear-float"></div>
+                            <div class="new-product-column-field">
+                                <div class="new-product-column-label">
+                                    <label>融资方：</label>
+                                </div>
+                                <div class="new-product-column-value">
+                                    <input type="text" required id="new-financingParty"
+                                           value="<%=it.base==undefined?'':it.base.financingParty%>"/><span
+                                        class="new-must">*</span>
+                                </div>
+                            </div>
+                            <div class="new-clear-float"></div>
+                            <div class="new-product-column-field">
+                                <div class="new-product-column-label">
+                                    <label>管理人：</label>
+                                </div>
+                                <div class="new-product-column-value">
+                                    <input type="text" required id="new-investmentManager"
+                                           value="<%=it.base==undefined?'':it.base.investmentManager%>"/><span
+                                        class="new-must">*</span>
+                                </div>
+                            </div>
+                            <div class="new-clear-float"></div>
+                            <div class="new-product-column-field">
+                                <div class="new-product-column-label">
+                                    <label>产品规模：</label>
+                                </div>
+                                <div class="new-product-column-value unit">
+                                    <input type="text" required validate-reg="^[0-9]*[1-9][0-9]*$" placeholder="单位为万"
+                                           id="new-raiseTotal"
+                                           value="<%=it.base == undefined ? '' : it.base.raiseTotal %>"/>万<span
+                                        class="new-must">*</span>
+                                </div>
+                            </div>
+                            <div class="new-clear-float"></div>
+                            <div class="new-product-column-field">
+                                <div class="new-product-column-label">
+                                    <label>成立规模：</label>
+                                </div>
+                                <div class="new-product-column-value unit">
+                                    <input id="new-holdTotal" placeholder="单位为万"
+                                           type="text"
+                                           value="<%=it.scheme==undefined?'':it.scheme.holdTotal%>"/>万
+                                </div>
+                            </div>
+                            <div class="new-clear-float"></div>
+                            <div class="new-product-column-field">
+                                <div class="new-product-column-label ">
+                                    <label>产品期限：</label>
+                                </div>
+                                <div class="new-product-column-value unit">
+                                    <input type="text" required validate-reg="^[0-9]*[1-9][0-9]*$" placeholder="单位为月"
+                                           id="new-investmentDeadline"
+                                           value="<%=it.base==undefined?'':it.base.investmentDeadline%>"/>月<span
+                                        class="new-must">*</span>
+                                </div>
+                            </div>
+                            <div class="new-clear-float"></div>
+                            <div class="new-product-column-field">
+                                <div class="new-product-column-label">
+                                    <label>产品期限说明：</label>
+                                </div>
+                                <div class="new-product-column-value">
+                                    <textarea id="new-investmentDeadlineRemark"><%=it.base==undefined?'':it.base.investmentDeadlineRemark%></textarea>
+                                </div>
+                            </div>
+                            <div class="new-clear-float"></div>
+                            <div class="new-product-column-field">
+                                <div class="new-product-column-label">
+                                    <label>资金托管行：</label>
+                                </div>
+                                <div class="new-product-column-value">
+                                    <input type="text" required id="new-trusteeBank"
+                                           value="<%=it.base==undefined?'':it.base.trusteeBank%>"/><span
+                                        class="new-must">*</span>
+                                </div>
+                            </div>
+                            <div class="new-clear-float"></div>
+                            <div class="new-product-column-field">
+                                <div class="new-product-column-label">
+                                    <label>预期收益率：</label>
+                                </div>
+                                <div class="new-product-column-value">
+                                    <% if(it.base!=undefined && it.base.annualBenefitRate.length>0){ %>
+                                    <% for(var i=0;i
+                                    <it.base.annualBenefitRate.length
+                                            ;i++){ %>
+                                        <% var item=it.base.annualBenefitRate[i];%>
+                                        <div class="new-product-archive">
+                                            <input validate-group="annualBenefitRate" smaller placeholder="开始金额"
+                                                   required validate-reg="^[0-9]*[1-9][0-9]*$"
+                                                   value="<%=item.start==undefined?'':item.start%>"/>
+                                            ~
+                                            <input validate-group="annualBenefitRate" bigger
+                                                   validate-group-msg="结束金额需要比开始金额大" placeholder="结束金额" required
+                                                   validate-reg="^[0-9]*[1-9][0-9]*$"
+                                                   value="<%=item.end==undefined?'':item.end%>"/>
+                                            <input placeholder="收益率" required validate-reg="^[0-9]*[1-9][0-9]*$"
+                                                   value="<%=item.annual==undefined?'':item.annual%>"
+                                                   class="new-product-years"/> %
+                                            <a class="new-product-annual-addTemp" title="新增">新增</a>
+                                            <a class="new-product-annual-removeTemp" title="移除">移除</a>
+                                            <span class="new-must">*</span>
+                                        </div>
+                                        <% } %>
+                                        <% }else{ %>
+                                        <div class="new-product-archive">
+                                            <input validate-group="annualBenefitRate" smaller required
+                                                   validate-reg="^[0-9]*[1-9][0-9]*$" placeholder="开始金额"/>
+                                            ~
+                                            <input validate-group="annualBenefitRate" bigger
+                                                   validate-group-msg="结束金额需要比开始金额大" required
+                                                   validate-reg="^[0-9]*[1-9][0-9]*$" placeholder="结束金额"/>
+                                            <input required validate-reg="^[0-9]*[1-9][0-9]*$" placeholder="收益率"
+                                                   class="new-product-years"/> %
+                                            <a class="new-product-annual-addTemp" title="新增">新增</a>
+                                            <a class="new-product-annual-removeTemp" title="移除">移除</a>
+                                            <span class="new-must">*</span>
+                                        </div>
+                                        <% } %>
+
+                                </div>
+
+
+                            </div>
+                            <div class="new-product-column-field">
+                                <div class="new-product-column-label">
+                                    <label>付息方式：</label>
+                                </div>
+                                <div class="new-product-column-value">
+                                    <input type="text" required id="new-interestPayType"
+                                           value="<%=it.fixed==undefined ? '':it.fixed.interestPayType%>"/><span
+                                        class="new-must">*</span>
+                                </div>
+                            </div>
+                            <div class="new-clear-float"></div>
+                            <div class="new-product-column-field">
+                                <div class="new-product-column-label">
+                                    <label>还款来源：</label>
+                                </div>
+                                <div class="new-product-column-value">
+                                    <textarea id="new-repaymentSource"><%=it.base==undefined?'':it.base.repaymentSource%></textarea>
+
+                                </div>
+                            </div>
+                            <div class="new-clear-float"></div>
+                            <div class="new-product-column-field">
+                                <div class="new-product-column-label">
+                                    <label>增信措施：</label>
+                                </div>
+                                <div class="new-product-column-value">
+                                    <textarea
+                                            id="new-trustMeasure"><%=it.base==undefined?'':it.base.trustMeasure%></textarea>
+                                </div>
+                            </div>
+                            <div class="new-clear-float"></div>
+
+                        </div>
+                        <div class="new-product-step" id="new-product-step2-float" style="display:none">
+
+
+                            <div class="new-clear-float"></div>
+                            <div class="new-product-column-field">
+                                <div class="new-product-column-label">
+                                    <label>管理人：</label>
+                                </div>
+                                <div class="new-product-column-value">
+                                    <input type="text" required id="new-float-investmentManager"
+                                           value="<%=it.base==undefined?'':it.base.investmentManager%>"/><span
+                                        class="new-must">*</span>
+                                </div>
+                            </div>
+                            <div class="new-clear-float"></div>
+                            <div class="new-product-column-field">
+                                <div class="new-product-column-label">
+                                    <label>产品规模：</label>
+                                </div>
+                                <div class="new-product-column-value unit">
+                                    <input type="text" required validate-reg="^[0-9]*[1-9][0-9]*$"
+                                           placeholder="单位为万"
+                                           id="new-float-raiseTotal"
+                                           value="<%=it.base == undefined ? '' : it.base.raiseTotal %>"/>万<span
+                                        class="new-must">*</span>
+                                </div>
+                            </div>
+
+                            <div class="new-clear-float"></div>
+                            <div class="new-product-column-field">
+                                <div class="new-product-column-label">
+                                    <label>成立规模：</label>
+                                </div>
+                                <div class="new-product-column-value unit">
+                                    <input id="new-float-holdTotal" validate-reg="^[0-9]*[1-9][0-9]*$"
+                                           placeholder="单位为万"
+                                           type="text"
+                                           value="<%=it.scheme==undefined?'':it.scheme.holdTotal%>"/>万
+                                </div>
+                            </div>
+                            <div class="new-clear-float"></div>
+                            <div class="new-product-column-field">
+                                <div class="new-product-column-label">
+                                    <label>产品存续期限：</label>
+                                </div>
+                                <div class="new-product-column-value unit">
+                                    <input type="text" id="new-float-duration" placeholder="单位为月"
+                                           value="<%=it.floating==undefined?'':it.floating.duration%>"/>月
+                                </div>
+                            </div>
+                            <div class="new-clear-float"></div>
+                            <div class="new-product-column-field">
+                                <div class="new-product-column-label">
+                                    <label>产品期限说明：</label>
+                                </div>
+                                <div class="new-product-column-value">
+                                    <textarea id="new-float-investmentDeadlineRemark"><%=it.base==undefined?'':it.base.investmentDeadlineRemark%></textarea>
+                                </div>
+                            </div>
+                            <div class="new-clear-float"></div>
+
+                            <div class="new-product-column-field">
+                                <div class="new-product-column-label">
+                                    <label>资金托管行：</label>
+                                </div>
+                                <div class="new-product-column-value">
+                                    <input type="text" required id="new-float-trusteeBank"
+                                           value="<%=it.base==undefined?'':it.base.trusteeBank%>"/><span
+                                        class="new-must">*</span>
+                                </div>
+                            </div>
+                            <div class="new-clear-float"></div>
+
+                            <div class="new-product-column-field">
+                                <div class="new-product-column-label">
+                                    <label>分红方式：</label>
+                                </div>
+                                <div class="new-product-column-value">
+                                    <input type="text" required id="new-float-dividendMode"
+                                           value="<%=it.base==undefined?'':it.base.trusteeBank%>"/><span
+                                        class="new-must">*</span>
+                                </div>
+                            </div>
+                            <div class="new-clear-float"></div>
+
+                            <div class="new-product-column-field">
+                                <div class="new-product-column-label">
+                                    <label>结构化：</label>
+                                </div>
+                                <div class="new-product-column-value">
+                                    <div id="new-float-structuredness">
+                                        是<input type="radio" checked value="1" name="structuring"/>
+                                        否<input type="radio" value="0" name="structuring"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="new-clear-float"></div>
+
+
+                            <div class="new-product-column-field">
+                                <div class="new-product-column-label">
+                                    <label>管理人介绍：</label>
+                                </div>
+                                <div class="new-product-column-value">
+                                    <textarea id="new-float-managementIntroduction"></textarea>
+                                </div>
+                            </div>
+                            <div class="new-clear-float"></div>
+
+                            <div class="new-product-column-field">
+                                <div class="new-product-column-label">
+                                    <label>基金经理介绍：</label>
+                                </div>
+                                <div class="new-product-column-value">
+                                    <textarea id="new-float-managerIntroduction"></textarea>
+                                </div>
+                            </div>
+                            <div class="new-clear-float"></div>
+
+                            <div class="new-product-column-field">
+                                <div class="new-product-column-label">
+                                    <label>预警线：</label>
+                                </div>
+                                <div class="new-product-column-value">
+                                    <input id="new-float-warningLine" type="text"/>
+                                </div>
+                            </div>
+                            <div class="new-clear-float"></div>
+
+                            <div class="new-product-column-field">
+                                <div class="new-product-column-label">
+                                    <label>止损线：</label>
+                                </div>
+                                <div class="new-product-column-value">
+                                    <input id="new-float-stopLine" type="text"/>
+                                </div>
+                            </div>
+                            <div class="new-clear-float"></div>
+
+
+                        </div>
+                        <div class="new-product-step" id="new-product-step2-floatAndFixed" style="display:none">
+
+                            <div class="new-clear-float"></div>
+                            <div class="new-product-column-field">
+                                <div class="new-product-column-label">
+                                    <label>融资方：</label>
+                                </div>
+                                <div class="new-product-column-value">
+                                    <input type="text" id="new-floatAndFixed-financingParty"
+                                           value="<%=it.base==undefined?'':it.base.financingParty%>"/>
+                                </div>
+                            </div>
+                            <div class="new-clear-float"></div>
+                            <div class="new-product-column-field">
+                                <div class="new-product-column-label">
+                                    <label>管理人：</label>
+                                </div>
+                                <div class="new-product-column-value">
+                                    <input type="text" required id="new-floatAndFixed-investmentManager"
+                                           value="<%=it.base==undefined?'':it.base.investmentManager%>"/><span
+                                        class="new-must">*</span>
+                                </div>
+                            </div>
+                            <div class="new-clear-float"></div>
+                            <div class="new-product-column-field">
+                                <div class="new-product-column-label">
+                                    <label>产品优先级规模：</label>
+                                </div>
+                                <div class="new-product-column-value unit">
+                                    <input id="nwe-floatAndFixed-PriorityScale" type="text" required validate-reg="^[0-9]*[1-9][0-9]*$" placeholder="单位为万"
+                                           value="<%=it.base == undefined ? '' : it.base.raiseTotal %>"/>万<span
+                                        class="new-must">*</span>
+                                </div>
+                            </div>
+                            <div class="new-clear-float"></div>
+                            <div class="new-product-column-field">
+                                <div class="new-product-column-label">
+                                    <label>产品劣后级规模：</label>
+                                </div>
+                                <div class="new-product-column-value unit">
+                                    <input type="text" required validate-reg="^[0-9]*[1-9][0-9]*$" placeholder="单位为万"
+                                           id="nwe-floatAndFixed-InferiorScale"
+                                           value="<%=it.base == undefined ? '' : it.base.raiseTotal %>"/>万<span
+                                        class="new-must">*</span>
+                                </div>
+                            </div>
+                            <div class="new-clear-float"></div>
+                            <div class="new-product-column-field">
+                                <div class="new-product-column-label unit">
+                                    <label>成立规模：</label>
+                                </div>
+                                <div class="new-product-column-value unit">
+                                    <input id="new-floatAndFixed-holdTotal" validate-reg="^[0-9]*[1-9][0-9]*$"
+                                           placeholder="单位为万"
+                                           type="text"
+                                           value="<%=it.scheme==undefined?'':it.scheme.holdTotal%>"/>万
+                                </div>
+                            </div>
+                            <div class="new-clear-float"></div>
+                            <div class="new-product-column-field">
+                                <div class="new-product-column-label">
+                                    <label>产品优先级期限：</label>
+                                </div>
+                                <div class="new-product-column-value unit">
+                                    <input type="text" required id="new-floatAndFixed-PriorityTerm" placeholder="单位为月"
+                                           value="<%=it.floating==undefined?'':it.floating.duration%>"/>月<span
+                                        class="new-must">*</span>
+                                </div>
+                            </div>
+                            <div class="new-clear-float"></div>
+                            <div class="new-product-column-field">
+                                <div class="new-product-column-label">
+                                    <label>产品劣后级期限：</label>
+                                </div>
+                                <div class="new-product-column-value unit">
+                                    <input type="text" required id="new-floatAndFixed-InferiorTerm" placeholder="单位为月"
+                                           value="<%=it.floating==undefined?'':it.floating.duration%>"/>月<span
+                                        class="new-must">*</span>
+                                </div>
+                            </div>
+                            <div class="new-clear-float"></div>
+                            <div class="new-product-column-field">
+                                <div class="new-product-column-label">
+                                    <label>产品期限说明：</label>
+                                </div>
+                                <div class="new-product-column-value">
+                                    <textarea id="new-floatAndFixed-investmentDeadlineRemark"><%=it.base==undefined?'':it.base.investmentDeadlineRemark%></textarea>
+                                </div>
+                            </div>
+                            <div class="new-clear-float"></div>
+                            <div class="new-product-column-field">
+                                <div class="new-product-column-label">
+                                    <label>资金托管行：</label>
+                                </div>
+                                <div class="new-product-column-value">
+                                    <input type="text" required id="new-floatAndFixed-trusteeBank"
+                                           value="<%=it.base==undefined?'':it.base.trusteeBank%>"/><span
+                                        class="new-must">*</span>
+                                </div>
+                            </div>
+                            <div class="new-clear-float"></div>
+                            <div class="new-product-column-field">
+                                <div class="new-product-column-label">
+                                    <label>优先级预期收益率：</label>
+                                </div>
+                                <div class="new-product-column-value unit">
+                                    <input type="text" required id="new-floatAndFixed-ExpectedRateOfReturnForPriority"
+                                           value="<%=it.base==undefined?'':it.base.trusteeBank%>"/>%<span
+                                        class="new-must">*</span>
+                                </div>
+                            </div>
+                            <div class="new-clear-float"></div>
+                            <div class="new-product-column-field">
+                                <div class="new-product-column-label">
+                                    <label>劣后级预期收益率：</label>
+                                </div>
+                                <div class="new-product-column-value unit">
+                                    <input type="text" required id="new-floatAndFixed-ExpectedRateOfReturnForInferior"
+                                           value="<%=it.base==undefined?'':it.base.trusteeBank%>"/>%<span
+                                        class="new-must">*</span>
+                                </div>
+                            </div>
+                            <div class="new-clear-float"></div>
+                            <div class="new-product-column-field">
+                                <div class="new-product-column-label">
+                                    <label>管理人介绍：</label>
+                                </div>
+                                <div class="new-product-column-value">
+                                    <textarea id="new-floatAndFixed-managementIntroduction"></textarea>
+                                </div>
+                            </div>
+                            <div class="new-clear-float"></div>
+                            <div class="new-product-column-field">
+                                <div class="new-product-column-label">
+                                    <label>基金经理介绍：</label>
+                                </div>
+                                <div class="new-product-column-value">
+                                    <textarea id="new-floatAndFixed-managerIntroduction"></textarea>
+                                </div>
+                            </div>
+                            <div class="new-clear-float"></div>
+                            <div class="new-clear-float"></div>
+                            <div class="new-product-column-field">
+                                <div class="new-product-column-label">
+                                    <label>还款来源：</label>
+                                </div>
+                                <div class="new-product-column-value">
+                                    <textarea id="new-floatAndFixed-repaymentSource"><%=it.base==undefined?'':it.base.repaymentSource%></textarea>
+
+                                </div>
+                            </div>
+                            <div class="new-clear-float"></div>
+                            <div class="new-product-column-field">
+                                <div class="new-product-column-label">
+                                    <label>增信措施：</label>
+                                </div>
+                                <div class="new-product-column-value">
+                                    <textarea
+                                            id="new-floatAndFixed-trustMeasure"><%=it.base==undefined?'':it.base.trustMeasure%></textarea>
+                                </div>
+                            </div>
+                            <div class="new-clear-float"></div>
+
+
+                        </div>
+                    </div>
+                </div>
+                <div class="steps-content">
+                    <div class="new-product-step" id="new-product-step3-fixed">
+
+                        <div class="new-clear-float"></div>
+                        <div class="new-product-column-field">
+                            <div class="new-product-column-label">
+                                <label>募集行：</label>
+                            </div>
+                            <div class="new-product-column-value">
+                                <input type="text" required id="new-raiseBank"
+                                       value="<%=it.base==undefined?'':it.base.raiseBank%>"/><span
+                                    class="new-must">*</span>
+                            </div>
+                        </div>
+                        <div class="new-clear-float"></div>
+                        <div class="new-product-column-field">
+                            <div class="new-product-column-label">
+                                <label>募集账户名称：</label>
+                            </div>
+                            <div class="new-product-column-value">
+                                <input type="text" required id="new-raiseAccountName"
+                                       value="<%=it.base==undefined?'':it.base.raiseAccountName%>"/><span
+                                    class="new-must">*</span>
+                            </div>
+                        </div>
+                        <div class="new-clear-float"></div>
+                        <div class="new-product-column-field">
+                            <div class="new-product-column-label">
+                                <label>募集账号：</label>
+                            </div>
+                            <div class="new-product-column-value">
+                                <input type="text" required validate-reg="^[0-9]*[1-9][0-9]*$" id="new-raiseAccount"
+                                       value="<%=it.base==undefined?'':it.base.raiseAccount%>"/><span
+                                    class="new-must">*</span>
+                            </div>
+                        </div>
+                        <div class="new-clear-float"></div>
+                        <div class="new-product-column-field">
+                            <div class="new-product-column-label">
+                                <label>认购起点：</label>
+                            </div>
+                            <div class="new-product-column-value unit">
+                                <input type="text" required id="new-tranchePoint" placeholder="单位为万"
+                                       value="<%=it.base==undefined?'':it.base.tranchePoint%>"
+                                       validate-reg="^[1-9]\d*(\.\d+)?$"/>万<span class="new-must">*</span>
+                            </div>
+                        </div>
+                        <div class="new-clear-float"></div>
+                        <div class="new-product-column-field">
+                            <div class="new-product-column-label">
+                                <label>托管费率：</label>
+                            </div>
+                            <div class="new-product-column-value unit">
+                                <input type="text" id="new-trusteeshipFee"
+                                       value="<%=it.base==undefined?'':it.base.tranchePoint%>"
+                                        />%
+                            </div>
+                        </div>
+                        <div class="new-clear-float"></div>
+                        <div class="new-product-column-field">
+                            <div class="new-product-column-label">
+                                <label>管理费率：</label>
+                            </div>
+                            <div class="new-product-column-value unit">
+                                <input type="text" id="new-managementFee"
+                                       value="<%=it.base==undefined?'':it.base.tranchePoint%>"
+                                        />%
+                            </div>
+                        </div>
+                        <div class="new-clear-float"></div>
+                        <div class="new-product-column-field">
+                            <div class="new-product-column-label">
+                                <label>产品图片：</label>
+                            </div>
+                            <div class="new-product-column-value">
+                                <div id="new-fixed-productPicture">
+                                    <div id="new-fixed-productPicture-container">
+                                        <a id="fixed-productPicture" class="uploadFile">上传图片</a><span
+                                            class="new-must">此图片用于蜜蜂云移动版</span>
+                                    </div>
+                                    <p class="new-product-preview">
+                                        <img src="<%=it.base==undefined?'':it.base.productPicture%>"
+                                             id="img-fixed-Preview"/>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="new-clear-float"></div>
+                        <div class="new-product-column-field">
+                            <div class="new-product-column-label">
+                                <label>产品资料：</label>
+                            </div>
+                            <div class="new-product-column-value">
+                                <div id="new-fixed-productDetail">
+                                    <div id="new-fixed-productDetail-container">
+                                        <a id="fixed-productDetail" class="uploadFile">上传文件</a><span
+                                            class="new-must">*</span>
+                                    </div>
+                                    <div id="new-productDetail-preview">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="new-clear-float"></div>
+                    </div>
+                    <div class="new-product-step" id="new-product-step3-float" style="display:none">
+
+                        <div class="new-clear-float"></div>
+                        <div class="new-product-column-field">
+                            <div class="new-product-column-label">
+                                <label>募集行：</label>
+                            </div>
+                            <div class="new-product-column-value">
+                                <input type="text" required id="new-float-raiseBank"
+                                       value="<%=it.base==undefined?'':it.base.raiseBank%>"/><span
+                                    class="new-must">*</span>
+                            </div>
+                        </div>
+                        <div class="new-clear-float"></div>
+                        <div class="new-product-column-field">
+                            <div class="new-product-column-label">
+                                <label>募集账户名称：</label>
+                            </div>
+                            <div class="new-product-column-value">
+                                <input type="text" required id="new-float-raiseAccountName"
+                                       value="<%=it.base==undefined?'':it.base.raiseAccountName%>"/><span
+                                    class="new-must">*</span>
+                            </div>
+                        </div>
+                        <div class="new-clear-float"></div>
+                        <div class="new-product-column-field">
+                            <div class="new-product-column-label">
+                                <label>募集账号：</label>
+                            </div>
+                            <div class="new-product-column-value">
+                                <input type="text" required validate-reg="^[0-9]*[1-9][0-9]*$"
+                                       id="new-float-raiseAccount"
+                                       value="<%=it.base==undefined?'':it.base.raiseAccount%>"/><span
+                                    class="new-must">*</span>
+                            </div>
+                        </div>
+                        <div class="new-clear-float"></div>
+                        <div class="new-product-column-field">
+                            <div class="new-product-column-label">
+                                <label>认购起点：</label>
+                            </div>
+                            <div class="new-product-column-value">
+                                <input type="text" required validate-reg="^[0-9]*[1-9][0-9]*$"
+                                       id="new-float-tranchePoint" placeholder="单位为万"
+                                       value="<%=it.base==undefined?'':it.base.tranchePoint%>"
+                                       validate-reg="^[1-9]\d*(\.\d+)?$"/><span class="new-must">*</span>
+                            </div>
+                        </div>
+                        <div class="new-clear-float"></div>
+                        <div class="new-product-column-field">
+                            <div class="new-product-column-label">
+                                <label>封闭期：</label>
+                            </div>
+                            <div class="new-product-column-value">
+                                <input type="text" required validate-reg="^[0-9]*[1-9][0-9]*$" id="new-closure"
+                                       placeholder="单位为月"
+                                       value="<%=it.floating==undefined?'':it.floating.closure%>"/><span
+                                    class="new-must">*</span>
+                            </div>
+                        </div>
+                        <div class="new-clear-float"></div>
+                        <div class="new-product-column-field">
+                            <div class="new-product-column-label">
+                                <label>开放日：</label>
+                            </div>
+                            <div class="new-product-column-value">
+                                <input id="new-float-openDate" class="p_selectdate" required type="text"
+                                       value="<%=it.scheme==undefined || it.scheme.openDate == '' ?'': new Date(it.scheme.openDate).format('yyyy-MM-dd')  %>"/><span
+                                    class="new-must">*</span>
+                            </div>
+                        </div>
+                        <div class="new-clear-float"></div>
+                        <div class="new-product-column-field">
+                            <div class="new-product-column-label">
+                                <label>认购费率：</label>
+                            </div>
+                            <div class="new-product-column-value unit">
+                                <input id="new-float-subscriptionFee" type="text"/>%
+                            </div>
+                        </div>
+                        <div class="new-clear-float"></div>
+                        <div class="new-product-column-field">
+                            <div class="new-product-column-label">
+                                <label>赎回费率：</label>
+                            </div>
+                            <div class="new-product-column-value unit">
+                                <input id="new-float-redeemFee" type="text"/>%
+                            </div>
+                        </div>
+                        <div class="new-clear-float"></div>
+                        <div class="new-product-column-field">
+                            <div class="new-product-column-label">
+                                <label>托管费率：</label>
+                            </div>
+                            <div class="new-product-column-value unit">
+                                <input id="new-float-trusteeshipFee" type="text"/>%
+                            </div>
+                        </div>
+                        <div class="new-clear-float"></div>
+                        <div class="new-product-column-field">
+                            <div class="new-product-column-label">
+                                <label>管理费率：</label>
+                            </div>
+                            <div class="new-product-column-value unit">
+                                <input id="new-float-managementFee" type="text"/>%
+                            </div>
+                        </div>
+                        <div class="new-clear-float"></div>
+                        <div class="new-product-column-field">
+                            <div class="new-product-column-label">
+                                <label>超额报酬：</label>
+                            </div>
+                            <div class="new-product-column-value">
+                                <input id="new-float-excessReturn" type="text"/>
+                            </div>
+                        </div>
+
+                        <div class="new-clear-float"></div>
+                        <div class="new-product-column-field">
+                            <div class="new-product-column-label">
+                                <label>产品图片：</label>
+                            </div>
+                            <div class="new-product-column-value">
+                                <div id="new-float-productPicture">
+                                    <div id="new-float-productPicture-container">
+                                        <a id="float-productPicture" class="uploadFile">上传图片</a><span
+                                            class="new-must">此图片用于蜜蜂云移动版</span>
+                                    </div>
+                                    <p class="new-product-preview">
+                                        <img src="<%=it.base==undefined?'':it.base.productPicture%>"
+                                             id="img-float-Preview"/>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="new-clear-float"></div>
+
+                        <div class="new-product-column-field">
+                            <div class="new-product-column-label">
+                                <label>产品资料：</label>
+                            </div>
+                            <div class="new-product-column-value">
+                                <div id="new-float-productDetail">
+                                    <div id="new-float-productDetail-container">
+                                        <a id="float-productDetail" class="uploadFile">上传文件</a><span
+                                            class="new-must">*</span>
+                                    </div>
+                                    <div id="new-float-productDetail-preview">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="new-clear-float"></div>
+                    </div>
+                    <div class="new-product-step" id="new-product-step3-floatAndFixed" style="display:none">
+
+                        <div class="new-clear-float"></div>
+                        <div class="new-product-column-field">
+                            <div class="new-product-column-label">
+                                <label>募集行：</label>
+                            </div>
+                            <div class="new-product-column-value">
+                                <input type="text" required id="new-floatAndFixed-raiseBank"
+                                       value="<%=it.base==undefined?'':it.base.raiseBank%>"/><span
+                                    class="new-must">*</span>
+                            </div>
+                        </div>
+                        <div class="new-clear-float"></div>
+                        <div class="new-product-column-field">
+                            <div class="new-product-column-label">
+                                <label>募集账户名称：</label>
+                            </div>
+                            <div class="new-product-column-value">
+                                <input type="text" required id="new-floatAndFixed-raiseAccountName"
+                                       value="<%=it.base==undefined?'':it.base.raiseAccountName%>"/><span
+                                    class="new-must">*</span>
+                            </div>
+                        </div>
+                        <div class="new-clear-float"></div>
+                        <div class="new-product-column-field">
+                            <div class="new-product-column-label">
+                                <label>募集账号：</label>
+                            </div>
+                            <div class="new-product-column-value">
+                                <input type="text" required validate-reg="^[0-9]*[1-9][0-9]*$"
+                                       id="new-floatAndFixed-raiseAccount"
+                                       value="<%=it.base==undefined?'':it.base.raiseAccount%>"/><span
+                                    class="new-must">*</span>
+                            </div>
+                        </div>
+                        <div class="new-clear-float"></div>
+                        <div class="new-product-column-field">
+                            <div class="new-product-column-label">
+                                <label>认购起点：</label>
+                            </div>
+                            <div class="new-product-column-value">
+                                <input type="text" required validate-reg="^[0-9]*[1-9][0-9]*$"
+                                       id="new-floatAndFixed-tranchePoint" placeholder="单位为万"
+                                       value="<%=it.base==undefined?'':it.base.tranchePoint%>"
+                                       validate-reg="^[1-9]\d*(\.\d+)?$"/><span class="new-must">*</span>
+                            </div>
+                        </div>
+                        <div class="new-clear-float"></div>
+                        <div class="new-product-column-field">
+                            <div class="new-product-column-label">
+                                <label>封闭期：</label>
+                            </div>
+                            <div class="new-product-column-value">
+                                <input type="text" validate-reg="^[0-9]*[1-9][0-9]*$"
+                                       id="new-floatAndFixed-closure"
+                                       placeholder="单位为月"
+                                       value="<%=it.floating==undefined?'':it.floating.closure%>"/><span
+                                    class="new-must">*</span>
+                            </div>
+                        </div>
+                        <div class="new-clear-float"></div>
+                        <div class="new-product-column-field">
+                            <div class="new-product-column-label">
+                                <label>开放期：</label>
+                            </div>
+                            <div class="new-product-column-value">
+                                <input type="text" id="new-floatAndFixed-purchaseRedemption" placeholder="单位为月"
+                                       value="<%=it.floating==undefined?'':it.floating.purchaseRedemption%>"/><span
+                                    class="new-must">*</span>
+                            </div>
+                        </div>
+                        <div class="new-clear-float"></div>
+                        <div class="new-product-column-field">
+                            <div class="new-product-column-label">
+                                <label>认购费率：</label>
+                            </div>
+                            <div class="new-product-column-value unit">
+                                <input id="new-floatAndFixed-subscriptionFee" type="text"/>%
+                            </div>
+                        </div>
+                        <div class="new-clear-float"></div>
+                        <div class="new-product-column-field">
+                            <div class="new-product-column-label">
+                                <label>赎回费率：</label>
+                            </div>
+                            <div class="new-product-column-value unit">
+                                <input id="new-floatAndFixed-redeemFee" type="text"/>%
+                            </div>
+                        </div>
+                        <div class="new-clear-float"></div>
+                        <div class="new-product-column-field">
+                            <div class="new-product-column-label">
+                                <label>托管费率：</label>
+                            </div>
+                            <div class="new-product-column-value unit">
+                                <input id="new-floatAndFixed-trusteeshipFee" type="text"/>%
+                            </div>
+                        </div>
+                        <div class="new-clear-float"></div>
+                        <div class="new-product-column-field">
+                            <div class="new-product-column-label">
+                                <label>管理费率：</label>
+                            </div>
+                            <div class="new-product-column-value unit">
+                                <input id="new-floatAndFixed-managementFee" type="text"/>%
+                            </div>
+                        </div>
+                        <div class="new-clear-float"></div>
+                        <div class="new-product-column-field">
+                            <div class="new-product-column-label">
+                                <label>超额报酬：</label>
+                            </div>
+                            <div class="new-product-column-value">
+                                <input id="new-floatAndFixed-excessReturn" type="text"/>
+                            </div>
+                        </div>
+                        <div class="new-clear-float"></div>
+                        <div class="new-product-column-field">
+                            <div class="new-product-column-label">
+                                <label>产品图片：</label>
+                            </div>
+                            <div class="new-product-column-value">
+                                <div id="new-floatAndFixed-productPicture">
+                                    <div id="new-floatAndFixed-productPicture-container">
+                                        <a id="floatAndFixed-productPicture" class="uploadFile">上传图片</a><span
+                                            class="new-must">此图片用于蜜蜂云移动版</span>
+                                    </div>
+                                    <p class="new-product-preview">
+                                        <img src="<%=it.base==undefined?'':it.base.productPicture%>"
+                                             id="img-floatAndFixed-Preview"/>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="new-clear-float"></div>
+                        <div class="new-product-column-field">
+                            <div class="new-product-column-label">
+                                <label>产品资料：</label>
+                            </div>
+                            <div class="new-product-column-value">
+                                <div id="new-floatAndFixed-productDetail">
+                                    <div id="new-floatAndFixed-productDetail-container">
+                                        <a id="floatAndFixed-productDetail" class="uploadFile">上传文件</a><span
+                                            class="new-must">*</span>
+                                    </div>
+                                    <div id="new-floatAndFixed-productDetail-preview">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="new-clear-float"></div>
+                    </div>
+                </div>
+                <div class="steps-content">
+                    <div class="new-product-step" id="new-product-step4">
+                        <div class="new-clear-float"></div>
+                        <div class="new-product-column-field">
+                            <div class="new-product-column-label">
+                                <label>产品发行启动日期：</label>
+                            </div>
+                            <div class="new-product-column-value">
+                                <input id="new-beginPayTime" required name="begin_pay_time" class="p_selectdate"
+                                       type="text"
+                                       value="<%=it.base==undefined || it.base.beginPayTime==''?'':new Date(it.base.beginPayTime).format('yyyy-MM-dd')%>"><span
+                                    class="new-must">*</span>
+                            </div>
+                        </div>
+                        <div class="new-clear-float"></div>
+                        <div class="new-product-column-field">
+                            <div class="new-product-column-label">
+                                <label>产品打款截止日期：</label>
+                            </div>
+                            <div class="new-product-column-value">
+                                <input id="new-lastPayTime" required name="last_pay_time" class="p_selectdate"
+                                       type="text"
+                                       value="<%=it.base==undefined || it.base.lastPayTime==''?'':new Date(it.base.lastPayTime).format('yyyy-MM-dd')%>"><span
+                                    class="new-must">*</span>
+                            </div>
+                        </div>
+                        <div class="new-clear-float"></div>
+                        <div class="new-product-column-field">
+                            <div class="new-product-column-label">
+                                <label>佣金费用(分档)：</label>
+                            </div>
+                            <div class="new-product-column-value">
+
+                                <% if(it.base!=undefined && it.scheme.commissionRatio.length>0){ %>
+                                <% for(var i=0;i
+                                <it.scheme.commissionRatio.length
+                                        ;i++){ %>
+                                    <% var item=it.scheme.commissionRatio[i];%>
+                                    <div class="new-product-rebateRatio-archive">
+                                        <input placeholder="开始金额" required validate-reg="^[0-9]*[1-9][0-9]*$"
+                                               value="<%=item.start==undefined?'':item.start%>"/>
+                                        ~
+                                        <input placeholder="结束金额" required validate-reg="^[0-9]*[1-9][0-9]*$"
+                                               value="<%=item.end==undefined?'':item.end%>"/>
+                                        <input placeholder="费率" required validate-reg="^[0-9]*[1-9][0-9]*$"
+                                               value="<%=item.annual==undefined?'':item.annual%>"
+                                               class="new-product-rebateRatio"/> %
+                                        <a class="new-product-rebateRatio-addTemp" title="新增">新增</a>
+                                        <a class="new-product-rebateRatio-removeTemp" title="移除">移除</a>
+                                        <span class="new-must">*</span>
+                                    </div>
+                                    <% } %>
+                                    <% }else{ %>
+                                    <div class="new-product-rebateRatio-archive">
+                                        <input required placeholder="开始金额"/>
+                                        ~
+                                        <input required validate-reg="^[0-9]*[1-9][0-9]*$" placeholder="结束金额"/>
+                                        <input required validate-reg="^[0-9]*[1-9][0-9]*$" placeholder="费率"
+                                               class="new-product-rebateRatio"/> %
+                                        <a class="new-product-rebateRatio-addTemp" title="新增">新增</a>
+                                        <a class="new-product-rebateRatio-removeTemp" title="移除">移除</a>
+                                        <span class="new-must">*</span>
+                                    </div>
+                                    <% } %>
+
+                            </div>
+                        </div>
+                        <div class="new-product-column-field" id="schemeFilePlace">
+                            <div class="new-product-column-label">
+                                <label>发行方案文件：</label>
+                            </div>
+                            <div class="new-product-column-value">
+                                <div id="new-scheme-container">
+                                    <a id="new-schemeFile" target="_blank" class="uploadFile">上传文件</a><span
+                                        class="new-must">*</span>
+                                </div>
+                                <div id="new-schemeFile-preview">
+
+
+                                    <% if(it.base!=undefined && it.scheme.schemeFile.length>0){ %>
+                                    <% for(var i=0;i
+                                    <it.scheme.schemeFile.length
+                                            ;i++){ %>
+                                        <% var item=it.scheme.schemeFile[i];%>
+                                        <div><a href="<%=item.fileUrl%>"> <%=item.fileName%> </a></div>
+                                        <% } %>
+                                        <% }else{ %>
+
+                                        <% } %>
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="steps-content">
+
+                    <div class="new-product-step" id="new-product-step5">
+                        <div class="new-clear-float"></div>
+                        <div class="new-product-column-field">
+                            <div class="new-product-column-label">
+                                <label>产品经理：</label>
+                            </div>
+                            <div class="new-product-column-auditor">
+                                <label id="new-auditor4" style="line-height: 30px;"></label>
+                            </div>
+                        </div>
+                        <div class="new-clear-float"></div>
+                        <div class="new-product-column-field">
+                            <div class="new-product-column-label">
+                                <label>渠道经理：</label>
+                            </div>
+                            <div class="new-product-column-auditor">
+                                <input id="new-auditor1" type="text" class="commonInput"
+                                       value="<%=it.auditors!=undefined && it.auditors.auditor1!=false ?it.auditors.auditor1 :'' %>"/>
+                            </div>
+                        </div>
+                        <div class="new-clear-float"></div>
+                        <div class="new-product-column-field">
+                            <div class="new-product-column-label">
+                                <label>审核经理：</label>
+                            </div>
+                            <div class="new-product-column-auditor">
+                                <input id="new-auditor2" type="text" class="commonInput"
+                                       value="<%=it.auditors!=undefined && it.auditors.auditor2!=false ?it.auditors.auditor2 :'' %>"/>
+                            </div>
+                        </div>
+                        <div class="new-clear-float"></div>
+                        <div class="new-product-column-field">
+                            <div class="new-product-column-label">
+                                <label>结算经理：</label>
+                            </div>
+                            <div class="new-product-column-auditor">
+                                <input id="new-auditor3" type="text" class="commonInput"
+                                       value="<%=it.auditors!=undefined && it.auditors.auditor3!=false ?it.auditors.auditor3 :'' %>"/>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </article>
+        <footer>
+            <div class="footer-actions">
+                <input class="mfy-steps-pre" type="button" value="上一步"/>
+                <input class="mfy-steps-next" type="button" value="下一步"/>
+                <input class="mfy-steps-ok" type="button" value="完成"/>
+            </div>
+        </footer>
+    </div>
+</div>

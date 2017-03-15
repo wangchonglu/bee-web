@@ -1,0 +1,44 @@
+
+<div class="reserve-main">
+    <div class="header">
+        <div class="nav-bar">
+            <ul>
+                <!--<li>-->
+                    <!--<a href="javascript:void(0)">运营管理&gt;</a>-->
+                <!--</li>-->
+                <li>
+                    <a href="javascript:void(0)" class="nav-bar-res">预约管理&gt;</a>
+                </li>
+                <li>
+                    <!--<a href="javascript:void(0)">所有预约产品</a>-->
+                    所有预约产品
+                </li>
+            </ul>
+        </div>
+        <div class="all">
+            <a href="javascript:void(0)" class="allProReserve">所有产品预约列表&gt;&gt;</a>
+        </div>
+        <div style="clear: both"></div>
+    </div>
+    <div class="reserve-part">
+        <div class="reserve-product">
+            <% if(it.length > 0){ %>
+                <ul>
+                    <% for(var i=0;i<it.length;i++){ %>
+                    <% var item=it[i];%>
+                    <li class="product-item" data-id="<%= item.id %>">
+                        <span><%= item.name %></span>
+                        <div class="hover"></div>
+                    </li>
+                    <% } %>
+                </ul>
+                <div style="clear: both"></div>
+            <% }else{ %>
+            <div class="empty">
+                暂无预约
+            </div>
+            <% } %>
+        </div>
+    </div>
+</div>
+

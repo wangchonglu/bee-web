@@ -1,0 +1,45 @@
+<div class="contract_archive">
+    <div class="contractArch_header">
+        <div class="header_operation">
+            <a class="addArchive" href="javascript:void(0);">
+                <img src="./modules/foundation/image/operation_add.png">
+                <span>新增归档</span>
+            </a>
+        </div>
+    </div>
+
+    <div class="contractArch_content">
+        <table class="contractArch_table beeWebTable">
+            <thead>
+            <tr>
+                <th>理财师</th>
+                <th>产品名称</th>
+                <th>合同编号</th>
+                <th>归档编号</th>
+            </tr>
+            </thead>
+            <tbody>
+            <% if(it.length > 0){ %>
+            <% for(var i=0;i<it.length;i++){ %>
+            <% var item=it[i];%>
+            <% var flag=i%2;var curClass;%>
+            <% if(flag==0){curClass="trOddBackColor";}else{curClass="trEvenBackColor";} %>
+            <tr class="<%= curClass %>">
+                <td class="name" data-field="name"><%=item.name%></td>
+                <td class="product" data-field="product"><%=item.product%></td>
+                <td class="contractNum" data-field="contractNum"><%=item.contractNum%></td>
+                <td class="archiveNum" data-field="archiveNum"><%=item.archiveNum%></td>
+            </tr>
+            <% } %>
+            <% }else{ %>
+            <tr class="contractArch_tbody_empty"><td colspan="8">No Data</td></tr>
+            <% } %>
+            </tbody>
+        </table>
+        <% if(it.length > 0){ %>
+        <div class="contractArch_pager">
+
+        </div>
+        <% } %>
+    </div>
+</div>

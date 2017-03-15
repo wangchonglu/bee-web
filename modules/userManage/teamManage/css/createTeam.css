@@ -1,0 +1,30 @@
+.create_team_pop {
+  width: 100%;
+  text-align: center; }
+  .create_team_pop table {
+    width: 80%;
+    margin: auto; }
+    .create_team_pop table tr {
+      height: 80px;
+      line-height: 80px;
+      width: 100%; }
+      .create_team_pop table tr th {
+        font-weight: normal;
+        font-style: normal;
+        height: 80px;
+        line-height: 80px;
+        text-align: center;
+        width: 30%;
+        color: #6b818b;
+        font-family: Microsoft YaHei;
+        font-size: 14px; }
+      .create_team_pop table tr td {
+        height: 80px;
+        line-height: 80px;
+        width: 70%;
+        color: #6b818b;
+        font-family: Microsoft YaHei;
+        font-size: 14px;
+        text-align: left; }
+
+/*# sourceMappingURL=createTeam.css.map */

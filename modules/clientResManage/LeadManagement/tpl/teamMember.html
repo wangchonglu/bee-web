@@ -1,0 +1,30 @@
+<div class="team-member">
+    <div class="content">
+        <table class="beeWebTable">
+            <thead>
+            <tr>
+                <th>名称</th>
+                <th>联系方式</th>
+                <th>所持线索</th>
+            </tr>
+            </thead>
+            <tbody>
+            <% if(it.length > 0){ %>
+            <% for(var i=0;i<it.length;i++){ %>
+            <% var item=it[i];%>
+            <% var flag=i%2;var curClass;%>
+            <% if(flag==0){curClass="trOddBackColor";}else{curClass="trEvenBackColor";} %>
+            <tr class="<%= curClass %> trUserLeads" data-uid="<%=item.uid%>" title="点击查看详情">
+                <td data-field="name"><%=item.name%></td>
+                <td data-field="phone"><%=item.phone%></td>
+                <td data-field="leadCount"><%=item.leadCount%></td>
+            </tr>
+            <% } %>
+            <% }else{ %>
+            <tr class="tbody_empty"><td colspan="3">No Data</td></tr>
+            <% } %>
+            </tbody>
+        </table>
+    </div>
+</div>
+

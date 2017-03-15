@@ -1,0 +1,13 @@
+<% if(it.length > 0){ %>
+<% for(var i=0;i<it.length;i++){ %>
+<% var item=it[i];%>
+<% var flag=i%2;var curClass;%>
+<% if(flag==0){curClass="trOddBackColor";}else{curClass="trEvenBackColor";} %>
+<tr class="<%= curClass %>" data-id="<%=item.id%>">
+    <td class="tbody_td" data-field="proName"><%=item.proName%></td>
+    <td class="tbody_td" data-field="region"><%=item.proType%></td>
+    <td class="tbody_td" data-field="fund"><%=item.income%></td>
+    <td class="tbody_td" data-field="income"><%=item.years%></td>
+</tr>
+<% } %>
+<% } %>

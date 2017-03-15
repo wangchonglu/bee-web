@@ -1,0 +1,37 @@
+.form_verify_pop {
+  width: 100%; }
+  .form_verify_pop table {
+    width: 90%;
+    margin: auto; }
+    .form_verify_pop table tr {
+      width: 100%;
+      height: 60px;
+      line-height: 60px; }
+      .form_verify_pop table tr th {
+        width: 30%;
+        height: 60px;
+        line-height: 60px;
+        text-align: center;
+        font-family: Microsoft YaHei;
+        font-size: 13px;
+        font-weight: normal;
+        font-style: normal; }
+      .form_verify_pop table tr td {
+        width: 70%;
+        height: 60px;
+        line-height: 60px;
+        text-align: left;
+        font-family: Microsoft YaHei;
+        font-size: 13px; }
+        .form_verify_pop table tr td select {
+          height: 31px;
+          width: 213px; }
+        .form_verify_pop table tr td .verifyOpinion {
+          width: 250px;
+          height: 90px;
+          max-width: 250px;
+          max-height: 250px; }
+    .form_verify_pop table .real-price, .form_verify_pop table .verify-opinion {
+      display: none; }
+
+/*# sourceMappingURL=verify.css.map */

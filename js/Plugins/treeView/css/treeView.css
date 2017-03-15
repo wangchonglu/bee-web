@@ -1,0 +1,77 @@
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+body, html, * {
+    padding: 0px;
+    margin: 0px;
+}
+
+ul, li {
+    list-style: none;
+}
+.mfyTreeView li .dataspan {
+    display: block;
+    height: 35px;
+    line-height: 35px;
+    padding-left: 10px;
+    font-family:"Microsoft YaHei";
+    font-size: 14px;
+    color: #000;
+    cursor: pointer;
+    margin-left: 20px;
+}
+
+.mfyTreeView li ul {
+    margin-left: 20px;
+}
+
+.mfyTreeView li .dataspan img {
+    vertical-align: sub;
+    height: 20px;
+    width: 20px;
+    margin-right: 20px;
+}
+
+.mfyTreeView li .folderCss,.mfyTreeView li .duCss {
+    display: block;
+    width: 16px;
+    height: 16px;
+    float: left;
+    margin-top: 7px;
+    margin-right: 2px;
+}
+
+.mfyTreeView li .closeFolder {
+    background: url(../images/file.gif) no-repeat -4px -1px;
+}
+
+.mfyTreeView li .openFolder {
+    background: url(../images/file.gif) no-repeat -20px 0px;
+}
+
+.mfyTreeView li .closeDu {
+    background: url(../images/angle.gif) no-repeat -1px -2px;
+}
+
+.mfyTreeView li .openDu {
+    background: url(../images/angle.gif) no-repeat -20px -2px;
+}
+
+.mfyTreeView li .itemHovered {
+!important;
+}
+
+.mfyTreeView li .rootItemSelect {
+!important;
+}
+
+.mfyTreeView li .itemSelected {
+    color: red !important;
+}
+
+.mfyTreeView ul {
+    display: none;
+    margin-left: 20px;
+}

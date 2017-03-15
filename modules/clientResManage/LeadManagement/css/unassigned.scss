@@ -1,0 +1,53 @@
+.lead_options{
+  float: left;
+  width: 250px;
+  height:50px;
+  margin-left: 10px;
+  input{
+    margin-right: 20px;
+  }
+  input.hoverBtn:hover{
+    background-color: #2aabd2;
+    color: #000;
+  }
+}
+
+.leads_search {
+  float: right;
+  margin-right: 20px;
+}
+
+.leads_unassigned{
+  width: 99%;
+  margin:auto;
+  table{
+    tbody{
+      tr{
+        cursor: pointer;
+      }
+      tr:hover{
+        background-color: #CCCCFF;
+      }
+      .tbody_empty{
+        height:150px;
+        cursor: default;
+        td{
+          font-family: "Microsoft YaHei";
+          font-size: 30px;
+          font-style: italic;
+          color:#dcdcdc;
+        }
+      }
+      .tbody_empty:hover{
+          background-color: #f7f9fb;
+      }
+    }
+
+    .leads_unassigned_pager{
+      width:100%;
+      height:100%;
+      background-color: #e5e5e5;
+    }
+  }
+
+}

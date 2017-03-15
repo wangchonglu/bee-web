@@ -1,0 +1,37 @@
+<div class="lead_pool_avg">
+    <table class="popTable">
+        <tr>
+            <td class="popTable_name">
+                可分配线索数：<span class="all_leads"><%=it.all%></span>
+            </td>
+            <td class="popTable_content">
+                <input type="button" class="avgAssign cfyBtn" value="平均分配" />
+            </td>
+        </tr>
+        <tr>
+            <td class="popTable_name">
+                请输入分配数：
+            </td>
+            <td class="popTable_content">
+                <input type="text" class="assignCount commonInput" />
+            </td>
+        </tr>
+        <%
+        for (var i=0;i<it.groups.length;i++){
+            var item=it.groups[i];
+        %>
+            <tr>
+                <td class="popTable_name">
+                    <%=item.name%>：
+                </td>
+                <td class="popTable_content">
+                    <% if(it.isTeam==true){ %>
+                        <input type="text" class="commonInput cfyLeadTeam" data-gid="<%=item.uid%>" />
+                    <% }else{ %>
+                    <input type="text" class="commonInput cfyLeadTeam" data-gid="<%=item.id%>" />
+                    <% } %>
+                </td>
+            </tr>
+        <%}%>
+    </table>
+</div>

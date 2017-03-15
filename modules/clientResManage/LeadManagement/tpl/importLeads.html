@@ -1,0 +1,70 @@
+<div class="lead_import_pop">
+    <table>
+        <tr>
+            <th>
+                线索文件模板:
+            </th>
+            <td>
+                <a href="./modules/clientResManage/leadPool/csv/导入线索模板.csv" class="file-temp">
+                    <span>点我下载</span>
+                </a>
+            </td>
+        </tr>
+        <tr>
+            <th>
+                选择文件:<br/>("*.CSV")
+            </th>
+            <td>
+                <input type="file" id="leadInput" />
+            </td>
+        </tr>
+        <tr>
+            <th>
+                来源：
+            </th>
+            <td>
+                <input type="text" class="commonInput importSource" required  required-msg="来源内容不能为空">
+            </td>
+        </tr>
+        <tr>
+            <th>
+                批次：
+            </th>
+            <td>
+                <!--<input type="text" class="commonInput importBatch" required  required-msg="批次内容不能为空">-->
+                <!--<select class="commonInput importBatch">-->
+                    <!--<option value="0">&#45;&#45;请选择批次&#45;&#45;</option>-->
+                <!--</select>-->
+                <div class="simpleDropDown">
+                    <div class="sddInput">
+                        <button class="sddText">&nbsp;</button>
+                        <img class="sddImg" src="./modules/foundation/image/nav_down.png" />
+                    </div>
+                    <div class="sddSource" style="display: none;">
+                        <ul class="sddul1">
+                        </ul>
+                        <ul class="sddul2">
+                            <li class="addbatch">
+                                <span>添加批次</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <th>
+                说明/备注：
+            </th>
+            <td>
+                <textarea class="commonInput importRemark"></textarea>
+                <!--<input type="text" class="commonInput importRemark" >-->
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" class="importOp">
+                <button class="cfyBtn startImport">开始导入</button>
+            </td>
+        </tr>
+    </table>
+</div>

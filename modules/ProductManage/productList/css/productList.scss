@@ -1,0 +1,119 @@
+$thLineHeight:45px;
+$tdLineHeight:35px;
+
+.product_list{
+  width: 100%;
+  .prolist_header {
+    width: 100%;
+    height: 76px;
+    background-color: #fff;
+    .header_operation{
+      position: relative;
+      top: 24px;
+      padding-left:20px;
+      height:28px;
+      .operation_add{
+        display: inline-block;
+        cursor: pointer;
+        display: none;
+        img{
+          position: relative;
+          top: 5px;
+          width:18px;
+          height:18px;
+
+        }
+      }
+      .operation_filter {
+        display: inline-block;
+        .select_op_filter {
+          color: #6b818b;
+          margin-right: 10px;
+          option {
+            color: #6b818b;
+            font-family: Microsoft YaHei;
+            font-size: 10px;
+          }
+        }
+      }
+      .operation_sort {
+        display: inline-block;
+        .select_op_sort {
+          color: #6b818b;
+          margin-right: 10px;
+          option {
+            color: #6b818b;
+            font-family: Microsoft YaHei;
+            font-size: 10px;
+          }
+         }
+      }
+      .operation_search{
+        float: right;
+        margin-right:30px;
+        border:1px solid #e8e8e8;
+        padding: 0 6px 3px 10px;
+        input{
+          border: none;
+          outline: none;
+          height:16px;
+        }
+        img{
+          height:16px;
+          width:16px;
+          position: relative;
+          top:4px;
+          cursor: pointer;
+        }
+      }
+      span,select,option {
+        color: #6b818b;
+        font-family: Microsoft YaHei;
+        font-size: 14px;
+        margin-right: 10px;
+      }
+    }
+  }
+}
+
+.prolist_content{
+  width: 99%;
+  margin:auto;
+  .prolist_table{
+    .prolist_tbody_op{
+      a{
+        cursor: pointer;
+        text-decoration: none;
+        margin-left: 6px;
+      }
+      a:hover{
+        cursor: pointer;
+        text-decoration:underline;
+      }
+    }
+    .prolist_tbody_empty {
+        height: 100px;
+        td{
+          height:100px;
+          line-height: 100px;
+          text-align: center;
+          font-family: Arial;
+        }
+    }
+  }
+  .prolist_pager{
+    width:100%;
+    height:$tdLineHeight;
+    background-color: #e5e5e5;
+  }
+}
+
+.trMouseover{
+  background-color: #eee;
+}
+.trOddBackColor{
+  background-color: #f7f9fb;
+}
+.trEvenBackColor{
+  background-color: #ebeff1;
+}

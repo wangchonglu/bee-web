@@ -1,0 +1,790 @@
+<form id="submitForm">
+    <div class="createProduct">
+        <div id="fuelux-wizard" class="row-fluid" data-target="#step-container">
+            <ul class="wizard-steps">
+                <li class="active"><span class="step">1</span> <span class="title"></span></li>
+                <li><span class="step">2</span> <span class="title"></span></li>
+                <li><span class="step">3</span> <span class="title"></span></li>
+                <li><span class="step">4</span> <span class="title"></span></li>
+                <li><span class="step">5</span> <span class="title"></span></li>
+            </ul>
+        </div>
+        <hr>
+        <div id="createPro">
+            <div class="items">
+                <div class="step-style page" id="createPro-step1">
+                    <div class="div-style" style="display: none;">
+                        <div class="div-label">
+                            <label class="label-font">产品号:</label>
+                        </div>
+                        <div class="div-input">
+                            <input class="input-style" style="<%=it.showPNoCSS%>" required-msg="产品编号为必填项"
+                                   type="text" id="id" name="id" <%=it.readonly%>
+                            value="<%=it.base==undefined?'':it.base.id%>"/>
+                        </div>
+                        <span class="error error1"></span>
+
+                    </div>
+                    <div class="div-style">
+                        <div class="div-label">
+                            <label class="label-font">名称:</label>
+                        </div>
+                        <div class="div-input">
+                            <input class="input-style" required required-msg="名称为必填项" type="text" id="name" name="name"
+                                   value="<%=it.base==undefined?'':it.base.productName%>"/>
+                        </div>
+                    </div>
+                    <div class="div-style">
+                        <div class="div-label">
+                            <label class="label-font">简称:</label>
+                        </div>
+                        <div class="div-input">
+                            <input class="input-style" type="text" id="short_name" name="short_name"
+                                   value="<%=it.base==undefined?'':it.base.shortName%>"/>
+                        </div>
+                    </div>
+                    <div class="div-style">
+                        <div class="div-label">
+                            <label class="label-font">收益类型:</label>
+                        </div>
+                        <div class="div-input">
+                            <select id="benefit_type" name="benefit_type" class="select-style">
+                                <option value="1"
+                                <%=it.base != undefined && it.base.benefitType=='1'? 'selected="selected"':'' %>
+                                >固定收益</option>
+                                <option value="2"
+                                <%=it.base != undefined && it.base.benefitType=='2'? 'selected="selected"':'' %>
+                                >浮动收益</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="div-style">
+                        <div class="div-label">
+                            <label class="label-font">产品类型:</label>
+                        </div>
+                        <div class="div-input">
+                            <select id="product_type" name="product_type" class="select-style">
+                                <option value="1"
+                                <%=it.base!=undefined && it.base.productType=='1'? 'selected="selected"':'' %>
+                                >信托</option>
+                                <option value="2"
+                                <%=it.base!=undefined && it.base.productType=='2'? 'selected="selected"':'' %>
+                                >资管</option>
+                                <option value="3"
+                                <%=it.base!=undefined && it.base.productType=='3'? 'selected=T"selected"':'' %>
+                                >私募</option>
+                                <option value="0"
+                                <%=it.base!=undefined && it.base.productType=='0'? 'selected="selected"':'' %>
+                                >所有</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="div-style">
+                        <div class="div-label">
+                            <label class="label-font">投向:</label>
+                        </div>
+                        <div class="div-input">
+                            <select id="invest_type" name="nvest_type" class="select-style">
+                                <option value="1"
+                                <%=it.base!=undefined && it.base.investType=='1'? 'selected="selected"':'' %>
+                                >房地产</option>
+                                <option value="2"
+                                <%=it.base!=undefined && it.base.investType=='2'? 'selected="selected"':'' %>
+                                >浮动收益</option>
+                                <option value="3"
+                                <%=it.base!=undefined && it.base.investType=='3'? 'selected="selected"':'' %>
+                                >工商企业</option>
+                                <option value="4"
+                                <%=it.base!=undefined && it.base.investType=='4'? 'selected="selected"':'' %>
+                                >PE/VC</option>
+                                <option value="5"
+                                <%=it.base!=undefined && it.base.investType=='5'? 'selected="selected"':'' %>
+                                >新三板</option>
+                                <option value="6"
+                                <%=it.base!=undefined && it.base.investType=='6'? 'selected="selected"':'' %>
+                                >打新</option>
+                                <option value="7"
+                                <%=it.base!=undefined && it.base.investType=='7'? 'selected="selected"':'' %>
+                                >定增</option>
+                                <option value="8"
+                                <%=it.base!=undefined && it.base.investType=='8'? 'selected="selected"':'' %>
+                                >二级市场－》股票型</option>
+                                <option value="9"
+                                <%=it.base!=undefined && it.base.investType=='9'? 'selected="selected"':'' %>
+                                >其他</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="div-style">
+                        <div class="div-label">
+                            <label class="label-font">资金使用方法:</label>
+                        </div>
+                        <div class="div-input">
+                            <textarea class="textarea-style" required required-msg="资金使用方法为必填项" id="financing_party"
+                                      name="financing_party"><%=it.base==undefined?'':it.base.financingParty%></textarea>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="footer-btn">
+                        <input type="button" class="prev-btn prev" value="上一步">
+                        <input type="button" class="next-btn next" value="下一步">
+                    </div>
+                </div>
+
+                <div class="step-style page" id="createPro-step2">
+                    <div class="div-style">
+                        <div class="div-label">
+                            <label class="label-font">投资管理人:</label>
+                        </div>
+                        <div class="div-input">
+                            <input class="input-style" required required-msg="投资管理人为必填项" type="text"
+                                   id="investment_manager" name="investment_manager"
+                                   value="<%=it.base==undefined?'':it.base.investmentManager%>">
+                        </div>
+                    </div>
+                    <div class="div-style">
+                        <div class="div-label">
+                            <label class="label-font">投资顾问:</label>
+                        </div>
+                        <div class="div-input">
+                            <input class="input-style" type="text" id="investment_adviser" name="investment_adviser"
+                                   value="<%=it.base==undefined?'':it.base.investmentAdviser%>">
+                        </div>
+                    </div>
+                    <div class="div-style">
+                        <div class="div-label">
+                            <label class="label-font">产品发行方:</label>
+                        </div>
+                        <div class="div-input">
+                            <input class="input-style" required required-msg="产品发行方为必填项" type="text"
+                                   id="product_distribution" name="product_distribution"
+                                   value="<%=it.base==undefined?'':it.base.productDistribution%>">
+                        </div>
+                    </div>
+                    <div class="div-style">
+                        <div class="div-label">
+                            <label class="label-font">募集行:</label>
+                        </div>
+                        <div class="div-input">
+                            <input class="input-style" required required-msg="募集行为必填项" type="text" id="raise_bank"
+                                   name="raise_bank" value="<%=it.base==undefined?'':it.base.raiseBank%>">
+                        </div>
+                    </div>
+                    <div class="div-style">
+                        <div class="div-label">
+                            <label class="label-font">募集账号:</label>
+                        </div>
+                        <div class="div-input">
+                            <input class="input-style" required required-msg="募集账号为必填项" type="text" id="raise_account"
+                                   name="raise_account" value="<%=it.base==undefined?'':it.base.raiseAccount%>"
+                                   validate-reg="^[1-9]\d*(\.\d+)?$">
+                        </div>
+                    </div>
+                    <div class="div-style">
+                        <div class="div-label">
+                            <label class="label-font">募集账户名称:</label>
+                        </div>
+                        <div class="div-input">
+                            <input class="input-style" required required-msg="募集账户名称为必填项" type="text"
+                                   id="raise_account_name" name="raise_account_name"
+                                   value="<%=it.base==undefined?'':it.base.raiseAccountName%>">
+                        </div>
+                    </div>
+                    <div class="div-style">
+                        <div class="div-label">
+                            <label class="label-font">托管行:</label>
+                        </div>
+                        <div class="div-input">
+                            <input class="input-style" required required-msg="托管行为必填项" type="text" id="trustee_bank"
+                                   name="trustee_bank" value="<%=it.base==undefined?'':it.base.trusteeBank%>">
+                        </div>
+                    </div>
+                    <div class="div-style">
+                        <div class="div-label">
+                            <label class="label-font">委贷行:</label>
+                        </div>
+                        <div class="div-input">
+                            <input class="input-style" required required-msg="委贷行为必填项" type="text" id="entrust_bank"
+                                   name="entrust_bank" value="<%=it.base==undefined?'':it.base.entrustBank%>">
+                        </div>
+                    </div>
+
+                    <div class="div-style">
+                        <div class="div-label">
+                            <label class="label-font">投资期限:</label>
+                        </div>
+                        <div class="div-input">
+                            <input class="input-style" required required-msg="投资期限为必填项" type="text"
+                                   id="investment_deadline" name="investment_deadline" placeholder="单位为月"
+                                   value="<%=it.base==undefined?'':it.base.investmentDeadline%>"
+                                   validate-reg="^[1-9]\d*(\.\d+)?$">
+                        </div>
+                    </div>
+
+                    <!--<div class="div-style" style="display: none;">-->
+                    <!--<div class="div-label">-->
+                    <!--<label class="label-font">创建产品用户号:</label>-->
+                    <!--</div>-->
+                    <!--<div class="div-input">-->
+                    <!--<input type="text" required required-msg="创建产品用户号为必填项" id="create_user_id"-->
+                    <!--name="create_user_id" class="input-style"-->
+                    <!--value="<%=it.base==undefined?'':it.base.createUserId%>">-->
+                    <!--</div>-->
+                    <!--</div>-->
+
+                    <div class="div-style">
+                        <div class="div-label">
+                            <label class="label-font">起购金额:</label>
+                        </div>
+                        <div class="div-input">
+                            <input id="tranche_point" required required-msg="起购金额为必填项" type="text" class="input-style"
+                                   placeholder="单位为万元" value="<%=it.base==undefined?'':it.base.tranchePoint%>"
+                                   validate-reg="^[1-9]\d*(\.\d+)?$"><!--validate-reg="/^[0-9]*[1-9][0-9]*$"-->
+                        </div>
+                    </div>
+
+                    <div class="div-style">
+                        <div class="div-label">
+                            <label class="label-font">年化收益率:</label>
+                        </div>
+                        <div class="div-input">
+                            <input type="text" required required-msg="年化收益率为必填项" id="annual_benefit_rate"
+                                   name="annual_benefit_rate" class="input-style"
+                                   value="<%=it.base==undefined?'':it.base.annualBenefitRate%>">
+                        </div>
+                    </div>
+
+                    <div class="div-style">
+                        <div class="div-label">
+                            <label class="label-font">募集规模:</label>
+                        </div>
+                        <div class="div-input">
+                            <input class="input-style" required required-msg="募集规模为必填项" type="text" id="raise_total"
+                                   name="raise_total" value="<%=it.base==undefined?'':it.base.raiseTotal%>"
+                                   validate-reg="^[1-9]\d*(\.\d+)?$">
+                        </div>
+                    </div>
+                    <div class="div-style">
+                        <div class="div-label">
+                            <label class="label-font">募集规模备注:</label>
+                        </div>
+                        <div class="div-input">
+                            <textarea class="input-style" id="raise_total_remark"
+                                      name="raise_total_remark"> <%=it.base==undefined?'':it.base.raiseTotalRemark%> </textarea>
+                        </div>
+                    </div>
+                    <div class="div-style">
+                        <div class="div-label">
+                            <label class="label-font">投资期限备注:</label>
+                        </div>
+                        <div class="div-input">
+                            <textarea class="input-style" id="investment_deadline_remark"
+                                      name="investment_deadline_remark"> <%=it.base==undefined?'':it.base.investmentDeadlineRemark%> </textarea>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="footer-btn">
+                        <input type="button" class="prev-btn prev" value="上一步">
+                        <input type="button" class="next-btn next" value="下一步">
+                    </div>
+                </div>
+
+                <div class="step-style page" id="createPro-step3">
+                    <div class="div-style">
+                        <div class="half-div">
+                            <div class="half-div-label">
+                                <label class="label-font ">打款开始日期:</label>
+                            </div>
+                            <div class="half-div-input">
+                                <input id="begin_pay_time" name="begin_pay_time" class="input-style p_selectdate"
+                                       type="text"
+                                       value="<%=it.base==undefined || it.base.beginPayTime==''?'':new Date(it.base.beginPayTime).toLocaleDateString()%>">
+                            </div>
+                        </div>
+
+                        <div class="half-div">
+                            <div class="half-div-label">
+                                <label class="label-font">打款截止日期:</label>
+                            </div>
+                            <div class="half-div-input">
+                                <input id="last_pay_time" name="last_pay_time" class="input-style p_selectdate"
+                                       type="text"
+                                       value="<%=it.base==undefined || it.base.lastPayTime==''?'':new Date(it.base.lastPayTime).toLocaleDateString()%>">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="div-style">
+                        <div class="half-div">
+                            <div class="half-div-label">
+                                <label class="label-font">发行日期:</label>
+                            </div>
+                            <div class="half-div-input">
+                                <input id="distribution_time" required required-msg="发行日期为必填项" name="distribution_time"
+                                       class="input-style p_selectdate"
+                                       type="text"
+                                       value="<%=it.base==undefined || it.base.distributionTime==''?'': new Date(it.base.distributionTime).toLocaleDateString() %>">
+                            </div>
+                        </div>
+
+                        <div class="half-div">
+                            <div class="half-div-label">
+                                <label class="label-font">产品创建日期:</label>
+                            </div>
+                            <div class="half-div-input">
+                                <input id="create_time" name="create_time" class="input-style p_selectdate" type="text"
+                                       value="<%=it.base==undefined || it.base.createTime==''?'':new Date(it.base.createTime).toLocaleDateString()%>">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="div-style">
+                        <div class="half-div">
+                            <div class="half-div-label">
+                                <label class="label-font">预告开始日期:</label>
+                            </div>
+                            <div class="half-div-input">
+                                <input id="begin_forecast_time" name="begin_forecast_time"
+                                       class="input-style p_selectdate" type="text"
+                                       value="<%=it.base==undefined || it.base.beginForecastTime==''?'': new Date(it.base.beginForecastTime).toLocaleDateString()%>">
+                            </div>
+                        </div>
+
+                        <div class="half-div">
+                            <div class="half-div-label">
+                                <label class="label-font">预告结束日期:</label>
+                            </div>
+                            <div class="half-div-input">
+                                <input id="last_forecast_time" name="last_forecast_time"
+                                       class="input-style p_selectdate" type="text"
+                                       value="<%=it.base==undefined || it.base.lastForecastTime==''?'':  new Date(it.base.lastForecastTime).toLocaleDateString()%>">
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="div-style">
+                        <div class="half-div">
+                            <div class="half-div-label">
+                                <label class="label-font">预热开始日期:</label>
+                            </div>
+                            <div class="half-div-input">
+                                <input id="begin_warmup_time" name="begin_warmup_time" class="input-style p_selectdate"
+                                       type="text"
+                                       value="<%=it.base==undefined || it.base.beginWarmupTime==''?'':  new Date(it.base.beginWarmupTime).toLocaleDateString() %>">
+                            </div>
+                        </div>
+
+                        <div class="half-div">
+                            <div class="half-div-label">
+                                <label class="label-font">预热结束日期:</label>
+                            </div>
+                            <div class="half-div-input">
+                                <input id="last_warmup_time" name="last_warmup_time" class="input-style p_selectdate"
+                                       type="text"
+                                       value="<%=it.base==undefined || it.base.lastWarmupTime==''?'': new Date(it.base.lastWarmupTime).toLocaleDateString() %>">
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="div-style">
+                        <div class="half-div">
+                            <div class="half-div-label">
+                                <label class="label-font">基金类别:</label>
+                            </div>
+                            <div class="half-div-input">
+                                <select id="fund_type" name="fund_type" class="select-style">
+                                    <option value="1">股票型</option>
+                                    <option value="2"
+                                    <%=it.base!=undefined && it.base.fundType=='2'? 'selected="selected"':'' %>
+                                    >债券型</option>
+                                    <option value="3"
+                                    <%=it.base!=undefined && it.base.fundType=='3'? 'selected="selected"':'' %>
+                                    >期货基金</option>
+                                    <option value="4"
+                                    <%=it.base!=undefined && it.base.fundType=='4'? 'selected="selected"':'' %>
+                                    >量化对冲</option>
+                                    <option value="5"
+                                    <%=it.base!=undefined && it.base.fundType=='5'? 'selected="selected"':'' %>
+                                    >FOF</option>
+                                    <option value="6"
+                                    <%=it.base!=undefined && it.base.fundType=='6'? 'selected="selected"':'' %>
+                                    >定向增发</option>
+                                    <option value="7"
+                                    <%=it.base!=undefined && it.base.fundType=='7'? 'selected="selected"':'' %>
+                                    >打新基金</option>
+                                    <option value="8"
+                                    <%=it.base!=undefined && it.base.fundType=='8'? 'selected="selected"':'' %>
+                                    >PE基金</option>
+                                    <option value="9"
+                                    <%=it.base!=undefined && it.base.fundType=='9'? 'selected="selected"':'' %>
+                                    >指数基金</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="half-div">
+                            <div class="half-div-label">
+                                <label class="label-font">佣返比例:</label>
+                            </div>
+                            <div class="half-div-input">
+                                <input type="text" id="rebate_ratio" name="rebate_ratio" class="select-style"
+                                       placeholder="单位为百分比" value="<%=it.base==undefined?'':it.base.rebateRatio%>">
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="div-style">
+                        <div class="div-label">
+                            <label class="label-font">是否是宣传产品:</label>
+                        </div>
+                        <div class="div-input">
+                            <select id="is_promote" name="is_promote" class="select-style">
+                                <option value="0"
+                                <%=it.base!=undefined && it.base.isPromote==0? 'selected="selected"':'' %> >否</option>
+                                <option value="1"
+                                <%=it.base!=undefined && it.base.isPromote==1? 'selected="selected"':'' %> >是</option>
+                            </select>
+                        </div>
+                    </div>
+
+
+                    <!--<div class="div-style">-->
+                    <!--<div class="div-label">-->
+                    <!--<label class="label-font">佣返比例:</label>-->
+                    <!--</div>-->
+                    <!--<div class="div-input">-->
+                    <!--<input type="text" id="rebate_ratio" name="rebate_ratio" class="select-style"-->
+                    <!--placeholder="单位为百分比" value="<%=it.base==undefined?'':it.base.rebateRatio%>">-->
+                    <!--</div>-->
+                    <!--</div>-->
+
+                    <div class="div-style" style="display: none">
+                        <div class="div-label">
+                            <label class="label-font">合同文件:</label>
+                        </div>
+                        <div class="div-input">
+                            <input type="file" id="contract" name="contract" class="input-style" placeholder="上传文件">
+                        </div>
+                    </div>
+
+                    <div class="div-style">
+                        <div class="div-label">
+                            <label class="label-font">产品图片:</label>
+                        </div>
+                        <div class="div-input">
+                            <!--<input type="file" class="file simg" name="product_picture" id="product_picture" multiple-->
+                            <!--accept="image/*" value="<%=it.base==undefined?'':it.base.productPictru%>">-->
+
+                            <!--<p class="upload_p">-->
+                            <!--<img src="<%=it.base==undefined?'':it.base.productPictru%>" id="upload_btn">-->
+                            <!--</p>-->
+                            <!--<input type="text" id="productImg"/>-->
+
+                            <div id="container">
+                                <a id="UpLoadFiles"
+                                   style="color: #2b669a; cursor: pointer; text-decoration: underline;font-family: Microsoft YaHei;font-size: 14px;">上传文件</a>
+                            </div>
+                            <p class="upload_p">
+                                <img src="<%=it.base==undefined?'':it.base.productPicture%>" id="upload_btn">
+                            </p>
+                        </div>
+                    </div>
+
+
+                    <div class="div-style">
+                        <div class="div-label">
+                            <label class="label-font">产品亮点:</label>
+                        </div>
+                        <div class="div-input">
+                            <textarea type="text" id="feature" name="feature" class="input-style">
+                                <%=it.base==undefined?'':it.base.feature%>
+                            </textarea>
+                        </div>
+                    </div>
+
+                    <div class="div-style">
+                        <div class="div-label">
+                            <label class="label-font">还款来源:</label>
+                        </div>
+                        <div class="div-input">
+                            <textarea type="text" id="repayment_source" name="repayment_source"
+                                      class="input-style">
+                                 <%=it.base==undefined?'':it.base.repaymentSource%>
+                            </textarea>
+                        </div>
+                    </div>
+
+                    <div class="div-style">
+                        <div class="div-label">
+                            <label class="label-font">增信措施:</label>
+                        </div>
+                        <div class="div-input">
+                           c
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="footer-btn">
+                        <input type="button" class="prev-btn prev" value="上一步">
+                        <input type="button" class="next-btn next" value="下一步">
+                    </div>
+                </div>
+
+                <div class="step-style page" id="cre <%=it.base!=undefined && it.base.isPromote==0? 'selected=" selected
+                "':'' %> atePro-step4">
+                <!--固定收益型-->
+                <div id="fixed">
+                    <div class="div-style">
+                        <div class="div-label">
+                            <label class="label-font">付息方式:</label>
+                        </div>
+                        <div class="div-input">
+                            <select id="interest_pay_type" name="interest_pay_type" class="select-style">
+                                <option value="1"
+                                <%=it.base!=undefined && it.base.interestPayType==1? 'selected="selected"':'' %>
+                                >方式1</option>
+                                <option value="2"
+                                <%=it.base!=undefined && it.base.interestPayType==2? 'selected="selected"':'' %>
+                                >方式2</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="div-style">
+                        <div class="div-label">
+                            <label class="label-font">发行方式:</label>
+                        </div>
+                        <div class="div-input">
+                            <select id="distribution_type" name="distribution_type" class="select-style">
+                                <option value="1"
+                                <%=it.base!=undefined && it.base.distributionType==1? 'selected="selected"':'' %>
+                                >上游打包价</option>
+                                <option value="2"
+                                <%=it.base!=undefined && it.base.distributionType==2? 'selected="selected"':'' %>
+                                >发行费</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="div-style">
+                        <div class="div-label">
+                            <label class="label-font">上游打包价:</label>
+                        </div>
+                        <div class="div-input">
+                            <input type="text" id="package_price" name="package_price" class="input-style"
+                                   value="<%=it.fixed==undefined?'':it.fixed.packagePrice%>"
+                                    >
+                        </div>
+                    </div>
+                    <!--<div class="div-style">-->
+                    <!--<div class="div-label">-->
+                    <!--<label class="label-font">发行费:</label>-->
+                    <!--</div>-->
+                    <!--<div class="div-input">-->
+                    <!--<input type="text" id="distribution_price" name="distribution_price"-->
+                    <!--class="input-style" value="<%=it.fixed==undefined?'':it.fixed.distributionPrice%>">-->
+                    <!--</div>-->
+                    <!--</div>-->
+                    <!--<div class="div-style">-->
+                    <!--<div class="div-label">-->
+                    <!--<label class="label-font">发行方案:</label>-->
+                    <!--</div>-->
+                    <!--<div class="div-input">-->
+                    <!--<input type="text" id="distribution_plan" name="distribution_plan" class="input-style"-->
+                    <!--value="<%=it.fixed==undefined?'':it.fixed.distributionPlan%>">-->
+                    <!--</div>-->
+                    <!--</div>-->
+                    <hr>
+                    <div class="footer-btn">
+                        <input type="button" class="prev-btn prev" value="上一步">
+                        <input type="button" class="next-btn next" value="下一步">
+                    </div>
+                </div>
+
+
+                <!--浮动收益型 begin-->
+                <div id="float" style="display: none">
+                    <div class="div-style">
+                        <div class="div-label">
+                            <label class="label-font">基金净值:</label>
+                        </div>
+                        <div class="div-input">
+                            <input type="text" id="net_fund" required required-msg="基金净值为必填项"  name="net_fund" class="input-style"
+                                   value="<%=it.floating==undefined?'':it.floating.netFund%>">
+                        </div>
+                    </div>
+                    <div class="div-style">
+                        <div class="div-label">
+                            <label class="label-font">存续期:</label>
+                        </div>
+                        <div class="div-input">
+                            <input type="text" id="duration" name="duration" class="input-style"
+                                   value="<%=it.floating==undefined?'':it.floating.duration%>">
+                        </div>
+                    </div>
+
+                    <div class="div-style">
+                        <div class="div-label">
+                            <label class="label-font">存续规模:</label>
+                        </div>
+                        <div class="div-input">
+                            <input type="text" id="duration_total" name="duration_total" class="input-style"
+                                   placeholder="单位为万元" value="<%=it.floating==undefined?'':it.floating.durationTotal%>">
+                        </div>
+                    </div>
+                    <div class="div-style">
+                        <div class="div-label">
+                            <label class="label-font">封闭期:</label>
+                        </div>
+                        <div class="div-input">
+                            <input type="text" id="closure" name="closure" class="input-style" placeholder="单位为月"
+                                   value="<%=it.floating==undefined?'':it.floating.closure%>">
+                        </div>
+                    </div>
+
+                    <div style="display: none;">
+                        <div class="div-style">
+                            <div class="div-label">
+                                <label class="label-font">管理费:</label>
+                            </div>
+                            <div class="div-input">
+                                <input type="text" id="management_cost" name="management_cost" class="input-style"
+                                        >
+
+                                <!--!!!!!!!!!!!!!!!!!!!!!!!!!!!此处需改!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
+                            </div>
+                        </div>
+                        <div class="div-style">
+                            <div class="div-label">
+                                <label class="label-font">业绩提成:</label>
+                            </div>
+                            <div class="div-input">
+                                <input type="text" id="commision" name="commision" class="input-style"
+                                       value="<%=it.base==undefined?'':it.base.distributionPlan%>">
+                            </div>
+                        </div>
+                        <div class="div-style">
+                            <div class="div-label">
+                                <label class="label-font">收益分配:</label>
+                            </div>
+                            <div class="div-input">
+                                <input type="text" id="benefit_distribution" name="benefit_distribution"
+                                       class="input-style" value="<%=it.base==undefined?'':it.base.distributionPlan%>">
+                            </div>
+                        </div>
+                        <div class="div-style">
+                            <div class="div-label">
+                                <label class="label-font">基金经理:</label>
+                            </div>
+                            <div class="div-input">
+                                <input type="text" id="fund_manager" name="fund_manager" class="input-style"
+                                       value="<%=it.base==undefined?'':it.base.distributionPlan%>">
+                            </div>
+                        </div>
+                        <div class="div-style">
+                            <div class="div-label">
+                                <label class="label-font">基金经理介绍:</label>
+                            </div>
+                            <div class="div-input">
+                                <textarea type="text" id="fund_manager_introduce" name="fund_manager_introduce"
+                                          class="textarea-style"> <%=it.base==undefined?'':it.base.distributionPlan%> </textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="div-style">
+                        <div class="div-label">
+                            <label class="label-font">申购赎回:</label>
+                        </div>
+                        <div class="div-input">
+                                <textarea type="text" id="purchase_redemption" name="purchase_redemption"
+                                          class="input-style"> <%=it.floating==undefined?'':it.floating.purchaseRedemption%> </textarea>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="footer-btn">
+                        <input type="button" class="prev-btn prev" value="上一步">
+                        <input type="button" class="next-btn next" value="下一步">
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="step-style page" id="createPro-step5">
+                <!--<div class="div-style">-->
+                <!--<div class="div-label">-->
+                <!--<label class="label-font">产品经理:</label>-->
+                <!--</div>-->
+                <!--<div class="div-input">-->
+                <!--&lt;!&ndash;-->
+                <!--<select id="product-manager" class="select-style">-->
+                <!--<option value="1" <%=it.auditors!=undefined && it.auditors.distributionType==1? 'selected="selected"':'' %> >经理1</option>-->
+                <!--<option value="2" <%=it.auditors!=undefined && it.auditors.distributionType==1? 'selected="selected"':'' %> >经理2</option>-->
+                <!--</select>-->
+                <!--&ndash;&gt;-->
+                <!--<input id="product-manager" class="commonInput"-->
+                <!--value="<%=it.auditors!=undefined && it.auditors.auditor4 %>"/>-->
+                <!--</div>-->
+                <!--</div>-->
+                <div class="div-style">
+                    <div class="div-label">
+                        <label class="label-font">产品经理:</label>
+                    </div>
+                    <div class="div-input">
+                        <label style="vertical-align: sub;" id="product-manager"></label>
+                    </div>
+                </div>
+                <div class="div-style">
+                    <div class="div-label">
+                        <label class="label-font">渠道经理:</label>
+                    </div>
+                    <div class="div-input">
+                        <!--
+                        <select id="ditch-manager" class="select-style">
+                            <option value="1" <%=it.auditors!=undefined && it.auditors.auditor1==1? 'selected="selected"':'' %> >经理1</option>
+                            <option value="2" <%=it.auditors!=undefined && it.auditors.auditor1==2? 'selected="selected"':'' %> >经理2</option>
+                        </select>
+                        -->
+                        <input id="ditch-manager" class="commonInput"
+                               value="<%=it.auditors!=undefined && it.auditors.auditor1!=false ?it.auditors.auditor1 :'' %>"/>
+                    </div>
+                </div>
+                <div class="div-style">
+                    <div class="div-label">
+                        <label class="label-font">审核经理:</label>
+                    </div>
+                    <div class="div-input">
+                        <!--
+                        <select id="audit-manager" class="select-style">
+                            <option value="1" <%=it.auditors!=undefined && it.auditors.auditor2==1? 'selected="selected"':'' %> >经理1</option>
+                            <option value="2" <%=it.auditors!=undefined && it.auditors.auditor2==2? 'selected="selected"':'' %> >经理2</option>
+                        </select>
+                        -->
+                        <input id="audit-manager" class="commonInput"
+                               value="<%=it.auditors!=undefined && it.auditors.auditor2!=false ?it.auditors.auditor2 :'' %>"/>
+                    </div>
+                </div>
+                <div class="div-style">
+                    <div class="div-label">
+                        <label class="label-font">结算经理:</label>
+                    </div>
+                    <div class="div-input">
+                        <!--
+                        <select id="closing-manager" class="select-style">
+                            <option value="1" <%=it.auditors!=undefined && it.auditors.auditor3==1? 'selected="selected"':'' %> >经理1</option>
+                            <option value="2" <%=it.auditors!=undefined && it.auditors.auditor3==2? 'selected="selected"':'' %> >经理2</option>
+                        </select>
+                        -->
+                            <input id="closing-manager" class="commonInput"
+                                   value="<%=it.auditors!=undefined && it.auditors.auditor3!=false ?it.auditors.auditor3 :'' %>"/>
+                    </div>
+                </div>
+                <hr>
+                <div class="footer-btn">
+                    <input type="button" class="prev-btn prev" value="上一步">
+                    <input type="button" class="next-btn next commits" value="完成">
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</form>

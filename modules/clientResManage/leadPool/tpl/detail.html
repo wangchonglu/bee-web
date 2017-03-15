@@ -1,0 +1,48 @@
+<div class="leadPool_z">
+    <div class="header">
+        <span>公司线索池详情</span>
+    </div>
+    <div class="content">
+        <table class="beeWebTable">
+            <thead>
+            <tr>
+                <th>客户名称</th>
+                <th>联系方式</th>
+                <th>公司名称</th>
+                <th>地址</th>
+                <th>邮箱</th>
+                <th>邮寄</th>
+                <th>评论</th>
+                <th>最近活动时间</th>
+                <th>创建时间</th>
+            </tr>
+            </thead>
+            <tbody>
+            <% if(it.length > 0){ %>
+            <% for(var i=0;i<it.length;i++){ %>
+            <% var item=it[i];%>
+            <% var flag=i%2;var curClass;%>
+            <% if(flag==0){curClass="trOddBackColor";}else{curClass="trEvenBackColor";} %>
+            <tr class="<%= curClass %>" data-gid="<%=item.id%>" data-index="<%=i%>">
+                <td data-field="name"><%=item.name%></td>
+                <td data-field="phone"><%=item.phone%></td>
+                <td data-field="companyName"><%=item.companyName%></td>
+                <td data-field="address"><%=item.address%></td>
+                <td data-field="email"><%=item.email%></td>
+                <td data-field="post"><%=item.post%></td>
+                <td data-field="comment"><%=item.comment%></td>
+                <td data-field="recentActivityRecordTime"><%=item.recentActivityRecordTime%></td>
+                <td data-field="createdAt"><%=item.createdAt%></td>
+            </tr>
+            <% } %>
+            <% }else{ %>
+            <tr class="tbody_empty"><td colspan="9">No Data</td></tr>
+            <% } %>
+            </tbody>
+        </table>
+        <% if(it.length>0){ %>
+        <div class="leadPool_detail_pager">
+        </div>
+        <% } %>
+    </div>
+</div>

@@ -1,0 +1,41 @@
+<div class="form-team">
+    <div class="teamHeader">
+        <div class="title">产品：<span class="name">短融保1号</span></div>
+        <div class="allList">
+            <a href="javascript:void(0)" class="singleProForm">所有报单列表&gt;&gt;</a>
+        </div>
+        <div style="clear: both"></div>
+    </div>
+    <div class="form-team-table">
+        <table class="beeWebTable">
+            <thead>
+            <tr>
+                <th>团队</th>
+                <th>限额</th>
+                <th>分配金额</th>
+                <th>报单数量</th>
+                <th>报单总金额</th>
+            </tr>
+            </thead>
+            <tbody>
+            <% if(it.length > 0){ %>
+            <% for(var i=0;i<it.length;i++){ %>
+            <% var item=it[i];%>
+            <% var flag=i%2;var curClass;%>
+            <% if(flag==0){curClass="trOddBackColor";}else{curClass="trEvenBackColor";} %>
+            <tr class="<%= curClass %> teamDetail" title="查看团队所有报单">
+                <td data-field="name"><%= item.name %></td>
+                <td data-field="amount"><%= item.amount %></td>
+                <td data-field="assignAmount"><%= item.assignAmount %></td>
+                <td data-field="count"><%= item.count %></td>
+                <td data-field="allPrice"><%= item.allPrice %></td>
+            </tr>
+            <% } %>
+            <% }else{ %>
+            <tr class="tbodyEmpty"><td colspan="5">暂无数据</td></tr>
+            <% } %>
+            </tbody>
+        </table>
+    </div>
+
+</div>

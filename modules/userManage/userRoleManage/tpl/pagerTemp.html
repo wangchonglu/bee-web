@@ -1,0 +1,24 @@
+<% if(it.length>0){ %>
+<% for(var i=0; i
+<it.length; i++){ %>
+<% var item=it[i]; %>
+<% var flag=i%2;var curClass;%>
+<% if(flag==0){curClass="trOddBackColor";}else{curClass="trEvenBackColor";} %>
+<tr class="<%= curClass %>" data-uid="<%= item.uid %>">
+    <td class="role_name"><%= item.name %></td>
+    <td class="role_dept"><%= item.dept %></td>
+    <td class="role_role"><%= item.roles %></td>
+    <td class="role_phone"><%= item.phone %></td>
+    <td class="role_email"><%= item.email %></td>
+    <td class="role_op">
+        <a href="javascript:void(0)" class="table-detail" title="详情">详情</a>
+        <a href="javascript:void(0)" class="table-delete" title="删除">删除</a>
+        <a href="javascript:void(0)" class="table-allot" title="修改角色">修改角色</a>
+    </td>
+</tr>
+<% } %>
+<% }else{ %>
+<tr class="tbody_empty">
+    <td colspan="6">当前没有数据 /(ㄒoㄒ)/~~</td>
+</tr>
+<% } %>

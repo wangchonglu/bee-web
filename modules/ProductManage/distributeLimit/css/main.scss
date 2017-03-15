@@ -1,0 +1,40 @@
+$fontName:Microsoft YaHei;
+$height:45px;
+
+.distributeLimit{
+  .productTbl{
+    background-color: #eaeaea;
+  }
+  .popTable{
+    width: 100%;
+    margin: auto;
+    border-collapse:collapse;
+    border-spacing: 0;
+    tr{
+      width: 100%;
+      height: $height;
+      line-height: $height;
+      td{
+        height: $height;
+        line-height: $height;
+      }
+      .popTable_name{
+        width: 20%;
+        text-align: right;
+        font-family:$fontName ;
+        font-size: 13px;
+        color: #6b818b;
+      }
+      .popTable_content{
+        text-align: left;
+        font-family:$fontName ;
+        font-size: 13px;
+        color: #6b818b;
+        input{
+          width:130px;
+          outline: none;
+        }
+      }
+    }
+  }
+}

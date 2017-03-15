@@ -1,0 +1,35 @@
+.lead_import_pop {
+  width: 100%;
+  text-align: center; }
+  .lead_import_pop table {
+    width: 95%;
+    margin: auto; }
+    .lead_import_pop table tr {
+      height: 45px;
+      width: 100%; }
+      .lead_import_pop table tr th {
+        font-weight: normal;
+        font-style: normal;
+        height: 45px;
+        text-align: right;
+        padding-right: 20px;
+        width: 40%;
+        color: #6b818b;
+        font-family: Microsoft YaHei;
+        font-size: 14px; }
+      .lead_import_pop table tr td {
+        height: 45px;
+        line-height: 45px;
+        width: 60%;
+        color: #6b818b;
+        font-family: Microsoft YaHei;
+        font-size: 14px;
+        text-align: left; }
+      .lead_import_pop table tr .error_manage {
+        text-align: center; }
+        .lead_import_pop table tr .error_manage .message {
+          color: red;
+          font-family: Microsoft YaHei;
+          font-size: 14px; }
+
+/*# sourceMappingURL=importLeads.css.map */

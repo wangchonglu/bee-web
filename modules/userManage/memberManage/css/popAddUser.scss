@@ -1,0 +1,32 @@
+$fontName:Microsoft YaHei;
+
+.popAddUser{
+  width: 100%;
+  table{
+    width: 100%;
+    tr{
+      width: 100%;
+      height: 50px;
+      th{
+        width: 35%;
+        text-align: right;
+        font-family:$fontName ;
+        font-size: 13px;
+        font-weight: normal;
+        padding-right: 30px;
+      }
+
+      td{
+        width: 65%;
+        text-align: left;
+        font-family:$fontName ;
+        font-size: 13px;
+        padding: 5px 0 5px 0;
+        .add_dept{
+          background-color: rgb(249, 249, 249);
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}

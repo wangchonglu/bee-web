@@ -1,0 +1,58 @@
+<div class="popUserDetail">
+    <div class="contact_user_img">
+        <img src="<%= it.image %>" />
+    </div>
+    <table class="popTable">
+        <tr>
+            <td class="popTable_name">姓名：</td>
+            <td class="popTable_content">
+                <span data-field="name"><%= it.name %></span>
+                <!--<input type="text" value="<%= it.name %>" data-field="name" class="commonInput" />-->
+            </td>
+        </tr>
+        <tr>
+            <td class="popTable_name">手机：</td>
+            <td class="popTable_content">
+                <span data-field="phone"><%= it.phone %></span>
+                <!--<input type="text" value="<%= it.phone %>" data-field="phone" class="commonInput" />-->
+            </td>
+        </tr>
+        <tr>
+            <td class="popTable_name">邮箱：</td>
+            <td class="popTable_content">
+                <span data-field="email"><%= it.email %></span>
+                <!--<input type="text" value="<%= it.email %>" data-field="email" class="commonInput" />-->
+            </td>
+        </tr>
+        <!--<tr>-->
+        <!--<td class="popTable_name">业绩：</td>-->
+        <!--<td class="popTable_content">-->
+        <!--<span><%= it.perform %></span>-->
+        <!--</td>-->
+        <!--</tr>-->
+        <!--<tr>-->
+        <!--<td class="popTable_name">佣金：</td>-->
+        <!--<td class="popTable_content">-->
+        <!--<span><%= it.salary %></span>-->
+        <!--</td>-->
+        <!--</tr>-->
+        <!--<tr>-->
+        <!--<td class="popTable_name">积分：</td>-->
+        <!--<td class="popTable_content">-->
+        <!--<span><%= it.score %></span>-->
+        <!--</td>-->
+        <!--</tr>-->
+        <tr>
+            <td class="popTable_name">地址：</td>
+            <td class="popTable_content">
+                <span><%= it.addr %></span>
+            </td>
+        </tr>
+        <tr>
+            <td class="popTable_name">身份证件：</td>
+            <td class="popTable_content">
+                <img src="<%= it.idcardimg %>" />
+            </td>
+        </tr>
+    </table>
+</div>

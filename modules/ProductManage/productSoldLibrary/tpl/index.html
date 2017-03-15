@@ -1,0 +1,51 @@
+<div class="product_sales">
+    <div class="prosales_header">
+        <div class="header_operation">
+            <div class="operation_sort">
+                <span>排序方式：</span>
+                <select class="select_op_sort">
+                    <option>募集规模</option>
+                </select>
+            </div>
+            <div class="operation_search">
+                <input class="people_search_btn" type="text" placeholder="搜索产品名称"/>
+                <img class="people_search_img" src="./modules/foundation/image/operation_search.png" title="搜索"/>
+            </div>
+        </div>
+    </div>
+
+    <div class="prosales_content">
+        <table class="prosales_table beeWebTable">
+            <thead>
+            <tr>
+                <th>产品名称</th>
+                <th>产品类型</th>
+                <th>募集总额(万元)</th>
+                <th>发行总额(万元)</th>
+            </tr>
+            </thead>
+            <tbody>
+            <% if(it.length > 0){ %>
+            <% for(var i=0;i<it.length;i++){ %>
+            <% var item=it[i];%>
+            <% var flag=i%2;var curClass;%>
+            <% if(flag==0){curClass="trOddBackColor";}else{curClass="trEvenBackColor";} %>
+            <tr class="<%= curClass %>" data-id="<%=item.id%>">
+                <td class="tbody_td" data-field="proName"><%=item.proName%></td>
+                <td class="tbody_td" data-field="region"><%=item.proType%></td>
+                <td class="tbody_td" data-field="fund"><%=item.income%></td>
+                <td class="tbody_td" data-field="income"><%=item.years%></td>
+            </tr>
+            <% } %>
+            <% }else{ %>
+            <tr class="prosales_tbody_empty"><td colspan="5">No Data</td></tr>
+            <% } %>
+            </tbody>
+        </table>
+        <% if(it.length > 0){ %>
+        <div class="prosales_pager">
+
+        </div>
+        <% } %>
+    </div>
+</div>

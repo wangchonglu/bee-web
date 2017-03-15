@@ -1,0 +1,11 @@
+<div class="role_allot_content">
+    <div class="content-div">
+        <% for(var i=0;i<it.roles.length;i++){ %>
+            <% var item=it.roles[i]; %>
+            <div class="roleItem">
+                <input type="checkbox" data-id="<%= item.id %>" name="roles" class="roleCheckBox" <% if(item.checked==true){%>checked<%}%> />
+                <%= item.name %>
+            </div>
+        <% } %>
+    </div>
+</div>

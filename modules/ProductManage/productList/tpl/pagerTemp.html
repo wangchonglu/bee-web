@@ -1,0 +1,51 @@
+<!--
+
+<% if(it.length > 0){ %>
+<% for(var i=0;i<it.length;i++){ %>
+<% var item=it[i];%>
+<% var flag=i%2;var curClass;%>
+<% if(flag==0){curClass="trOddBackColor";}else{curClass="trEvenBackColor";} %>
+<tr class="<%= curClass %>" data-uid="<%=item.uid %>">
+    <td class="prolist_tbody_td" data-field="proName"><%=item.proName%></td>
+    <td class="prolist_tbody_td" data-field="fund"><%=item.fund%></td>
+    <td class="prolist_tbody_td" data-field="income"><%=item.income%></td>
+    <td class="prolist_tbody_td" data-field="region"><%=item.region%></td>
+    <td class="prolist_tbody_td" data-field="years"><%=item.years%></td>
+    <td class="prolist_tbody_td" data-field="yearRate"><%=item.yearRate%></td>
+    <td class="prolist_tbody_td" data-field="backRate"><%=item.backRate%></td>
+    <td class="prolist_tbody_op" data-field="operate">
+        <a class="list_img_edit" href="javascript:void(0)">编辑</a>
+        <a class="list_img_delete" href="javascript:void(0)">删除</a>
+    </td>
+</tr>
+<% } %>
+<% } %>
+
+
+-->
+
+<% if(it.items.length > 0){ %>
+<% for(var i=0;i<it.items.length;i++){ %>
+<% var item=it.items[i];%>
+<% var flag=i%2;var curClass;%>
+<% if(flag==0){curClass="trOddBackColor";}else{curClass="trEvenBackColor";} %>
+<tr class="<%= curClass %>" data-id="<%=item.id %>">
+    <td class="prolist_tbody_td proName" data-field="proName"><%=item.proName%></td>
+    <td class="prolist_tbody_td fund" data-field="fund"><%=item.fund%></td>
+    <td class="prolist_tbody_td income" data-field="income"><%=item.income%></td>
+    <td class="prolist_tbody_td region" data-field="region"><%=item.region%></td>
+    <td class="prolist_tbody_td years" data-field="years"><%=item.years%></td>
+    <td class="prolist_tbody_td yearRate" data-field="yearRate"><%=item.yearRate%></td>
+    <td class="prolist_tbody_td backRate" data-field="backRate"><%=item.backRate%></td>
+    <td class="prolist_tbody_op operate" data-field="operate">
+        <a data-id="<%=item.id%>" class="list_img_edit" href="javascript:void(0)">编辑</a>
+        <a data-id="<%=item.id%>" class="list_img_edit_scheme" href="javascript:void(0)">编辑发行方案</a>
+        <a data-id="<%=item.id%>" class="list_img_edit_detail" href="javascript:void(0)">编辑详细资料</a>
+        <!--<a data-id="<%=item.id%>" class="list_img_details" href="javascript:void(0)">详情</a>-->
+        <a data-id="<%=item.id%>" class="list_img_delete" href="javascript:void(0)">删除</a>
+    </td>
+</tr>
+<% } %>
+<% }else{ %>
+<tr class="prolist_tbody_empty"><td colspan="9">No Data</td></tr>
+<% } %>

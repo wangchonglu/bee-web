@@ -1,0 +1,77 @@
+<div class="coop_channel">
+
+    <div class="tab-content">
+        <ul>
+            <li class="cha-stitude select">
+                <span>机构</span>
+            </li>
+            <li class="cha-person">
+                <span>个人</span>
+            </li>
+        </ul>
+    </div>
+    <div style="clear:both;"></div>
+    <div class="coopChannel_content">
+        <div class="coopChannel_header">
+            <div class="header_operation">
+                <div class="operation_add">
+                    <img class="op_addproduct" src="./modules/foundation/image/operation_add.png" title="添加渠道" />
+                    <span>添加渠道</span>
+                </div>
+                <div class="operation_sort">
+                    <span>排序方式：</span>
+                    <select class="select_op_sort">
+                        <option>成交额度</option>
+                    </select>
+                </div>
+
+                <div class="operation_search">
+                </div>
+            </div>
+        </div>
+
+        <table class="coopChannel_table beeWebTable">
+            <thead>
+            <tr>
+                <th>渠道名称</th>
+                <th>类型</th>
+                <th>联系方式</th>
+                <th>职位</th>
+                <th>累计成交额(万元)</th>
+                <th>地域</th>
+                <th>理财师数量</th>
+                <th>机构服务经理</th>
+                <th>历史成交记录</th>
+            </tr>
+            </thead>
+            <tbody>
+            <% if(it.length > 0){ %>
+            <% for(var i=0;i<it.length;i++){ %>
+            <% var item=it[i];%>
+            <% var flag=i%2;var curClass;%>
+            <% if(flag==0){curClass="trOddBackColor";}else{curClass="trEvenBackColor";} %>
+            <tr class="<%= curClass %>">
+                <td class="tbody_td" data-field="proName"><%=item.proName%></td>
+                <td class="tbody_td" data-field="fund"><%=item.fund%></td>
+                <td class="tbody_td" data-field="income"><%=item.income%></td>
+                <td class="tbody_td" data-field="region"><%=item.region%></td>
+                <td class="tbody_td" data-field="years"><%=item.years%></td>
+                <td class="tbody_td" data-field="income"><%=item.zone%></td>
+                <td class="tbody_td" data-field="region"><%=item.funderCount%></td>
+                <td class="tbody_td" data-field="years"><%=item.serviceMan%></td>
+                <td class="tbody_td" data-field="region"><a href="#">历史成交记录</a></td>
+            </tr>
+            <% } %>
+            <% }else{ %>
+            <tr class="coopChannel_tbody_empty"><td colspan="8">No Data</td></tr>
+            <% } %>
+            </tbody>
+        </table>
+        <% if(it.length > 0){ %>
+        <div class="coopChannel_pager">
+
+        </div>
+        <% } %>
+    </div>
+
+</div>

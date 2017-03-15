@@ -1,0 +1,50 @@
+<div class="leads_garbage">
+    <div class="content">
+        <table class="beeWebTable">
+            <thead>
+            <tr>
+                <th>名称</th>
+                <th>联系方式</th>
+                <th>公司名称</th>
+                <th>职位</th>
+                <th>来源</th>
+                <th>批次</th>
+                <th>创建时间</th>
+                <th>丢弃原因</th>
+            </tr>
+            </thead>
+            <tbody>
+            <% if(it.length > 0){ %>
+            <% for(var i=0;i<it.length;i++){ %>
+            <% var item=it[i];%>
+            <% var flag=i%2;var curClass;%>
+            <% if(flag==0){curClass="trOddBackColor";}else{curClass="trEvenBackColor";} %>
+            <tr class="<%= curClass %> trData" data-gid="<%=item.id%>" data-index="<%=i%>" title="点击查看详情">
+                <td data-field="name"><%= formatNullField(item.name) %></td>
+                <td data-field="phone"><%= formatNullField(item.phone) %></td>
+                <td data-field="companyName"><%= formatNullField(item.companyName) %></td>
+                <td data-field="position"><%= formatNullField(item.post) %></td>
+                <td data-field="source"><%= formatNullField(item.dbcVarchar2) %></td>
+                <td data-field="batch" data-id="<%=item.dbcInteger1%>"><%= formatNullField(item.dbcVarchar4) %></td>
+                <td data-field="createdAt"><%= getSmpFormatDate(new Date(item.createdAt), true) %></td>
+                <td data-field="reason"><%= formatNullField(item.errorReason) %></td>
+            </tr>
+            <% } %>
+            <% }else{ %>
+            <tr class="tbody_empty"><td colspan="9">No Data</td></tr>
+            <% } %>
+            </tbody>
+            <% if(it.length>0){ %>
+            <tfoot>
+                <tr>
+                    <td colspan="9">
+                        <div class="leads_garbage_pager">
+                        </div>
+                    </td>
+                </tr>
+            </tfoot>
+            <% } %>
+        </table>
+
+    </div>
+</div>

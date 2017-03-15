@@ -1,0 +1,33 @@
+.sign_pop {
+  width: 100%;
+  text-align: center; }
+  .sign_pop .sign_table {
+    width: 100%;
+    margin-bottom: 20px; }
+    .sign_pop .sign_table table {
+      width: 80%;
+      margin: auto; }
+      .sign_pop .sign_table table tr {
+        height: 80px;
+        line-height: 80px;
+        width: 100%; }
+        .sign_pop .sign_table table tr th {
+          font-weight: normal;
+          font-style: normal;
+          height: 80px;
+          line-height: 80px;
+          text-align: center;
+          width: 30%;
+          color: #6b818b;
+          font-family: Microsoft YaHei;
+          font-size: 14px; }
+        .sign_pop .sign_table table tr td {
+          height: 80px;
+          line-height: 80px;
+          width: 70%;
+          color: #6b818b;
+          font-family: Microsoft YaHei;
+          font-size: 14px;
+          text-align: left; }
+
+/*# sourceMappingURL=confirmSign.css.map */

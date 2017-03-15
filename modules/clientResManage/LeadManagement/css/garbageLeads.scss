@@ -1,0 +1,33 @@
+.leads_garbage{
+  width: 99%;
+  margin:auto;
+  table{
+    tbody{
+      tr{
+        cursor: pointer;
+      }
+      tr:hover{
+        background-color: #CCCCFF;
+      }
+      .tbody_empty{
+        height:150px;
+        cursor: default;
+        td{
+          font-family: "Microsoft YaHei";
+          font-size: 30px;
+          font-style: italic;
+          color:#dcdcdc;
+        }
+      }
+      .tbody_empty:hover{
+        background-color: #f7f9fb;
+      }
+    }
+
+    .leads_garbage_pager{
+      width:100%;
+      height:100%;
+      background-color: #e5e5e5;
+    }
+  }
+}

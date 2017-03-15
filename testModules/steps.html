@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+
+    <link rel="stylesheet" href="../js/lib/jquery.rollbar/css/perfect-scrollbar.min.css"/>
+    <script src="../js/lib/jquery/jquery-1.11.3.min.js"></script>
+    <script src="../js/lib/jquery.rollbar/js/perfect-scrollbar.jquery.min.js"></script>
+
+    <script>
+        ;
+        (function () {
+
+            $(function () {
+
+
+                //  $(" .mfy-step .steps-contentList .steps-content").rollbar({zIndex:80});
+                autoStepControl({
+                    onPre: function (currentIndex) {
+                        return false;
+                    }, onNext: function (currentIndex) {
+                        return true;
+                    }, onSkipStep: function (currentIndex) {
+                        return true;
+                    }
+                    , onOk: function () {
+
+                    }
+                });
+
+                $("body").perfectScrollbar();
+                $(" .mfy-step .steps-contentList .steps-content").perfectScrollbar();
+            });
+
+            function autoStepControl(options) {
+
+                var settings = $.extend({
+                    onPre: undefined,
+                    onNext: undefined,
+                    onOk: undefined,
+                    isSkipStep: true
+                }, options);
+
+                var stepIndex = 1;
+
+                var $myfStes = $(".mfy-step");
+                var headerLength = $myfStes.find("header .header-step-list").width();
+                var headerItems = $myfStes.find("header .header-step");
+                var itemWidth = headerItems.width();
+                var marginRight = (headerLength - (headerItems.length * headerItems.width())) / (headerItems.length - 1);
+                $myfStes.find("header .header-step").css("margin-right", marginRight).last().css("margin-right", 0);
+
+                //设置steps-contentBox的宽度
+                var contentWidth = $myfStes.find(".steps-contentList").width();
+                //$myfStes.find(".steps-contentBox").css("width", headerItems.length * contentWidth + 10);
+                var $contentList = $myfStes.find(".steps-contentList .steps-content");
+                $contentList.css("width", headerLength).hide().first().show();
+
+                $myfStes.find(".steps-line-active").animate({width: itemWidth + (marginRight / 2)}, 1000);
+
+                var $steps = headerItems.find(".default");
+
+                $myfStes.find(".footer-actions input:button").click(function () {
+                    var self = $(this);
+                    if (self.hasClass("mfy-steps-pre")) {
+                        var isValidate = settings.onPre(stepIndex);
+                        if (!isValidate) {
+                            return;
+                        }
+                        stepIndex--;
+                    }
+                    if (self.hasClass("mfy-steps-next")) {
+                        var isValidate = settings.onNext(stepIndex);
+                        if (!isValidate) {
+                            return;
+                        }
+                        stepIndex++;
+                    }
+                    if (self.hasClass("mfy-steps-ok")) {
+                        settings.onOK();
+                    }
+                    if (stepIndex < 1) {
+                        stepIndex = 1;
+                        return;
+                    }
+                    if (stepIndex > headerItems.length) {
+                        stepIndex = headerItems.length;
+                        return;
+                    }
+                    stepMove();
+                });
+
+                if (settings.isSkipStep) {
+                    headerItems.click(function () {
+                        var currentIndex = stepIndex;
+                        stepIndex = $.inArray(this, headerItems) + 1;
+                        var isValidate = settings.onSkipStep(currentIndex);
+                        if (!isValidate) {
+                            return;
+                        }
+                        stepMove();
+                    });
+                }
+
+                var stepMove = function () {
+
+                    var lineWidth = (marginRight * (stepIndex) ) - (marginRight / 2) + (itemWidth * stepIndex);
+                    if (lineWidth > headerLength) {
+                        lineWidth = headerLength;
+                    }
+
+                    var $activeLines = $myfStes.find(".steps-line-active");
+                    $activeLines.animate({width: lineWidth}, {
+                        duration: 1000,
+                        progress: function () {
+                            headerItems.each(function (i, step) {
+                                var $stepBox = $(step);
+                                var boxLeft = $stepBox.position().left;
+                                if ($activeLines.width() >= boxLeft) {
+                                    $stepBox.find(".default").addClass("active");
+                                }
+                                if ($activeLines.width() < boxLeft) {
+                                    $stepBox.find(".default").removeClass("active");
+                                }
+                            });
+                        }
+                    });
+
+                    // $myfStes.find(".steps-contentBox").animate({"marginLeft": (0 - headerLength) * (stepIndex - 1)}, 1000);
+                    $contentList.fadeOut("slow").eq(stepIndex - 1).fadeIn(2000);
+                }
+            }
+
+        })();
+    </script>
+    <style>
+        body, html, * {
+            padding: 0px;
+            margin: 0px;
+        }
+
+        .mfy-step {
+            background: #F6F6F6;
+            position: relative;
+            width: 800px;
+        }
+
+        .mfy-step header {
+
+        }
+
+        .mfy-step .header-step-list {
+        }
+
+        .mfy-step .header-step-list .header-step {
+            position: relative;
+            z-index: 102;
+            cursor: pointer;
+        }
+
+        .mfy-step .steps-line {
+            position: absolute;
+            top: 23px;
+            height: 5px;
+            width: 100%;
+            background-color: #ced1d6;
+            z-index: 100;
+        }
+
+        .mfy-step .steps-line-active {
+            position: absolute;
+            top: 23px;
+            height: 5px;
+            z-index: 101;
+            background-color: #5293c4;
+        }
+
+        .mfy-step header .header-step {
+            float: left;
+        }
+
+        .mfy-step header .default {
+            background-color: #fff;
+            border: 5px solid #ced1d6;
+            border-radius: 100%;
+            color: #546474;
+            display: inline-block;
+            font-size: 15px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            width: 40px;
+        }
+
+        .mfy-step header .stepTitle {
+            position: absolute;
+            right: -10px;
+            top: 56px;
+            color: #444444;
+            font-size: 13px;
+            display: block;
+            width: 70px;
+            text-align: center;
+        }
+
+        .mfy-step header .active {
+            border-color: #5293c4;
+        }
+
+        .mfy-step .steps-contentList {
+            margin: 35px auto;
+            border-top: solid 1px #eee;
+            height: 300px;
+        }
+
+        .mfy-step .steps-contentList .steps-content {
+            position: relative;
+            height: 300px;
+            border: solid 1px red;
+        }
+
+        .mfy-step .steps-contentList .hide {
+
+        }
+
+        .mfy-step .footer-actions .mfy-steps-pre,
+        .mfy-step .footer-actions .mfy-steps-next,
+        .mfy-step .footer-actions .mfy-steps-ok {
+            border-radius: 5px;
+            outline: none;
+            color: #fff;
+            width: 100px;
+            height: 45px;
+            font-family: Microsoft YaHei;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        .mfy-step .footer-actions .mfy-steps-pre {
+            background-color: #abbac3;
+            border-color: #abbac3;
+            border: 3px solid #fff;
+        }
+
+        .mfy-step .footer-actions .mfy-steps-next, .mfy-step .footer-actions .mfy-steps-ok {
+            background-color: #5293c4;
+            border-color: #5293c4;
+            border: 3px solid #fff;
+        }
+    </style>
+
+</head>
+<body>
+
+<div class="mfy-step">
+    <header>
+        <div class="header-step-list">
+            <div class="header-step">
+                <span class="default active">1</span>
+                <span class="stepTitle">产品概要</span>
+            </div>
+            <div class="header-step">
+                <span class="default">2</span>
+                <span class="stepTitle">产品要素</span>
+            </div>
+            <div class="header-step">
+                <span class="default">3</span>
+                <span class="stepTitle">申赎要素</span>
+            </div>
+            <div class="header-step">
+                <span class="default">4</span>
+                <span class="stepTitle">发行方案</span>
+            </div>
+            <div class="header-step">
+                <span class="default">5</span>
+                <span class="stepTitle">产品角色</span>
+            </div>
+        </div>
+        <div class="steps-line"></div>
+        <div class="steps-line-active"></div>
+    </header>
+    <div style="clear:both"></div>
+    <article class="steps-contentList">
+        <div class="steps-contentBox">
+            <div class="steps-content" style="background-color:white">
+                <div style="height:1000px;width:2000px">第1步内容<input/></div>
+            </div>
+            <div class="steps-content" style="background-color: red">
+                <div style="height:1000px">第2步内容 <input/></div>
+            </div>
+            <div class="steps-content" style="background-color: yellow">
+                <div style="height:1000px">第3步内容 <input/></div>
+            </div>
+            <div class="steps-content" style="background-color: blue">
+                <div style="height:1000px">第4步内容 <input/></div>
+            </div>
+            <div class="steps-content" style="background-color: black">
+                <div style="height:1000px">第5步内容 <input/></div>
+            </div>
+        </div>
+    </article>
+    <footer>
+        <div class="footer-actions">
+            <input class="mfy-steps-pre" type="button" value="上一步"/>
+            <input class="mfy-steps-next" type="button" value="下一步"/>
+            <input class="mfy-steps-ok" type="button" value="完成"/>
+        </div>
+    </footer>
+</div>
+
+
+</body>
+</html>

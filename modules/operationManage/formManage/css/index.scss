@@ -1,0 +1,85 @@
+$thLineHeight: 45px;
+$tdLineHeight: 35px;
+
+.form_manage {
+  width: 100%;
+  .formMag_header {
+    width: 100%;
+    height: 40px;
+    background-color: #fff;
+    .operation_sort,.report-product-search {
+      float:left;
+      margin-left: 10px;
+      .select_op_sort {
+        color: #6b818b;
+        option {
+          color: #6b818b;
+          font-family: Microsoft YaHei;
+          font-size: 14px;
+        }
+      }
+
+      span,select,option {
+        color: #6b818b;
+        font-family: Microsoft YaHei;
+        font-size: 14px;
+      }
+    }
+
+    .report-product-search{
+      margin-left: 40px;
+    }
+    .operation_search{
+      color: #6b818b;
+      float: right;
+      margin-right: 10px;
+      margin-top: -5px;
+    }
+  }
+
+  .formMag_content {
+    width: 100%;
+    margin: auto;
+    .formMag_table {
+      td {
+        a {
+          text-decoration: none;
+          margin-left: 10px;
+        }
+        a:hover {
+          text-decoration: underline;
+        }
+      }
+
+      tbody{
+        tr{
+          cursor: pointer;
+        }
+        tr:hover{
+          background-color: #CCCCFF;
+        }
+        tr.tbodyEmpty{
+          cursor: default;
+        }
+        tr.tbodyEmpty:hover{
+          background-color:#f7f9fb;
+        }
+      }
+      .formStatistic{
+        float: left;
+        padding-left: 20px;
+        font-family: Microsoft YaHei;
+        font-size: 12px;
+        color: #000;
+        .all,.type{
+          font-family: Microsoft YaHei;
+          font-size: 12px;
+          color: red;
+        }
+      }
+
+    }
+  }
+}
+
+

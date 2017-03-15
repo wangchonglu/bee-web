@@ -1,0 +1,63 @@
+<div id="enter_contact" class="enter_contact">
+    <div class="enter_con_header">
+        <div class="header_operation">
+            <div class="operation_add">
+                <a href="javascript:void(0)" class="op_add_staff"  title="新增员工" >
+                    <img src="./modules/foundation/image/operation_add.png" />
+                    <span>新增员工</span>
+                </a>
+            </div>
+            <div class="operation_filter">
+                筛选：<select class="operation_filter_auth">
+                    <option>全部</option>
+                    <option>已认证</option>
+                    <option>待认证</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="enter_con_content">
+        <table class="beeWebTable enter_con_table">
+            <thead>
+            <tr>
+                <th class="thead_th">姓名</th>
+                <th class="thead_th">部门</th>
+                <th class="thead_th">手机</th>
+                <th class="thead_th">邮箱</th>
+                <th class="thead_op">操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            <% if(it.length > 0){ %>
+            <% for(var i=0;i<it.length;i++){ %>
+            <% var item=it[i];%>
+            <% var flag=i%2;var curClass;%>
+            <% if(flag==0){curClass="trOddBackColor";}else{curClass="trEvenBackColor";} %>
+            <tr class="<%= curClass %>" data-uid="<%=item.uid %>">
+                <td class="tbody_td" data-field="name"><%=item.name%></td>
+                <td class="tbody_td" data-field="dept" data-did="<%=item.dep_id%>"><%=item.dep_name%></td>
+                <td class="tbody_td" data-field="phone"><%=item.telphone%></td>
+                <td class="tbody_td" data-field="email"><%=item.email%></td>
+                <td class="tbody_op" data-field="operate">
+                    <% if(item.flag !=2){ %>
+                        <a class="list_img_edit" href="javascript:void(0)">认证</a>
+                        <a class="list_img_delete" href="javascript:void(0)">驳回</a>
+                    <% }%>
+                    <a class="peo_detail_info" href="javascript:void(0)">详情</a>
+                </td>
+            </tr>
+            <% } %>
+            <% }else{ %>
+            <tr class="tbody_empty"><td colspan="5">当前没有数据 /(ㄒoㄒ)/~~</td></tr>
+            <% } %>
+            </tbody>
+            <tfoot>
+            </tfoot>
+        </table>
+        <% if(it.length > 0){ %>
+        <div class="enter_con_pager">
+
+        </div>
+        <% } %>
+    </div>
+</div>

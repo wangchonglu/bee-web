@@ -1,0 +1,41 @@
+.contract_archive {
+  width: 100%; }
+  .contract_archive .contractArch_header {
+    width: 100%;
+    height: 76px;
+    background-color: #fff; }
+    .contract_archive .contractArch_header .header_operation {
+      height: 76px;
+      line-height: 76px;
+      padding-left: 30px; }
+      .contract_archive .contractArch_header .header_operation .addArchive {
+        text-decoration: none;
+        cursor: pointer; }
+        .contract_archive .contractArch_header .header_operation .addArchive span {
+          color: #6b818b;
+          font-family: Microsoft YaHei;
+          font-size: 14px;
+          margin-right: 10px; }
+        .contract_archive .contractArch_header .header_operation .addArchive img {
+          position: relative;
+          top: 3px;
+          width: 18px;
+          height: 18px; }
+      .contract_archive .contractArch_header .header_operation .addArchive:hover span {
+        color: #5FAEE3; }
+  .contract_archive .contractArch_content {
+    width: 99%;
+    margin: auto; }
+    .contract_archive .contractArch_content .contractArch_table .contractArch_tbody_empty {
+      height: 100px; }
+      .contract_archive .contractArch_content .contractArch_table .contractArch_tbody_empty td {
+        height: 100px;
+        line-height: 100px;
+        text-align: center;
+        font-family: Arial; }
+    .contract_archive .contractArch_content .contractArch_pager {
+      width: 100%;
+      height: 35px;
+      background-color: #e5e5e5; }
+
+/*# sourceMappingURL=index.css.map */

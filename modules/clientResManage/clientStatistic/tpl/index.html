@@ -1,0 +1,51 @@
+<div class="client_statistic">
+    <div class="clientStati_header">
+        <div class="header_operation">
+            <div class="operation_sort">
+                <span>排序方式：</span>
+                <select class="select_op_sort">
+                    <option>客户数量</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <div class="clientStati_content">
+        <table class="clientStati_table beeWebTable">
+            <thead>
+            <tr>
+                <th>理财师名称</th>
+                <th>部门</th>
+                <th>邮箱</th>
+                <th>联系电话</th>
+                <th>客户数量</th>
+                <th>会员数量</th>
+            </tr>
+            </thead>
+            <tbody>
+            <% if(it.length > 0){ %>
+            <% for(var i=0;i<it.length;i++){ %>
+            <% var item=it[i];%>
+            <% var flag=i%2;var curClass;%>
+            <% if(flag==0){curClass="trOddBackColor";}else{curClass="trEvenBackColor";} %>
+            <tr class="<%= curClass %>">
+                <td class="tbody_td" data-field="proName"><%=item.proName%></td>
+                <td class="tbody_td" data-field="fund"><%=item.fund%></td>
+                <td class="tbody_td" data-field="income"><%=item.income%></td>
+                <td class="tbody_td" data-field="region"><%=item.region%></td>
+                <td class="tbody_td" data-field="years"><%=item.years%></td>
+                <td data-field="memberCount"><a href="javascript:void(0)"><%=item.years%></a></td>
+            </tr>
+            <% } %>
+            <% }else{ %>
+            <tr class="clientStati_tbody_empty"><td colspan="6">No Data</td></tr>
+            <% } %>
+            </tbody>
+        </table>
+        <% if(it.length > 0){ %>
+        <div class="clientStati_pager">
+
+        </div>
+        <% } %>
+    </div>
+</div>

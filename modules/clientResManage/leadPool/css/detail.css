@@ -1,0 +1,21 @@
+.leadPool_detail {
+  width: 100%; }
+  .leadPool_detail .header {
+    width: 100%;
+    margin: 10px 30px; }
+    .leadPool_detail .header span {
+      display: block;
+      height: 30px;
+      line-height: 30px;
+      color: #6b818b;
+      font-family: Microsoft YaHei;
+      font-size: 15px; }
+  .leadPool_detail .content {
+    width: 99%;
+    margin: auto; }
+    .leadPool_detail .content .leadPool_detail_pager {
+      width: 100%;
+      height: 35px;
+      background-color: #e5e5e5; }
+
+/*# sourceMappingURL=detail.css.map */

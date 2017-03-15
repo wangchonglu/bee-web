@@ -1,0 +1,257 @@
+.member-manage {
+  width: 100%;
+  height: 100%;
+  overflow: hidden; }
+  .member-manage .header {
+    width: 100%;
+    height: 50px;
+    background-color: #eeeeee;
+    border-top: 1px solid #ddd; }
+    .member-manage .header .hd-title {
+      float: left;
+      height: 50px;
+      line-height: 50px;
+      padding: 0 20px;
+      text-align: center;
+      font-weight: bold;
+      color: #6b818b;
+      font-family: Microsoft YaHei;
+      font-size: 16px; }
+    .member-manage .header .hd-op {
+      float: right; }
+      .member-manage .header .hd-op ul {
+        list-style: none; }
+        .member-manage .header .hd-op ul li {
+          float: left;
+          height: 50px;
+          line-height: 50px;
+          padding: 0 15px;
+          text-align: center;
+          color: #666;
+          font-family: Microsoft YaHei;
+          font-size: 14px;
+          border-left: 1px solid #DDDDDD;
+          cursor: pointer; }
+          .member-manage .header .hd-op ul li img {
+            position: relative;
+            top: 4px;
+            width: 18px;
+            height: 18px;
+            -webkit-transition: all 1s ease;
+            -moz-transition: all 1s ease;
+            -o-transition: all 1s ease;
+            transition: all 1s ease; }
+          .member-manage .header .hd-op ul li span {
+            color: inherit; }
+        .member-manage .header .hd-op ul li.hoverOp:hover {
+          background-color: #fff; }
+          .member-manage .header .hd-op ul li.hoverOp:hover img {
+            -webkit-transform: rotate(360deg);
+            -moz-transform: rotate(360deg);
+            -ms-transform: rotate(360deg);
+            -o-transform: rotate(360deg);
+            transform: rotate(360deg); }
+        .member-manage .header .hd-op ul li.hoverDel:hover {
+          background-color: #fff; }
+        .member-manage .header .hd-op ul .op, .member-manage .header .hd-op ul .delete-team {
+          color: #b1b1b1; }
+        .member-manage .header .hd-op ul .search {
+          cursor: default;
+          border-right: 1px solid #DDDDDD; }
+          .member-manage .header .hd-op ul .search .searchinput {
+            background-color: #fff;
+            border: 1px solid #FFBF80;
+            -moz-border-radius: 4px;
+            -webkit-border-radius: 4px;
+            border-radius: 4px;
+            height: 30px;
+            width: 200px;
+            margin-top: 10px;
+            margin-left: -11px; }
+            .member-manage .header .hd-op ul .search .searchinput img {
+              position: relative;
+              left: -22px;
+              top: -5px;
+              width: 18px;
+              height: 18px; }
+            .member-manage .header .hd-op ul .search .searchinput input {
+              position: relative;
+              top: -10px;
+              left: -19px;
+              border: none;
+              outline: none;
+              width: 120px; }
+  .member-manage .content {
+    width: 100%;
+    height: 100%;
+    min-height: 500px;
+    overflow: hidden;
+    border-bottom: 1px solid #ddd; }
+    .member-manage .content .dept-info {
+      float: left;
+      padding-bottom: 10000px;
+      margin-bottom: -10000px;
+      width: 20%;
+      height: 100%;
+      border-right: 1px solid #ddd;
+      margin-right: -1px; }
+      .member-manage .content .dept-info .dept-op {
+        width: 100%;
+        background-color: #f9f9f9;
+        height: 40px; }
+        .member-manage .content .dept-info .dept-op .dept-op-edit {
+          width: 100%;
+          height: 100%;
+          padding-top: 6px;
+          border-left: 1px solid #ddd;
+          border-top: 1px solid #ddd;
+          text-align: center;
+          cursor: pointer; }
+          .member-manage .content .dept-info .dept-op .dept-op-edit img {
+            position: relative;
+            top: 4px;
+            width: 18px;
+            height: 18px;
+            -webkit-transition: all 1s ease;
+            -moz-transition: all 1s ease;
+            -o-transition: all 1s ease;
+            transition: all 1s ease; }
+          .member-manage .content .dept-info .dept-op .dept-op-edit span {
+            color: #666;
+            font-family: Microsoft YaHei;
+            font-size: 14px; }
+        .member-manage .content .dept-info .dept-op .dept-op-edit:hover {
+          background-color: #fff; }
+          .member-manage .content .dept-info .dept-op .dept-op-edit:hover img {
+            -webkit-transform: rotate(360deg);
+            -moz-transform: rotate(360deg);
+            -ms-transform: rotate(360deg);
+            -o-transform: rotate(360deg);
+            transform: rotate(360deg); }
+      .member-manage .content .dept-info .dept-nav {
+        width: 100%;
+        border-top: 1px solid #ddd; }
+        .member-manage .content .dept-info .dept-nav .nav-tree {
+          width: 100%; }
+    .member-manage .content .user-info {
+      float: left;
+      padding-bottom: 10000px;
+      margin-bottom: -10000px;
+      width: 80%;
+      height: 100%;
+      position: relative; }
+      .member-manage .content .user-info .user-header {
+        width: 100%;
+        margin: 0 -2px;
+        height: 39px;
+        line-height: 39px;
+        border-left: 1px solid #ddd;
+        border-right: 1px solid #ddd;
+        border-top: 1px solid #ddd;
+        background-color: #f9f9f9;
+        text-align: center; }
+        .member-manage .content .user-info .user-header .user-title {
+          color: #666;
+          font-family: Microsoft YaHei;
+          font-size: 14px; }
+      .member-manage .content .user-info .user-table, .member-manage .content .user-info .apply-table, .member-manage .content .user-info .sales-team-table, .member-manage .content .user-info .resign-user-table {
+        width: 100%;
+        margin: 0 -2px;
+        padding-left: 2px; }
+        .member-manage .content .user-info .user-table table, .member-manage .content .user-info .apply-table table, .member-manage .content .user-info .sales-team-table table, .member-manage .content .user-info .resign-user-table table {
+          width: 100%;
+          border-collapse: collapse;
+          border-spacing: 0; }
+          .member-manage .content .user-info .user-table table thead, .member-manage .content .user-info .apply-table table thead, .member-manage .content .user-info .sales-team-table table thead, .member-manage .content .user-info .resign-user-table table thead {
+            background-color: #f9f9f9; }
+            .member-manage .content .user-info .user-table table thead tr, .member-manage .content .user-info .apply-table table thead tr, .member-manage .content .user-info .sales-team-table table thead tr, .member-manage .content .user-info .resign-user-table table thead tr {
+              height: 40px; }
+          .member-manage .content .user-info .user-table table tbody tr, .member-manage .content .user-info .apply-table table tbody tr, .member-manage .content .user-info .sales-team-table table tbody tr, .member-manage .content .user-info .resign-user-table table tbody tr {
+            height: 37px;
+            cursor: pointer; }
+          .member-manage .content .user-info .user-table table tbody tr:nth-child(odd), .member-manage .content .user-info .apply-table table tbody tr:nth-child(odd), .member-manage .content .user-info .sales-team-table table tbody tr:nth-child(odd), .member-manage .content .user-info .resign-user-table table tbody tr:nth-child(odd) {
+            background-color: #fcfcfc; }
+          .member-manage .content .user-info .user-table table tbody tr:nth-child(even), .member-manage .content .user-info .apply-table table tbody tr:nth-child(even), .member-manage .content .user-info .sales-team-table table tbody tr:nth-child(even), .member-manage .content .user-info .resign-user-table table tbody tr:nth-child(even) {
+            background-color: #fff; }
+          .member-manage .content .user-info .user-table table tbody tr:hover, .member-manage .content .user-info .apply-table table tbody tr:hover, .member-manage .content .user-info .sales-team-table table tbody tr:hover, .member-manage .content .user-info .resign-user-table table tbody tr:hover {
+            background-color: #f8f8f8; }
+          .member-manage .content .user-info .user-table table tfoot tr, .member-manage .content .user-info .apply-table table tfoot tr, .member-manage .content .user-info .sales-team-table table tfoot tr, .member-manage .content .user-info .resign-user-table table tfoot tr {
+            height: 37px;
+            background-color: #f9f9f9; }
+            .member-manage .content .user-info .user-table table tfoot tr td, .member-manage .content .user-info .apply-table table tfoot tr td, .member-manage .content .user-info .sales-team-table table tfoot tr td, .member-manage .content .user-info .resign-user-table table tfoot tr td {
+              height: 37px;
+              line-height: 37px;
+              font-family: Microsoft YaHei;
+              font-size: 12px;
+              color: #000; }
+          .member-manage .content .user-info .user-table table tr td, .member-manage .content .user-info .apply-table table tr td, .member-manage .content .user-info .sales-team-table table tr td, .member-manage .content .user-info .resign-user-table table tr td {
+            text-align: center;
+            border: 1px solid #ddd;
+            color: #666;
+            font-family: Microsoft YaHei;
+            font-size: 14px;
+            overflow: hidden; }
+            .member-manage .content .user-info .user-table table tr td .user-check-all, .member-manage .content .user-info .user-table table tr td .user-check-item, .member-manage .content .user-info .user-table table tr td .check-all, .member-manage .content .user-info .user-table table tr td .check-item, .member-manage .content .user-info .apply-table table tr td .user-check-all, .member-manage .content .user-info .apply-table table tr td .user-check-item, .member-manage .content .user-info .apply-table table tr td .check-all, .member-manage .content .user-info .apply-table table tr td .check-item, .member-manage .content .user-info .sales-team-table table tr td .user-check-all, .member-manage .content .user-info .sales-team-table table tr td .user-check-item, .member-manage .content .user-info .sales-team-table table tr td .check-all, .member-manage .content .user-info .sales-team-table table tr td .check-item, .member-manage .content .user-info .resign-user-table table tr td .user-check-all, .member-manage .content .user-info .resign-user-table table tr td .user-check-item, .member-manage .content .user-info .resign-user-table table tr td .check-all, .member-manage .content .user-info .resign-user-table table tr td .check-item {
+              display: block;
+              margin-left: 40%;
+              width: 15px;
+              height: 15px;
+              background-image: url("../../../foundation/image/row-checkbox.gif");
+              background-position: 1px 1px;
+              background-repeat: no-repeat; }
+            .member-manage .content .user-info .user-table table tr td a, .member-manage .content .user-info .apply-table table tr td a, .member-manage .content .user-info .sales-team-table table tr td a, .member-manage .content .user-info .resign-user-table table tr td a {
+              text-decoration: none; }
+            .member-manage .content .user-info .user-table table tr td a:hover, .member-manage .content .user-info .apply-table table tr td a:hover, .member-manage .content .user-info .sales-team-table table tr td a:hover, .member-manage .content .user-info .resign-user-table table tr td a:hover {
+              text-decoration: underline; }
+          .member-manage .content .user-info .user-table table tr .td-op, .member-manage .content .user-info .apply-table table tr .td-op, .member-manage .content .user-info .sales-team-table table tr .td-op, .member-manage .content .user-info .resign-user-table table tr .td-op {
+            width: 8%; }
+          .member-manage .content .user-info .user-table table tr.empty, .member-manage .content .user-info .apply-table table tr.empty, .member-manage .content .user-info .sales-team-table table tr.empty, .member-manage .content .user-info .resign-user-table table tr.empty {
+            height: 150px;
+            cursor: default; }
+            .member-manage .content .user-info .user-table table tr.empty td, .member-manage .content .user-info .apply-table table tr.empty td, .member-manage .content .user-info .sales-team-table table tr.empty td, .member-manage .content .user-info .resign-user-table table tr.empty td {
+              font-family: "Microsoft YaHei";
+              font-size: 30px;
+              font-style: italic;
+              color: #dcdcdc; }
+      .member-manage .content .user-info .user-table .td-op {
+        width: 10%; }
+      .member-manage .content .user-info .user-table .td-name {
+        width: 20%; }
+      .member-manage .content .user-info .user-table .td-dept {
+        width: 20%; }
+      .member-manage .content .user-info .user-table .td-phone {
+        width: 25%; }
+      .member-manage .content .user-info .user-table .td-email {
+        width: 25%; }
+      .member-manage .content .user-info .sales-team-table .td-op {
+        width: 10%; }
+      .member-manage .content .user-info .sales-team-table .td-name {
+        width: 20%; }
+      .member-manage .content .user-info .sales-team-table .td-member {
+        width: 10%; }
+      .member-manage .content .user-info .sales-team-table .td-admin {
+        width: 20%; }
+      .member-manage .content .user-info .sales-team-table .td-createAt {
+        width: 20%; }
+      .member-manage .content .user-info .sales-team-table .td-ope {
+        width: 20%; }
+      .member-manage .content .user-info .resign-user-table .td-name {
+        width: 20%; }
+      .member-manage .content .user-info .resign-user-table .td-dept {
+        width: 20%; }
+      .member-manage .content .user-info .resign-user-table .td-phone {
+        width: 30%; }
+      .member-manage .content .user-info .resign-user-table .td-email {
+        width: 30%; }
+      .member-manage .content .user-info .apply-table .td-name {
+        width: 30%; }
+      .member-manage .content .user-info .apply-table .td-dept {
+        width: 35%; }
+      .member-manage .content .user-info .apply-table .td-applydate {
+        width: 35%; }
+  .member-manage .trOdd {
+    background-color: #fcfcfc; }
+  .member-manage .trEven {
+    background-color: #fff; }
+
+/*# sourceMappingURL=index.css.map */

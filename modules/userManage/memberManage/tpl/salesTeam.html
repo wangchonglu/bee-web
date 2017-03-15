@@ -1,0 +1,40 @@
+<div class="sales-team-table">
+    <table>
+        <thead>
+        <tr>
+            <td class="td-op">
+                <span class="check-all" data-check="false"></span>
+            </td>
+            <td class="td-name">团队名称 </td>
+            <td class="td-member">成员数目</td>
+            <td class="td-admin">管理员</td>
+            <td class="td-createAt">创建日期</td>
+            <td class="td-ope">操作</td>
+        </tr>
+        </thead>
+        <tbody>
+        <% if(it.length > 0){ %>
+        <% for(var i=0;i<it.length;i++){ %>
+        <% var item=it[i];%>
+        <% var flag=i%2;var curClass;%>
+        <% if(flag==0){curClass="trOdd";}else{curClass="trEven";} %>
+        <tr class="<%= curClass %> tr-member" data-tid="<%= item.id %>">
+            <td class="td-op">
+                <span class="check-item" data-check="false"></span>
+            </td>
+            <td class="td-name" data-field="name"><%= item.name %></td>
+            <td class="td-member" data-field="memberCount"><%= item.memberCount %></td>
+            <td class="td-admin" data-field="adminName"><%= item.adminName %></td>
+            <td class="td-createAt" data-field="createdAt"><%= item.createdAt %></td>
+            <td class="td-ope assignUser">
+                <a href="javascript:void(0)">分配人员</a>
+            </td>
+        </tr>
+        <% } %>
+        <% }else{ %>
+        <tr class="empty"><td colspan="6">暂无数据</td></tr>
+        <% } %>
+        </tbody>
+    </table>
+</div>
+

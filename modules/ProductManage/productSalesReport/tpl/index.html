@@ -1,0 +1,60 @@
+<div class="product_sales">
+    <div class="prosales_header">
+        <div class="header_operation">
+            <div class="operation_sort">
+                <span>排序方式：</span>
+                <select class="select_op_sort">
+                    <option>募集规模</option>
+                    <option>报单人数</option>
+                </select>
+            </div>
+            <div class="operation_search">
+                <input class="people_search_btn" type="text" placeholder="搜索产品名称"/>
+                <img class="people_search_img" src="./modules/foundation/image/operation_search.png" title="搜索"/>
+            </div>
+        </div>
+    </div>
+
+    <div class="prosales_content">
+        <table class="prosales_table beeWebTable">
+            <thead>
+            <tr>
+                <th>产品名称</th>
+                <th>参销金额(万元)</th>
+                <th>募集规模(万元)</th>
+                <th>预约金额(万元)</th>
+                <th>打款金额(万元)</th>
+                <th>打款百分比</th>
+                <th>预约人数</th>
+                <th>报单人数</th>
+            </tr>
+            </thead>
+            <tbody>
+            <% if(it.length > 0){ %>
+                <% for(var i=0;i<it.length;i++){ %>
+                    <% var item=it[i];%>
+                    <% var flag=i%2;var curClass;%>
+                    <% if(flag==0){curClass="trOddBackColor";}else{curClass="trEvenBackColor";} %>
+                    <tr class="<%= curClass%> " data-id="<%= item.id%>">
+                        <td class="tbody_td" data-field="proName"><%=item.proName%></td>
+                        <td class="tbody_td" data-field="fund"><%=item.fund%></td>
+                        <td class="tbody_td" data-field="income"><%=item.income%></td>
+                        <td class="tbody_td" data-field="region"><%=item.region%></td>
+                        <td class="tbody_td" data-field="years"><%=item.years%></td>
+                        <td class="tbody_td" data-field="yearRate"><%=item.yearRate%></td>
+                        <td class="tbody_td" data-field="backRate"><%=item.backRate%></td>
+                        <td class="tbody_td" data-field="backRate"><%=item.backRate1%></td>
+                    </tr>
+                <% } %>
+            <% }else{ %>
+            <tr class="prosales_tbody_empty"><td colspan="8">No Data</td></tr>
+            <% } %>
+            </tbody>
+        </table>
+        <% if(it.length > 0){ %>
+            <div class="prosales_pager">
+
+            </div>
+        <% } %>
+    </div>
+</div>

@@ -1,0 +1,13 @@
+<% if(it.length > 0){ %>
+    <% for(var i=0;i<it.length;i++){ %>
+        <% var item=it[i];%>
+        <% var flag=i%2;var curClass;%>
+        <% if(flag==0){curClass="trOddBackColor";}else{curClass="trEvenBackColor";} %>
+        <tr class="<%= curClass %>">
+            <td class="name" data-field="name"><%=item.name%></td>
+            <td class="product" data-field="product"><%=item.product%></td>
+            <td class="contractNum" data-field="contractNum"><%=item.contractNum%></td>
+            <td class="archiveNum" data-field="archiveNum"><%=item.archiveNum%></td>
+        </tr>
+    <% } %>
+<% } %>

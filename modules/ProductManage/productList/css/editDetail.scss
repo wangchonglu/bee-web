@@ -1,0 +1,77 @@
+.editDetail {
+  table {
+    width: 100%;
+    tr {
+      height: 45px;
+      line-height: 45px;
+      width: 100%;
+      th {
+        height: 45px;
+        line-height: 45px;
+        text-align: center;
+        width: 30%;
+        font-style: normal;
+        font-weight: normal;
+        color: #6b818b;
+        font-family: Microsoft YaHei;
+        font-size: 14px;
+      }
+      td {
+        height: 45px;
+        line-height: 45px;
+        width: 70%;
+        color: #6b818b;
+        font-family: Microsoft YaHei;
+        font-size: 14px;
+        text-align: left;
+      }
+      input {
+        padding-left: 5px;
+        border: 1px solid #cccccc;
+        border-radius: 5px;
+        width: 180px;
+        height: 25px;
+        color: #6b818b;
+        font-family: Microsoft YaHei;
+        font-size: 14px;
+      }
+      textarea {
+        line-height: 15px;
+        width: 240px;
+        padding-left: 5px;
+        border: 1px solid #cccccc;
+        border-radius: 5px;
+      }
+      a {
+        color: #2b669a;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+.editDetail .toTop {
+  vertical-align: top;
+}
+
+.editDetail .fileStyle {
+  line-height: 30px;
+}
+
+.editDetail .deleteDetail {
+  float: right;
+  padding-right: 82px;
+  color: gainsboro;
+  cursor: pointer;
+  padding-top: 3px;
+}
+
+.editDetail .upLoad {
+  text-decoration: underline;
+  margin-left: 50px;
+  cursor: pointer;
+}
+
+.editDetail .upLoadFile {
+  display: none;
+}

@@ -1,0 +1,63 @@
+<div class="member_pool">
+    <div class="memberPool_header">
+        <div class="header_operation">
+            <div class="operation_sort">
+                <span>排序方式：</span>
+                <select class="select_op_sort">
+                    <option>积分</option>
+                    <option>等级</option>
+                </select>
+            </div>
+            <div class="operation_search">
+
+            </div>
+        </div>
+    </div>
+
+    <div class="memberPool_content">
+        <table class="memberPool_table beeWebTable">
+            <thead>
+            <tr>
+                <th>姓名</th>
+                <th>来源</th>
+                <th>等级</th>
+                <th>积分</th>
+                <th>联系方式</th>
+                <th>邮箱</th>
+                <th>公司</th>
+                <th>职位</th>
+                <th>服务人员</th>
+                <th>满意度</th>
+            </tr>
+            </thead>
+            <tbody>
+            <% if(it.length > 0){ %>
+            <% for(var i=0;i<it.length;i++){ %>
+            <% var item=it[i];%>
+            <% var flag=i%2;var curClass;%>
+            <% if(flag==0){curClass="trOddBackColor";}else{curClass="trEvenBackColor";} %>
+            <tr class="<%= curClass %>">
+                <td class="tbody_td" data-field="proName"><%=item.proName%></td>
+                <td class="tbody_td" data-field="proName"><%=item.source%></td>
+                <td class="tbody_td" data-field="fund"><%=item.fund%></td>
+                <td class="tbody_td" data-field="income"><%=item.income%></td>
+                <td class="tbody_td" data-field="region"><%=item.region%></td>
+                <td class="tbody_td" data-field="years"><%=item.years%></td>
+                <td class="tbody_td" data-field="region"><%=item.company%></td>
+                <td class="tbody_td" data-field="years"><%=item.position%></td>
+                <td class="tbody_td" data-field="years"><%=item.serviceWorkers%></td>
+                <td class="tbody_td" data-field="years"><%=item.satisfaction%></td>
+            </tr>
+            <% } %>
+            <% }else{ %>
+            <tr class="memberPool_tbody_empty"><td colspan="8">No Data</td></tr>
+            <% } %>
+            </tbody>
+        </table>
+        <% if(it.length > 0){ %>
+        <div class="memberPool_pager">
+
+        </div>
+        <% } %>
+    </div>
+</div>

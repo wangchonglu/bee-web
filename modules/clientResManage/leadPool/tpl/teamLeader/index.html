@@ -1,0 +1,43 @@
+<div class="leads_pool">
+    <div class="leadsPool_header">
+        <div class="display_info">
+            <span class="title">团队线索池</span>
+            <div>
+                <!--共<span class="total"><%=it.seaData.allCount%></span>条,已分配<span class="use"><%=it.seaData.claimedCount%></span>，-->未分配<a href="javascript:void(0);"><span class="remain"><%=it.seaData.uncaimedCount%></span></a>
+            </div>
+        </div>
+        <div class="operation_info">
+            <input type="button" value="导入线索" class="importLeads cfyBtn" />
+            <input type="button" value="分配线索" class="customAssign cfyBtn" />
+        </div>
+        <div style="clear: both"></div>
+    </div>
+
+    <div class="leadsPool_content">
+        <table class="leadsPool_table beeWebTable">
+            <thead>
+            <tr>
+                <th>成员名称</th>
+                <th>联系方式</th>
+                <th>所持线索</th>
+            </tr>
+            </thead>
+            <tbody>
+            <% if(it.groups.length > 0){ %>
+            <% for(var i=0;i<it.groups.length;i++){ %>
+            <% var item=it.groups[i];%>
+            <% var flag=i%2;var curClass;%>
+            <% if(flag==0){curClass="trOddBackColor";}else{curClass="trEvenBackColor";} %>
+            <tr class="<%= curClass %>" data-gid="<%=item.id%>" data-index="<%=i%>">
+                <td data-field="name"><%=item.name%></td>
+                <td data-field="phone"><%=item.phone%></td>
+                <td data-field="leadCount"><%=item.leadCount%></td>
+            </tr>
+            <% } %>
+            <% }else{ %>
+            <tr class="tbody_empty"><td colspan="4">当前没有数据 /(ㄒoㄒ)/~~</td></tr>
+            <% } %>
+            </tbody>
+        </table>
+    </div>
+</div>

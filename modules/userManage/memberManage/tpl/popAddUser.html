@@ -1,0 +1,29 @@
+<div class="popAddUser">
+    <table>
+        <tr>
+            <th>姓名：</th>
+            <td>
+                <input type="text" class="add_name commonInput" required  required-msg="不能为空呦！"/>
+            </td>
+        </tr>
+        <tr>
+            <th>部门：</th>
+            <td>
+                <input type="text" class="add_dept commonInput" id="enter_contact_dept" placeholder="点击选择部门" data-op="select" required  required-msg="不能为空呦！"/>
+                <!--<button class="commonInput add_dept" id="enter_contact_dept" data-op="select">请选择部门</button>-->
+            </td>
+        </tr>
+        <tr>
+            <th>手机：</th>
+            <td>
+                <input type="text" class="add_phone commonInput" required  required-msg="不能为空呦！"validate-isPhone validate-isPhone-msg="手机号码格式错误" />
+            </td>
+        </tr>
+        <tr>
+            <th>邮箱：</th>
+            <td>
+                <input type="text" class="add_email commonInput" validate-isEmail validate-isEmail-msg="邮箱格式错误"/>
+            </td>
+        </tr>
+    </table>
+</div>

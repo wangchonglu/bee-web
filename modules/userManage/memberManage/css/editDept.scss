@@ -1,0 +1,46 @@
+.edit-dept-pop{
+  width:100%;
+  .dept-ops{
+    width: 100%;
+    height:40px;
+
+    table{
+      width: 100%;
+      border-collapse: collapse;
+      border-spacing: 0;
+      tr{
+        height:40px;
+        td{
+          border: 1px solid #ddd;
+          background-color: #f9f9f9;
+          width: 33%;
+          text-align: center;
+          cursor: pointer;
+          img{
+            position: relative;
+            top:3px;
+          }
+          span{
+            font-family: "Microsoft YaHei";
+            color:#666;
+            font-size:14px;
+          }
+        }
+        td:hover{
+          background-color: #fff;
+        }
+        td.dept-ops-edit{
+          span{
+            color: #b1b1b1;
+          }
+        }
+        td.dept-ops-delete{
+          span{
+            color: #b1b1b1;
+          }
+        }
+      }
+    }
+
+  }
+}

@@ -1,0 +1,21 @@
+<div class="deptOpsAdd-pop">
+    <table>
+        <tr>
+            <th>
+                名称
+            </th>
+            <td>
+                <input type="text" class="commonInput dept-name" placeholder="输入部门名称" autocomplete="off" required  required-msg="部门名称不能为空">
+            </td>
+        </tr>
+        <tr>
+            <th>
+                归属
+            </th>
+            <td>
+                <input type="text" class="parent-dept commonInput" placeholder="点击选择部门" data-did="<%= it.id %>"  data-op="add" value="<%= it.name %>" required  required-msg="不能为空呦！"/>
+                <!--<button class="commonInput parent-dept" data-did="<%= it.id %>"  data-op="add"><%= it.name %></button>-->
+            </td>
+        </tr>
+    </table>
+</div>

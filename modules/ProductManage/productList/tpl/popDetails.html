@@ -1,0 +1,308 @@
+<div class="popDetails">
+    <div class="main-content">
+        <div class="content-div">
+            <div class="label-div">产品名称：</div>
+            <div class="input-div"><label id="name" class="input-style"><%=it.name%></label></div>
+        </div>
+        <div class="content-div">
+            <div class="label-div">产品类型：</div>
+            <div class="input-div"><label id="productType" class="input-style"><%=it.productType%></label></div>
+        </div>
+        <div class="content-div">
+            <div class="label-div">收益类型：</div>
+            <div class="input-div"><label id="benefitType" class="input-style"><%=it.benefitType%></label></div>
+        </div>
+        <div class="content-div">
+            <div class="label-div">产品号：</div>
+            <div class="input-div"><label id="id" class="input-style"><%=it.id%></label></div>
+        </div>
+        <div class="content-div">
+            <div class="label-div">简称：</div>
+            <div class="input-div"><label id="shortName" class="input-style"><%=it.shortName%></label></div>
+        </div>
+        <div class="content-div">
+            <div class="label-div">融资方：</div>
+            <div class="input-div"><label id="financingParty" class="input-style"><%=it.financingParty%></label></div>
+        </div>
+        <div class="content-div">
+            <div class="label-div">投向：</div>
+            <div class="input-div"><label id="investType" class="input-style"><%=it.investType%></label></div>
+        </div>
+        <div class="content-div">
+            <div class="label-div">管理人：</div>
+            <div class="input-div"><label id="investmentManager" class="input-style"><%=it.investmentManager%></label>
+            </div>
+        </div>
+        <% if( it.benefitType=='1'){ %>
+        <div id="module-fixed">
+            <div class="content-div">
+                <div class="label-div">融资方：</div>
+                <div class="input-div"><label id="financingParty" class="input-style"><%=it.financingParty%></label>
+                </div>
+            </div>
+            <div class="content-div">
+                <div class="label-div">产品规模：</div>
+                <div class="input-div"><label id="raiseTotal" class="input-style"><%=it.raiseTotal%></label></div>
+            </div>
+            <div class="content-div">
+                <div class="label-div">成立规模：</div>
+                <div class="input-div"><label id="holdTotal" class="input-style"><%=it.holdTotal%></label></div>
+            </div>
+            <div class="content-div">
+                <div class="label-div">产品期限：</div>
+                <div class="input-div"><label id="investmentDeadline"
+                                              class="input-style"><%=it.investmentDeadline%></label>
+                </div>
+            </div>
+            <div class="content-div">
+                <div class="label-div">产品期限说明：</div>
+                <div class="input-div"><label id="investmentDeadlineRemark" class="input-style"><%=it.investmentDeadlineRemark%></label>
+                </div>
+            </div>
+            <div class="content-div">
+                <div class="label-div">资金托管行：</div>
+                <div class="input-div"><label id="trusteeBank" class="input-style"><%=it.trusteeBank%></label></div>
+            </div>
+            <div class="content-div">
+                <div class="label-div">预期收益率：</div>
+                <div class="input-div"><label id="annualBenefitRate">
+
+                    <% if(it!=undefined && it.annualBenefitRate.length>0){ %>
+                    <% for(var i=0;i
+                    <it.annualBenefitRate.length
+                            ;i++){ %>
+                        <% var
+                        annual=it.annualBenefitRate[i];%><span><%=annual.start==undefined?'':annual.start%></span>万 ~
+                        <span><%=annual.end==undefined?'':annual.end%></span>万　
+                        <span><%=annual.annual==undefined?'':annual.annual%></span>%<br/>
+                        <% } %>
+                        <% } %>
+                </label>
+                </div>
+            </div>
+            <div class="content-div">
+                <div class="label-div">付息方式：</div>
+                <div class="input-div"><label id="interestPayType" class="input-style"><%=it.interestPayType%></label>
+                </div>
+            </div>
+            <div class="content-div">
+                <div class="label-div">还款来源：</div>
+                <div class="input-div"><label id="repaymentSource" class="input-style"><%=it.repaymentSource%></label>
+                </div>
+            </div>
+            <div class="content-div">
+                <div class="label-div">增信措施：</div>
+                <div class="input-div"><label id="trustMeasure" class="input-style"><%=it.trustMeasure%></label></div>
+            </div>
+        </div>
+        <% } %>
+        <% if( it.benefitType=='2'){ %>
+        <div id="module-float">
+            <div class="content-div">
+                <div class="label-div">产品规模：</div>
+                <div class="input-div"><label id="raiseTotal" class="input-style"><%=it.raiseTotal%></label></div>
+            </div>
+            <div class="content-div">
+                <div class="label-div">成立规模：</div>
+                <div class="input-div"><label id="holdTotal" class="input-style"><%=it.holdTotal%></label></div>
+            </div>
+            <div class="content-div">
+                <div class="label-div">产品存续期限：</div>
+                <div class="input-div"><label id="duration" class="input-style"><%=it.floating%></label></div>
+            </div>
+            <div class="content-div">
+                <div class="label-div">产品期限说明：</div>
+                <div class="input-div"><label id="investmentDeadlineRemark" class="input-style"><%=it.investmentDeadlineRemark%></label>
+                </div>
+            </div>
+            <div class="content-div">
+                <div class="label-div">资金托管行：</div>
+                <div class="input-div"><label id="trusteeBank" class="input-style"><%=it.trusteeBank%></label></div>
+            </div>
+            <div class="content-div">
+                <div class="label-div">分红方式：</div>
+                <div class="input-div"><label id="trusteeBank" class="input-style"><%=it.trusteeBank%></label></div>
+            </div>
+            <div class="content-div">
+                <div class="label-div">结构化：</div>
+                <div class="input-div"><label id="trusteeBank" class="input-style"><%=it.trusteeBank%></label></div>
+            </div>
+            <div class="content-div">
+                <div class="label-div">管理人介绍：</div>
+                <div class="input-div"><label id="trusteeBank" class="input-style"><%=it.trusteeBank%></label></div>
+            </div>
+            <div class="content-div">
+                <div class="label-div">基金经理介绍：</div>
+                <div class="input-div"><label id="trusteeBank" class="input-style"><%=it.trusteeBank%></label></div>
+            </div>
+            <div class="content-div">
+                <div class="label-div">预警线：</div>
+                <div class="input-div"><label id="trusteeBank" class="input-style"><%=it.trusteeBank%></label></div>
+            </div>
+            <div class="content-div">
+                <div class="label-div">封闭期：</div>
+                <div class="input-div"><label id="trusteeBank" class="input-style"><%=it.trusteeBank%></label></div>
+            </div>
+            <div class="content-div">
+                <div class="label-div">开放日：</div>
+                <div class="input-div"><label id="closure" class="input-style"><%=it.floating%></label></div>
+            </div>
+            <div class="content-div">
+                <div class="label-div">认购费率：</div>
+                <div class="input-div"><label id="openDate" class="input-style"><%=it.scheme %>%</label></div>
+            </div>
+            <div class="content-div">
+                <div class="label-div">赎回费率：</div>
+                <div class="input-div"><label id="openDate" class="input-style"><%=it.scheme %>%</label></div>
+            </div>
+            <div class="content-div">
+                <div class="label-div">超额报酬：</div>
+                <div class="input-div"><label id="openDate" class="input-style"><%=it.scheme %>%</label></div>
+            </div>
+
+        </div>
+
+        <% } %>
+        <% if( it.benefitType=='3'){ %>
+        <div id="module-fixedAndFloat">
+            <div class="content-div">
+                <div class="label-div">融资方：</div>
+                <div class="input-div"><label id="financingParty" class="input-style"><%=it.financingParty%></label>
+                </div>
+            </div>
+            <div class="content-div">
+                <div class="label-div">产品优先级规模：</div>
+                <div class="input-div"><label id="financingParty" class="input-style"><%=it.financingParty%></label>
+                </div>
+            </div>
+            <div class="content-div">
+                <div class="label-div">产品劣后级规模：</div>
+                <div class="input-div"><label id="financingParty" class="input-style"><%=it.financingParty%></label>
+                </div>
+            </div>
+            <div class="content-div">
+                <div class="label-div">成立规模：</div>
+                <div class="input-div"><label id="holdTotal" class="input-style"><%=it.holdTotal%></label></div>
+            </div>
+            <div class="content-div">
+                <div class="label-div">产品优先级期限：</div>
+                <div class="input-div"><label id="holdTotal" class="input-style"><%=it.holdTotal%></label></div>
+            </div>
+            <div class="content-div">
+                <div class="label-div">产品劣后级期限：</div>
+                <div class="input-div"><label id="holdTotal" class="input-style"><%=it.holdTotal%></label></div>
+            </div>
+            <div class="content-div">
+                <div class="label-div">产品期限说明：</div>
+                <div class="input-div"><label id="investmentDeadlineRemark" class="input-style"><%=it.investmentDeadlineRemark%></label>
+                </div>
+            </div>
+            <div class="content-div">
+                <div class="label-div">资金托管行：</div>
+                <div class="input-div"><label id="trusteeBank" class="input-style"><%=it.trusteeBank%></label></div>
+            </div>
+            <div class="content-div">
+                <div class="label-div">优先级预期收益率：</div>
+                <div class="input-div"><label id="trusteeBank" class="input-style"><%=it.trusteeBank%></label></div>
+            </div>
+            <div class="content-div">
+                <div class="label-div">劣后级预期收益率：</div>
+                <div class="input-div"><label id="trusteeBank" class="input-style"><%=it.trusteeBank%></label></div>
+            </div>
+            <div class="content-div">
+                <div class="label-div">管理人介绍：</div>
+                <div class="input-div"><label id="trusteeBank" class="input-style"><%=it.trusteeBank%></label></div>
+            </div>
+            <div class="content-div">
+                <div class="label-div">基金经理介绍：</div>
+                <div class="input-div"><label id="trusteeBank" class="input-style"><%=it.trusteeBank%></label></div>
+            </div>
+            <div class="content-div">
+                <div class="label-div">还款来源：</div>
+                <div class="input-div"><label id="repaymentSource" class="input-style"><%=it.repaymentSource%></label>
+                </div>
+            </div>
+            <div class="content-div">
+                <div class="label-div">增信措施：</div>
+                <div class="input-div"><label id="trustMeasure" class="input-style"><%=it.trustMeasure%></label></div>
+            </div>
+        </div>
+        <% } %>
+
+
+        <div class="content-div">
+            <div class="label-div">募集行：</div>
+            <div class="input-div"><label id="raiseBank" class="input-style"><%=it.raiseBank%></label></div>
+        </div>
+        <div class="content-div">
+            <div class="label-div">募集账号：</div>
+            <div class="input-div"><label id="raiseAccount" class="input-style"><%=it.raiseAccount%></label></div>
+        </div>
+        <div class="content-div">
+            <div class="label-div">募集账户名称：</div>
+            <div class="input-div"><label id="raiseAccountName" class="input-style"><%=it.raiseAccountName%></label>
+            </div>
+        </div>
+        <div class="content-div">
+            <div class="label-div">资金托管行：</div>
+            <div class="input-div"><label id="trusteeBank" class="input-style"><%=it.trusteeBank%></label></div>
+        </div>
+        <div class="content-div">
+            <div class="label-div">产品规模：</div>
+            <div class="input-div"><label id="raiseTotal" class="input-style"><%=it.raiseTotal%></label></div>
+        </div>
+        <div class="content-div">
+            <div class="label-div">产品发行启动日期：</div>
+            <div class="input-div"><label id="beginPayTime" class="input-style"><%=it==undefined ||
+                it.beginPayTime==''?'':new Date(it.beginPayTime).toLocaleDateString()%></label></div>
+        </div>
+
+        <div class="content-div">
+            <div class="label-div">产品打款截止日期：</div>
+            <div class="input-div"><label id="lastPayTime" class="input-style"><%=it==undefined ||
+                it.lastPayTime==''?'':new Date(it.lastPayTime).toLocaleDateString()%></label></div>
+        </div>
+        <div class="content-div">
+            <div class="label-div">产品创建日期：</div>
+            <div class="input-div"><label id="createTime" class="input-style"><%=it==undefined ||
+                it.createTime==''?'':new Date(it.createTime).toLocaleDateString()%></label></div>
+        </div>
+        <div class="content-div">
+            <div class="label-div">产品图片：</div>
+            <div class="input-div">
+                <label id="productPicture" class="input-style">
+                    <img src="<%=it==undefined?'':it.productPicture%>" id="upload_btn">
+                </label>
+            </div>
+        </div>
+        <div class="content-div">
+            <div class="label-div">创建产品用户号：</div>
+            <div class="input-div"><label id="createUserId" class="input-style"><%=it.createUserId%></label></div>
+        </div>
+        <div class="content-div">
+            <div class="label-div">认购起点：</div>
+            <div class="input-div"><label id="tranchePoint" class="input-style"><%=it.tranchePoint%></label></div>
+        </div>
+
+        <div class="content-div">
+            <div class="label-div">付息方式：</div>
+            <div class="input-div"><label id="interestPayType" class="input-style"><%=it.interestPayType%></label></div>
+        </div>
+        <div class="content-div">
+            <div class="label-div">渠道经理：</div>
+            <div class="input-div"><label id="auditor1" class="input-style"><%=it.auditor1%></label></div>
+        </div>
+        <div class="content-div">
+            <div class="label-div">审核经理：</div>
+            <div class="input-div"><label id="auditor2" class="input-style"><%=it.auditor2%></label></div>
+        </div>
+        <div class="content-div">
+            <div class="label-div">结算经理：</div>
+            <div class="input-div"><label id="auditor3" class="input-style"><%=it.auditor3%></label></div>
+        </div>
+
+
+    </div>
+
+
+</div>

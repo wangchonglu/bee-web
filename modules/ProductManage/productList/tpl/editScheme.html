@@ -1,0 +1,120 @@
+<!--
+<div class="Scheme">
+    <div class="column">
+        <div class="filed">
+        <span>
+            产品号：
+        </span>
+            <input type="text"/>
+        </div>
+        <div class="filed">
+        <span>
+            本期募集总额：
+        </span>
+            <input type="text"/>
+        </div>
+    </div>
+    <div class="clear"></div>
+    <div class="filed">
+        <span>
+            开放日：
+        </span>
+        <input type="text"/>
+    </div>
+    <div class="filed">
+        <span>
+            截止抢购时间：
+        </span>
+        <input type="text"/>
+    </div>
+    <div class="clear"></div>
+    <div class="filed">
+        <span>
+            募集预警通知：
+        </span>
+        <input type="text"/>
+    </div>
+    <div class="filed">
+        <span>
+            成立规模：
+        </span>
+        <input type="text"/>
+    </div>
+    <div class="clear"></div>
+    <div class="filed">
+        <span>
+            大单金额：
+        </span>
+        <input type="text"/>
+    </div>
+    <div class="filed">
+        <span>
+            上传客户资料：
+        </span>
+        <input type="text"/>
+    </div>
+    <div class="clear"></div>
+    <div class="filed">
+        <span>
+            佣金起点：
+        </span>
+        <input type="text"/>
+    </div>
+    <div class="filed">
+        <span>
+            佣金比率：
+        </span>
+        <input type="text"/>
+    </div>
+</div>
+
+-->
+
+
+<div class="scheme_add_content">
+    <table>
+        <tr>
+            <th> 产品号：</th>
+            <td><label id="productId"><%=it.productId%></label></td>
+            <th>本期募集总额：</th>
+            <td><input id="raiseTotal" required type="text"
+                       value="<%=it.theRaiseTotal==undefined?'':it.theRaiseTotal%>"/></td>
+        </tr>
+        <tr>
+            <th>开放日：</th>
+            <td><input id="openDate" class="p_selectdate" required type="text"
+                       value="<%=it.openDate==undefined?'':it.openDate%>"/></td>
+            <th>截止抢购时间：</th>
+            <td><input id="lastPayTime" class="p_selectdate" required type="text"
+                       value="<%=it.lastSecondKillTime==undefined?'':it.lastSecondKillTime%>"/></td>
+        </tr>
+        <tr>
+            <th>募集预警通知：</th>
+            <td><input id="warningLimit" required type="text"
+                       value="<%=it.warningLimit==undefined?'':it.warningLimit%>"/></td>
+            <th>成立规模：</th>
+            <td><input id="holdTotal" type="text" value="<%=it.holdTotal==undefined?'':it.holdTotal%>"/></td>
+        </tr>
+        <tr>
+            <th>大单金额：</th>
+            <td><input id="largeAmount" type="text" value="<%=it.largeAmount==undefined?'':it.largeAmount%>"/></td>
+            <th>上传客户资料：</th>
+            <td><select id="isCustomerUpload">
+                <option value="1"
+                <%=it.commissionPoint!=undefined && it.isCustomerUpload == 1 ? 'selected="selected"':'' %>
+                >是</option>
+                <option value="0"
+                <%=it.commissionPoint!=undefined && it.isCustomerUpload == 0 ? 'selected="selected"':'' %>
+                >否</option>
+            </select></td>
+        </tr>
+        <tr>
+            <th>佣金起点：</th>
+            <td><input id="commissionPoint" required type="text"
+                       value="<%=it.commissionPoint==undefined?'':it.commissionPoint%>"/></td>
+            <th>佣金比率：</th>
+            <td><input id="commissionRatio" required type="text"
+                       value="<%=it.commissionRatio==undefined?'':it.commissionRatio%>"/></td>
+        </tr>
+    </table>
+</div>

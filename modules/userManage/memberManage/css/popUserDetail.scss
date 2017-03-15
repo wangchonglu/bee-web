@@ -1,0 +1,45 @@
+$fontName:Microsoft YaHei;
+
+@mixin borderRadius($size:1px) {
+  -moz-border-radius: $size;
+  -webkit-border-radius: $size;
+  border-radius: $size;
+}
+
+.popUserDetail{
+  width: 100%;
+  .contact_user_img{
+    position: absolute;
+    right:60px;
+    img{
+      width:120px;
+      height:120px;
+      @include borderRadius(60px);
+    }
+  }
+  .popTable{
+    width: 100%;
+    tr{
+      width: 100%;
+      height: 50px;
+      .popTable_name{
+        width: 20%;
+        text-align: center;
+        font-family:$fontName ;
+        font-size: 13px;
+      }
+
+      .popTable_content{
+        width: 70%;
+        text-align: left;
+        font-family:$fontName ;
+        font-size: 13px;
+        padding: 5px 0 5px 0;
+        img{
+          width:250px;
+          height:150px;
+        }
+      }
+    }
+  }
+}

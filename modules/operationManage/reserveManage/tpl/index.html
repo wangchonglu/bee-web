@@ -1,0 +1,75 @@
+<div class="reserve_manage">
+    <div class="reserveMag_header">
+        <div class="operation_sort">
+            <span>排序方式：</span>
+            <select class="select_op_sort">
+                <option>预约时间</option>
+                <option>预约金额</option>
+            </select>
+        </div>
+
+        <div class="report-product-search">
+            <span>选择产品：</span>
+            <select>
+                <option>   --- 请选择 ---   </option>
+                <option>短融保4号（二十二期）</option>
+                <option>五分贷 - 新手专享计划</option>
+            </select>
+        </div>
+
+        <div class="operation_search">
+
+        </div>
+    </div>
+
+    <div class="reserveMag_content">
+        <table class="reserveMag_table beeWebTable">
+            <thead>
+            <tr>
+                <th>产品名称</th>
+                <th>客户姓名</th>
+                <th>预约金额</th>
+                <th>理财师名称</th>
+                <th>所属团队</th>
+                <th>出单机构</th>
+                <th>渠道经理</th>
+                <th>预约时间</th>
+            </tr>
+            </thead>
+            <tbody>
+                <% if(it.length > 0){ %>
+                    <% for(var i=0;i<it.length;i++){ %>
+                        <% var item=it[i];%>
+                        <% var flag=i%2;var curClass;%>
+                        <% if(flag==0){curClass="trOddBackColor";}else{curClass="trEvenBackColor";} %>
+                        <tr class="<%= curClass %>">
+                            <td data-field="proName"><%= item.proName %></td>
+                            <td data-field="cusName"><%= item.cusName %></td>
+                            <td data-field="price"><%= item.price %></td>
+                            <td data-field="fundName"><%= item.fundName %></td>
+                            <td data-field="team">周立团队一</td>
+                            <td data-field="institute"></td>
+                            <td data-field="channelManage"></td>
+                            <td data-field="createdAt"><%= item.createdAt %></td>
+                        </tr>
+                    <% } %>
+                <% }else{ %>
+                <tr class="tbodyEmpty"><td colspan="8">暂无数据</td></tr>
+                <% } %>
+            </tbody>
+            <% if(it.length>0){ %>
+            <tfoot>
+            <tr>
+                <td colspan="8">
+                    <div class="reserveMag_pager">
+                        <div class="reserveStatistic">
+                            共有<span class="all">14</span>个预约，<span class="type">3</span>种产品
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            </tfoot>
+            <% } %>
+        </table>
+    </div>
+</div>

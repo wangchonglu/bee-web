@@ -1,0 +1,26 @@
+<div class="lead_pool_avg">
+    <div class="avg-head">
+        <span class="avg-all">可分配数：<span class="all_leads"><%=it.all%></span></span>
+        <span class="avg-txt">待分配数：<input type="text" class="assignCount commonInput" /></span>
+        <span class="avg-btn"><input type="button" class="avgAssign cfyBtn" value="平均分配" /></span>
+    </div>
+    <table class="popTable">
+        <%
+        for (var i=0;i<it.groups.length;i++){
+            var item=it.groups[i];
+        %>
+            <tr>
+                <th>
+                    <%=item.name%>：
+                </th>
+                <td>
+                    <% if(it.isTeam==true){ %>
+                        <input type="text" class="commonInput cfyLeadTeam" data-gid="<%=item.uid%>" />
+                    <% }else{ %>
+                    <input type="text" class="commonInput cfyLeadTeam" data-gid="<%=item.id%>" />
+                    <% } %>
+                </td>
+            </tr>
+        <%}%>
+    </table>
+</div>

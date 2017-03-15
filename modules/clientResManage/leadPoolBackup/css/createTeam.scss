@@ -1,0 +1,34 @@
+
+.lead_create_team_pop{
+  width:100%;
+  text-align: center;
+  table{
+    width: 80%;
+    margin: auto;
+    tr{
+      height:45px;
+      line-height: 45px;
+      width: 100%;
+      th{
+        font-weight: normal;
+        font-style: normal;
+        height:45px;
+        line-height: 45px;
+        text-align: center;
+        width:30%;
+        color: #6b818b;
+        font-family: Microsoft YaHei;
+        font-size: 14px;
+      }
+      td{
+        height:45px;
+        line-height: 45px;
+        width:70%;
+        color: #6b818b;
+        font-family: Microsoft YaHei;
+        font-size: 14px;
+        text-align: left;
+      }
+    }
+  }
+}

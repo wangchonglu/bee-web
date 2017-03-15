@@ -1,0 +1,14 @@
+
+
+调用方式如下：
+
+require("simpleShowDialog");
+$(window).simpleShowDialog({
+    title: undefined,   //标题
+    content:undefined,  //内容，暂时只支持html，后续会支持url（如需要请提出需求）
+    height:500,
+    width:600,
+    actions:["submit","save","cancel","ok","login","close"], //暂时提供三个操作按钮，提交、保存、取消、确认、登录、关闭
+    onSubmit:undefined,     //提交按钮点击事件，如果实现   rerurn false;控件不关闭
+    onCancel:undefined     //取消按钮点击事件，如果实现    rerurn false;控件不关闭
+});
